@@ -1,0 +1,24 @@
+@font-face {
+  font-family: HKGrotesk;
+  font-weight: 400;
+  font-style: normal;
+  src: url("HKGrotesk-Regular.woff2") format("woff2"),
+    url("HKGrotesk-Regular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: HKGrotesk;
+  font-weight: 600;
+  font-style: normal;
+  src: url("HKGrotesk-SemiBold.woff2") format("woff2"),
+    url("HKGrotesk-SemiBold.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: HKGrotesk;
+  font-weight: 900;
+  font-style: normal;
+  src: url("HKGrotesk-Black.woff2") format("woff2"),
+    url("HKGrotesk-Black.woff") format("woff");
+  font-display: swap;
+}
