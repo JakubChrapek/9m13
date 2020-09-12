@@ -1,7 +1,13 @@
 import React from "react"
+import Seo from "../components/seo"
 
 const SpectaclePage = () => {
-  return <>Spektakl</>
+  return (
+    <>
+      <Seo title="Spektakl" />
+      Spektakl
+    </>
+  )
 }
 
 export default SpectaclePage

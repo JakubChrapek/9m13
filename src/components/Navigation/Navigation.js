@@ -15,10 +15,15 @@ const NavigationWrapper = styled.nav`
   }
 `
 
-const Logo = styled.span`
+const Logo = styled.div`
   font-weight: 700;
   font-size: 28px;
   margin-right: 10px;
+  a {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 `
 
 const NavigationList = styled.ul`
@@ -31,10 +36,29 @@ const NavigationListItem = styled.li`
   font-size: 16px;
   margin-left: 32px;
 `
+
+const SkipNavLink = styled(Link)`
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  font-weight: ${({ theme }) => theme.fontWeight.semiBold};
+  transform: translateY(-200%);
+  transition: transform
+    ${({ theme }) => `${theme.transition.time} ${theme.transition.cubicBezier}`};
+
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.colors.black};
+    outline-offset: 8px;
+    transform: translateY(0);
+  }
+`
 const Navigation = () => (
   <NavigationWrapper>
+    <SkipNavLink to="#main">Skip navigation</SkipNavLink>
     <Logo>
-      <Link to="/">numer 9 mieszkania 13</Link>
+      <Link to="/">
+        <span>numer 9</span> <span>mieszkania 13</span>
+      </Link>
     </Logo>
     <NavigationList>
       <NavigationListItem>

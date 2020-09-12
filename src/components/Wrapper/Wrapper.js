@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const StyledMain = styled.main``
 const ContentWrapper = ({ children }) => {
-  return <StyledMain>{children}</StyledMain>
+  return <StyledMain id="main">{children}</StyledMain>
 }
 
 export default ContentWrapper

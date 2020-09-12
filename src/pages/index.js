@@ -1,11 +1,24 @@
 import React from "react"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
+import { graphql } from "gatsby"
 
-const HomePage = () => (
+const HomePage = ({ data }) => (
   <>
-    <SEO title="9 mieszkania 13" />
-    Home
+    <Seo title="9 mieszkania 13" />
+    {data.allDatoCmsTest.nodes.map((test, iterator) => (
+      <p key={iterator}>{test.testParagraph}</p>
+    ))}
   </>
 )
+
+export const query = graphql`
+  {
+    allDatoCmsTest {
+      nodes {
+        testParagraph
+      }
+    }
+  }
+`
 
 export default HomePage
