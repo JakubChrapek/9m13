@@ -3,10 +3,10 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 const NavigationWrapper = styled.nav`
-  padding: 20px 0;
-  height: 80px;
+  padding: 60px 0;
+  /* height: 80px; */
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
   font-family: "HKGrotesk";
   a {
@@ -16,9 +16,11 @@ const NavigationWrapper = styled.nav`
 `
 
 const Logo = styled.div`
-  font-weight: 700;
-  font-size: 28px;
-  margin-right: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  flex: 0 0 25%;
   a {
     display: flex;
     flex-direction: column;
@@ -28,20 +30,27 @@ const Logo = styled.div`
 
 const NavigationList = styled.ul`
   display: flex;
+  flex: 0 0 75%;
   list-style: none;
+  padding-left: 12.5%;
 `
 
 const NavigationListItem = styled.li`
   font-weight: 600;
-  font-size: 16px;
-  margin-left: 32px;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  margin-right: 70px;
+  &:last-child {
+    margin-right: 0;
+  }
 `
 
 const SkipNavLink = styled(Link)`
   position: absolute;
   top: 10px;
   right: 60px;
-  font-weight: ${({ theme }) => theme.fontWeight.semiBold};
+  font-weight: 600;
   transform: translateY(-200%);
   transition: transform
     ${({ theme }) => `${theme.transition.time} ${theme.transition.cubicBezier}`};

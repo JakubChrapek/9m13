@@ -6,6 +6,7 @@ import styled, { ThemeProvider } from "styled-components"
 
 const PageWrapper = styled.div`
   max-width: 1440px;
+  padding: 0 75px;
   margin: 0 auto;
 `
 
@@ -13,11 +14,9 @@ const theme = {
   colors: {
     white: "#fff",
     black: "#000",
-  },
-  fontWeight: {
-    normal: "400",
-    semiBold: "600",
-    black: "900",
+    gray: "#BEBFBB",
+    grayText: "#606060",
+    grayDarkest: "#1B1F1D",
   },
   transition: {
     time: "0.6s",

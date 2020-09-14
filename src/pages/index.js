@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 
 const HomePage = ({ data }) => (
   <>
-    <Seo title="9 mieszkania 13" />
+    <Seo title="Home" />
     {data.allDatoCmsTest.nodes.map((test, iterator) => (
       <p key={iterator}>{test.testParagraph}</p>
     ))}

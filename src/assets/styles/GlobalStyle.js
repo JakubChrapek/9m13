@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
-    padding: 0 40px;
+    padding: 0;
     font-family: 'HKGrotesk';
   }
   button {
