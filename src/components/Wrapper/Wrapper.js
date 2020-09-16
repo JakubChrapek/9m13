@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 
-const StyledMain = styled.main``
+const MainWrapper = styled.main``
 const ContentWrapper = ({ children }) => {
-  return <StyledMain id="main">{children}</StyledMain>
+  return <MainWrapper id="main">{children}</MainWrapper>
 }
 
 export default ContentWrapper

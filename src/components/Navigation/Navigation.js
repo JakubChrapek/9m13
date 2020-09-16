@@ -3,15 +3,19 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 const NavigationWrapper = styled.nav`
-  padding: 60px 0;
-  /* height: 80px; */
+  padding: 40px 75px;
+  height: 140px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: stretch;
   font-family: "HKGrotesk";
   a {
     text-decoration: none;
     color: inherit;
+    :focus {
+      outline: 2px solid ${({ theme }) => theme.colors.black};
+      outline-offset: 8px;
+    }
   }
 `
 
@@ -22,7 +26,7 @@ const Logo = styled.div`
   letter-spacing: 0.02em;
   flex: 0 0 25%;
   a {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     flex-wrap: wrap;
   }
@@ -30,12 +34,14 @@ const Logo = styled.div`
 
 const NavigationList = styled.ul`
   display: flex;
+  align-items: stretch;
   flex: 0 0 75%;
   list-style: none;
-  padding-left: 12.5%;
 `
 
 const NavigationListItem = styled.li`
+  display: flex;
+  align-items: stretch;
   font-weight: 600;
   font-size: 18px;
   line-height: 18px;
@@ -44,6 +50,11 @@ const NavigationListItem = styled.li`
   &:last-child {
     margin-right: 0;
   }
+`
+
+const StyledNavLink = styled(Link)`
+  display: flex;
+  align-items: center;
 `
 
 const SkipNavLink = styled(Link)`
@@ -71,19 +82,19 @@ const Navigation = () => (
     </Logo>
     <NavigationList>
       <NavigationListItem>
-        <Link to="/spectacle">Spektakl</Link>
+        <StyledNavLink to="/spectacle">Spektakl</StyledNavLink>
       </NavigationListItem>
       <NavigationListItem>
-        <Link to="/actors">Postacie</Link>
+        <StyledNavLink to="/actors">Postacie</StyledNavLink>
       </NavigationListItem>
       <NavigationListItem>
-        <Link to="/creators">Realizatorzy</Link>
+        <StyledNavLink to="/creators">Realizatorzy</StyledNavLink>
       </NavigationListItem>
       <NavigationListItem>
-        <Link to="/blog">Konteksty</Link>
+        <StyledNavLink to="/blog">Konteksty</StyledNavLink>
       </NavigationListItem>
       <NavigationListItem>
-        <Link to="/workshop">Warsztat</Link>
+        <StyledNavLink to="/workshop">Warsztat</StyledNavLink>
       </NavigationListItem>
     </NavigationList>
   </NavigationWrapper>

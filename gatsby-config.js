@@ -57,6 +57,44 @@ module.exports = {
         apiToken: process.env.API_DATO_CMS,
       },
     },
+    {
+      resolve: "gatsby-source-vimeo-all",
+      options: {
+        clientId: process.env.VIMEO_CLIENT_ID,
+        clientSecret: process.env.VIMEO_CLIENT_SECRET,
+        accessToken: process.env.VIMEO_ACCESS_TOKEN,
+      },
+    },
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [
+    //       {
+    //         resolve: `gatsby-remark-embed-video`,
+    //         options: {
+    //           maxWidth: 800,
+    //           ratio: 1.77,
+    //           height: 400,
+    //           related: false,
+    //           noIframerder: true,
+    //         },
+    //       },
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           maxWidth: 590,
+    //         },
+    //       },
+    //       {
+    //         resolve: `gatsby-remark-responsive-iframe`,
+    //         options: {
+    //           wrapperStyle: `margin-bottom: 1.0725rem`,
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
+
     // `gatsby-plugin-offline`,
   ],
 }

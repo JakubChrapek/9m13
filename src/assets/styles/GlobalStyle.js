@@ -14,6 +14,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'HKGrotesk';
   }
+  div#gatsby-focus-wrapper {
+    overflow: hidden;
+  }
   button {
     padding: 0;
     cursor: pointer;
