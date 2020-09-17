@@ -118,6 +118,7 @@ export const DetailsSection = styled.section`
 
 export const PeopleDetailsWrapper = styled.div`
   max-width: 1440px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   padding: 115px 210px 140px 160px;
@@ -145,11 +146,27 @@ export const CrewWrapper = styled.div`
 
 export const CharactersWrapper = styled.section`
   max-width: 1440px;
+  margin: 0 auto;
   padding: 80px 75px 120px;
 `
 export const CharactersGrid = styled.div`
   margin-top: 75px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 128px;
+  grid-template-columns: repeat(3, minmax(318px, 1fr));
+  grid-row-gap: 120px;
+  grid-column-gap: 40px;
+`
+export const CreatorsSection = styled.section`
+  width: 100vw;
+  margin: 0 auto;
+  background-color: ${({ bg, theme }) => (bg ? bg : theme.colors.grayDarkest)};
+`
+
+export const CreatorsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 130px 200px 150px 180px;
 `

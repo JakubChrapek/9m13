@@ -3,6 +3,7 @@ import Seo from "../components/Seo"
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 import styled, { ThemeContext } from "styled-components"
+import { gsap } from "gsap"
 
 // Components
 import Text from "../components/Text/Text"
@@ -26,6 +27,8 @@ import {
   CrewWrapper,
   CharactersWrapper,
   CharactersGrid,
+  CreatorsSection,
+  CreatorsWrapper,
 } from "../components/HomeComponents/HomeStyles"
 import { Flex } from "../components/Flex/Flex"
 
@@ -158,17 +161,31 @@ const HomePage = ({ data }) => {
         </Text>
         <CharactersGrid>
           {data.allDatoCmsPostac.nodes.map(postac => (
-            <Flex column>
+            <Flex column margin={postac.postacMargin}>
               <Image
                 fluid={postac.postacObraz.fluid}
                 alt={postac.postacObraz.alt}
               />
-              <Text textTransform="uppercase">{postac.postacTytul}</Text>
-              <Text>{postac.postacOpis}</Text>
+              <Text
+                fontSize="30px"
+                lineHeight="36px"
+                textTransform="uppercase"
+                margin="20px 0 0 0"
+              >
+                {postac.postacTytul}
+              </Text>
+              <Text margin="10px 0 0 0">{postac.postacOpis}</Text>
             </Flex>
           ))}
         </CharactersGrid>
       </CharactersWrapper>
+      <CreatorsSection>
+        <CreatorsWrapper>
+          {data.allDatoCmsTworca.nodes.map(tworca => (
+            <Text color="#fff">{tworca.imieNazwisko}</Text>
+          ))}
+        </CreatorsWrapper>
+      </CreatorsSection>
     </>
   )
 }
@@ -188,16 +205,24 @@ export const query = graphql`
       }
     }
 
-    allDatoCmsPostac {
+    allDatoCmsPostac(sort: { fields: meta___createdAt }) {
       nodes {
         postacTytul
         postacOpis
+        postacMargin
         postacObraz {
           alt
-          fluid(maxWidth: 400) {
+          fluid(maxWidth: 416) {
             ...GatsbyDatoCmsFluid_tracedSVG
           }
         }
+      }
+    }
+
+    allDatoCmsTworca(sort: { fields: meta___createdAt }) {
+      nodes {
+        imieNazwisko
+        tworcaOpis
       }
     }
   }
