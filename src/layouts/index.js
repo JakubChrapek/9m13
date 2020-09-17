@@ -5,7 +5,6 @@ import Wrapper from "../components/Wrapper/Wrapper"
 import styled, { ThemeProvider } from "styled-components"
 
 const PageWrapper = styled.div`
-  max-width: 1440px;
   padding: 0;
   margin: 0 auto;
 `

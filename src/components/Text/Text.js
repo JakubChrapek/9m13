@@ -9,6 +9,8 @@ const StyledText = styled.p`
     letterSpacing ? letterSpacing : "0"};
   color: ${({ color, theme }) => (color ? color : theme.colors.black)};
   margin: ${({ margin }) => (margin ? margin : "0")};
+  text-transform: ${({ textTransform }) => textTransform};
+  text-align: ${({ textAlign }) => textAlign};
 `
 
 const Text = ({
@@ -20,6 +22,8 @@ const Text = ({
   lineHeight,
   letterSpacing,
   margin,
+  textTransform,
+  textAlign,
 }) => {
   return (
     <StyledText
@@ -30,6 +34,8 @@ const Text = ({
       lineHeight={lineHeight}
       letterSpacing={letterSpacing}
       margin={margin}
+      textTransform={textTransform}
+      textAlign={textAlign}
     >
       {children}
     </StyledText>

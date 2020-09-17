@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 const NavigationWrapper = styled.nav`
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 40px 75px;
   height: 140px;
   display: flex;

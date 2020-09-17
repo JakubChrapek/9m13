@@ -1,101 +1,40 @@
 import React, { useContext } from "react"
 import Seo from "../components/Seo"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 import styled, { ThemeContext } from "styled-components"
 
 // Components
 import Text from "../components/Text/Text"
-
-const HeroSection = styled.div`
-  height: calc(100vh - 180px);
-  display: flex;
-  padding-left: 165px;
-  position: relative;
-`
-const TextWrapper = styled.div`
-  width: 55%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-`
-
-const StyledHeader = styled.h2`
-  font-size: 70px;
-  line-height: 101px;
-  font-weight: 400;
-  margin: 0;
-  color: #000;
-  @media (max-width: 1340px) {
-    font-size: 56px;
-    line-height: 80px;
-  }
-`
-
-const ImagesWrapper = styled.div`
-  width: 60%;
-  height: 100%;
-  overflow: hidden;
-  /* display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr); */
-`
-
-const StyledImage = styled(Image)`
-  object-fit: cover;
-  z-index: 2;
-  picture img {
-    object-fit: cover !important;
-  }
-`
-
-const CircleBigger = styled.svg`
-  position: absolute;
-  width: 45%;
-  top: 0px;
-  right: -8%;
-`
-const CircleSmaller = styled.svg`
-  position: absolute;
-  width: 27.5%;
-  top: 25%;
-  right: 12.5%;
-`
-const TextWithBackground = styled.span`
-  background-color: ${({ bg }) => bg};
-`
-
-const StyledButton = styled.button`
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  width: 50%;
-  max-width: 305px;
-  min-width: 200px;
-  padding: 20px 0px;
-  border: 1px solid ${({ theme }) => theme.colors.black};
-  margin: ${({ margin }) => margin};
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.grayDarkest};
-`
-const VideoSection = styled.section`
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  background-color: ${({ theme }) => theme.colors.grayDarkest};
-  padding: 30px 75px 105px;
-`
+import {
+  VideoSection,
+  HeroSection,
+  TextWrapper,
+  StyledHeader,
+  ImagesWrapper,
+  StyledImage,
+  CircleBigger,
+  CircleSmaller,
+  TextWithBackground,
+  StyledButton,
+  VideoIframe,
+  VideoContainer,
+  ArtBriefSection,
+  DetailsSection,
+  RealisatorsWrapper,
+  PeopleDetailsWrapper,
+  CrewWrapper,
+  CharactersWrapper,
+  CharactersGrid,
+} from "../components/HomeComponents/HomeStyles"
+import { Flex } from "../components/Flex/Flex"
 
 const HomePage = ({ data }) => {
   const themeContext = useContext(ThemeContext)
+
   return (
     <>
       <Seo title="Home" />
-      {/* {data.allDatoCmsTest.nodes.map((test, iterator) => (
-      <p key={iterator}>{test.testParagraph}</p>
-    ))} */}
       <HeroSection>
         <TextWrapper>
           <StyledHeader
@@ -124,22 +63,112 @@ const HomePage = ({ data }) => {
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle cx="50" cy="50" r="50" fill="#1B1F1D" fill-opacity="0.2" />
+            <circle cx="50" cy="50" r="50" fill="#1B1F1D" fillOpacity="0.2" />
           </CircleSmaller>
         </ImagesWrapper>
       </HeroSection>
       <VideoSection>
-        <Text
-          color={themeContext.colors.white}
-          fontSize="24px"
-          fontWeight="600"
-          letterSpacing="0.02em"
-          lineHeight="28px"
-        >
-          numer 9 <br />
-          mieszkania 13
-        </Text>
+        <VideoContainer>
+          <Text
+            color="#fff"
+            fontSize="24px"
+            fontWeight="600"
+            letterSpacing="0.02em"
+            lineHeight="28px"
+          >
+            numer 9 <br />
+            mieszkania 13
+          </Text>
+          <VideoIframe
+            src="https://player.vimeo.com/video/458423947"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          ></VideoIframe>
+        </VideoContainer>
       </VideoSection>
+      <ArtBriefSection>
+        <Text color={themeContext.colors.grayDarkest}>
+          Spektakl online „numer 9 mieszkania 13” to nowatorskie połączenie
+          formy teatralnej z animacją filmową. Potrzeby i pragnienia mieszkańców
+          jednej kamienicy „stłoczą się” w jednym miejscu. Inspiracja
+          surrealizmem, absurdem i groteską pozwoli na humorystyczne spojrzenie
+          na tę sytuację. Małżeństwo z wieloletnim stażem, fana gier
+          komputerowych czy też obsesyjnie zmieniającą wycieraczki kobietę spod
+          siódemki czeka jednak pewna nieoczekiwana zmiana…
+        </Text>
+        <Text margin="32px 0 0" color={themeContext.colors.grayDarkest}>
+          Jak poradzić sobie z tęsknotą za bliskością, dotykiem, bezpośrednią
+          rozmową? Czy blok wytrzyma izolację? Czy ściany nie pękną pod naporem
+          rozpychających się w jednym miejscu emocji…? I wreszcie – czy
+          kamienica, architektoniczna bryła, może mieć uczucia…?
+        </Text>
+      </ArtBriefSection>
+      <DetailsSection>
+        <PeopleDetailsWrapper>
+          <RealisatorsWrapper>
+            <Text fontSize="52px" lineHeight="60px" color="#fff">
+              Realizatorzy:
+            </Text>
+            <Text margin="42px 0 0" color="#fff">
+              <ul>
+                <li>reżyseria i montaż: Daria Kopiec</li>
+                <li>scenariusz: Zuzanna Bojda</li>
+                <li>muzyka: Natalia Czekała</li>
+                <li>scenografia: Aleksandra Starzyńska</li>
+                <li>animacja filmowa: Magdalena Parszewska</li>
+                <li>postprodukcja filmowa, efekty specjalne: Jacek Mazur</li>
+                <li>reżyseria dźwięku: Agata Chodyra</li>
+                <li>współpraca operatorska: Piotr Chodura</li>
+                <li>korekcja barwna: Jarosław Sterczewski</li>
+              </ul>
+            </Text>
+          </RealisatorsWrapper>
+          <CrewWrapper>
+            <Text fontSize="52px" lineHeight="60px" color="#fff">
+              Obsada:
+            </Text>
+            <Text margin="42px 0 0" color="#fff">
+              <ul>
+                <li>reżyseria i montaż: Daria Kopiec</li>
+                <li>scenariusz: Zuzanna Bojda</li>
+                <li>muzyka: Natalia Czekała</li>
+                <li>scenografia: Aleksandra Starzyńska</li>
+                <li>animacja filmowa: Magdalena Parszewska</li>
+                <li>postprodukcja filmowa, efekty specjalne: Jacek Mazur</li>
+                <li>reżyseria dźwięku: Agata Chodyra</li>
+                <li>współpraca operatorska: Piotr Chodura</li>
+                <li>korekcja barwna: Jarosław Sterczewski</li>
+              </ul>
+            </Text>
+          </CrewWrapper>
+        </PeopleDetailsWrapper>
+      </DetailsSection>
+      <CharactersWrapper>
+        <Text
+          fontSize="52px"
+          fontWeight="400"
+          lineHeight="65px"
+          as="h2"
+          textAlign="center"
+        >
+          Postacie
+        </Text>
+        <CharactersGrid>
+          {data.allDatoCmsPostac.nodes.map(postac => (
+            <Flex column>
+              <Image
+                fluid={postac.postacObraz.fluid}
+                alt={postac.postacObraz.alt}
+              />
+              <Text textTransform="uppercase">{postac.postacTytul}</Text>
+              <Text>{postac.postacOpis}</Text>
+            </Flex>
+          ))}
+        </CharactersGrid>
+      </CharactersWrapper>
     </>
   )
 }
@@ -155,6 +184,19 @@ export const query = graphql`
       childImageSharp {
         fluid(quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+
+    allDatoCmsPostac {
+      nodes {
+        postacTytul
+        postacOpis
+        postacObraz {
+          alt
+          fluid(maxWidth: 400) {
+            ...GatsbyDatoCmsFluid_tracedSVG
+          }
         }
       }
     }
