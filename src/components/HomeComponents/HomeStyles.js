@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Image from "gatsby-image"
+import { motion } from "framer-motion"
 
 export const HeroSection = styled.div`
   height: calc(100vh - 180px);
@@ -156,7 +157,7 @@ export const CharactersGrid = styled.div`
   grid-row-gap: 120px;
   grid-column-gap: 40px;
 `
-export const CreatorsSection = styled.section`
+export const CreatorsSection = styled(motion.section)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,26 +179,48 @@ export const CreatorsWrapper = styled.div`
 export const ContentWrapperList = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 0 0 52.5%;
-  border: 1px solid red;
+  flex: 0 0 55%;
   padding: 0;
   margin: 0;
   position: relative;
-  height: 460px;
 
   ul {
     padding: 0;
     margin: 0;
+    position: relative;
     overflow: hidden;
     width: 100%;
-    height: 460px;
+
+    /* &::-webkit-scrollbar {
+      background-color: rgba(255, 255, 255, 0.4);
+      width: 8px;
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-button {
+      background-color: blue;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: green;
+    }
+    &::-webkit-scrollbar-track-piece {
+      background-color: red;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: pink;
+    }
+    &::-webkit-scrollbar-corner {
+      background-color: yellow;
+    }
+    &::-webkit-resizer {
+      background-color: gray;
+    } */
+
     li {
-      height: 460px;
       width: 100%;
       list-style: none;
       padding: 0;
       margin: 0;
-      opacity: 0;
+      opacity: 1;
     }
   }
 `
@@ -205,8 +228,8 @@ export const ContentWrapperList = styled.div`
 export const NamesWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 0 0 42.5%;
-  border: 1px solid #fff;
+  flex: 0 0 45%;
+  margin-left: 120px;
   ul {
     padding: 0;
     margin: 0;
@@ -215,9 +238,36 @@ export const NamesWrapper = styled.div`
       padding: 0;
       margin: 0;
       cursor: pointer;
-      color: ${({ theme }) => theme.colors.white};
+      position: relative;
+
       &:hover {
-        text-decoration: underline;
+        svg {
+          transform: scaleX(1);
+        }
+      }
+
+      p {
+        position: relative;
+        display: inline-block;
+        transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        color: rgba(255, 255, 255, 0.2);
+      }
+      svg {
+        position: absolute;
+        left: -40px;
+        top: calc(50% - 4px);
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      &.active {
+        p {
+          color: ${({ theme }) => theme.colors.white};
+        }
+        svg {
+          transform: scaleX(1);
+        }
       }
     }
   }
