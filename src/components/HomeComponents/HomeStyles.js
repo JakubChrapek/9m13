@@ -157,8 +157,12 @@ export const CharactersGrid = styled.div`
   grid-column-gap: 40px;
 `
 export const CreatorsSection = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   margin: 0 auto;
+  height: 100vh;
   background-color: ${({ bg, theme }) => (bg ? bg : theme.colors.grayDarkest)};
 `
 
@@ -169,4 +173,52 @@ export const CreatorsWrapper = styled.div`
   max-width: 1440px;
   margin: 0 auto;
   padding: 130px 200px 150px 180px;
+`
+
+export const ContentWrapperList = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 52.5%;
+  border: 1px solid red;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: 460px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 460px;
+    li {
+      height: 460px;
+      width: 100%;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+    }
+  }
+`
+
+export const NamesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 42.5%;
+  border: 1px solid #fff;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      color: ${({ theme }) => theme.colors.white};
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 `

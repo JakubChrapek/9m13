@@ -1,9 +1,9 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import Seo from "../components/Seo"
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 import styled, { ThemeContext } from "styled-components"
-import { gsap } from "gsap"
+import { TweenLite, Power3 } from "gsap"
 
 // Components
 import Text from "../components/Text/Text"
@@ -29,11 +29,32 @@ import {
   CharactersGrid,
   CreatorsSection,
   CreatorsWrapper,
+  ContentWrapperList,
+  NamesWrapper,
 } from "../components/HomeComponents/HomeStyles"
 import { Flex } from "../components/Flex/Flex"
 
 const HomePage = ({ data }) => {
   const themeContext = useContext(ThemeContext)
+  const namesList = useRef(null)
+  const creatorsContentList = useRef(null)
+
+  const [names, setNames] = useState(
+    data.allDatoCmsTworca.nodes.map(tworca => false)
+  )
+
+  const [activeName, setActiveName] = useState(0)
+
+  const changeSlide = slideNumber => {
+    console.log("Change ", slideNumber)
+  }
+
+  useEffect(() => {
+    TweenLite.to(creatorsContentList.current.children[0], 0, {
+      opacity: 1,
+    })
+    console.log(names)
+  }, [])
 
   return (
     <>
@@ -181,9 +202,35 @@ const HomePage = ({ data }) => {
       </CharactersWrapper>
       <CreatorsSection>
         <CreatorsWrapper>
-          {data.allDatoCmsTworca.nodes.map(tworca => (
-            <Text color="#fff">{tworca.imieNazwisko}</Text>
-          ))}
+          <ContentWrapperList>
+            <ul ref={creatorsContentList}>
+              {data.allDatoCmsTworca.nodes.map((tworca, iterator) => (
+                <li
+                  className={names[iterator] ? "active" : ""}
+                  key={tworca.imieNazwisko}
+                >
+                  <Text color="#fff">{tworca.imieNazwisko}</Text>
+                  <Text color="#fff">{tworca.tworcaOpis}</Text>
+                </li>
+              ))}
+            </ul>
+          </ContentWrapperList>
+          <NamesWrapper>
+            <Text fontSize="52px" lineHeight="60px" color="#fff">
+              Twórcy
+            </Text>
+            <ul ref={namesList}>
+              {data.allDatoCmsTworca.nodes.map((tworca, iterator) => (
+                <li
+                  className={names[iterator] ? "active" : ""}
+                  key={tworca.imieNazwisko}
+                  onClick={() => changeSlide(iterator)}
+                >
+                  <Text color="#fff">{tworca.imieNazwisko}</Text>
+                </li>
+              ))}
+            </ul>
+          </NamesWrapper>
         </CreatorsWrapper>
       </CreatorsSection>
     </>
