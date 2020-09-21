@@ -272,3 +272,27 @@ export const NamesWrapper = styled.div`
     }
   }
 `
+
+export const FooterSection = styled.footer`
+  display: flex;
+  padding: 130px 85px 90px 65px;
+  max-width: 1440px;
+`
+
+export const TeatrColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 3 3 40%;
+`
+
+export const MinisterstwoColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 30%;
+`
+
+export const SocialColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 30%;
+`

@@ -5,6 +5,9 @@ import Image from "gatsby-image"
 import styled, { ThemeContext } from "styled-components"
 import { useInView } from "react-intersection-observer"
 import { motion, AnimateSharedLayout } from "framer-motion"
+import fb from "../assets/images/footerImages/facebook.svg"
+import ig from "../assets/images/footerImages/instagram.svg"
+import yt from "../assets/images/footerImages/youtube.svg"
 
 // Components
 import Text from "../components/Text/Text"
@@ -33,6 +36,10 @@ import {
   CreatorsWrapper,
   ContentWrapperList,
   NamesWrapper,
+  FooterSection,
+  TeatrColumn,
+  MinisterstwoColumn,
+  SocialColumn,
 } from "../components/HomeComponents/HomeStyles"
 import { Flex } from "../components/Flex/Flex"
 
@@ -271,6 +278,33 @@ const HomePage = ({ data }) => {
           </NamesWrapper>
         </CreatorsWrapper>
       </CreatorsSection>
+      <FooterSection>
+        <TeatrColumn>
+          <Image
+            style={{ width: "100%", height: "156px" }}
+            imgStyle={{ objectFit: "contain", width: "100%", height: "156px" }}
+            fluid={data.teatr.childImageSharp.fluid}
+          />
+          <Text>
+            Wały Chrobrego 3<br />
+            70-500 Szczecin
+          </Text>
+        </TeatrColumn>
+        <MinisterstwoColumn>
+          <Image
+            imgStyle={{ objectFit: "contain", width: "100%", height: "240px" }}
+            fluid={data.ministerstwo.childImageSharp.fluid}
+          />
+        </MinisterstwoColumn>
+        <SocialColumn>
+          <Text>Nasze social media</Text>
+          <Flex>
+            <img src={fb} alt="Facebook icon" />
+            <img src={ig} alt="Instagram icon" />
+            <img src={yt} alt="Youtube icon" />
+          </Flex>
+        </SocialColumn>
+      </FooterSection>
     </>
   )
 }
@@ -286,6 +320,22 @@ export const query = graphql`
       childImageSharp {
         fluid(quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+
+    ministerstwo: file(name: { eq: "ministerstwo-kultury-dofinansowanie" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+
+    teatr: file(name: { eq: "teatr-współczesny-w-szczecinie" }) {
+      childImageSharp {
+        fluid {
+          src
         }
       }
     }
