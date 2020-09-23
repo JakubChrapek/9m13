@@ -69,7 +69,7 @@ const NavigationList = styled.ul`
     &.open {
       display: flex;
       visibility: visible;
-      position: absolute;
+      position: fixed;
       left: 0;
       top: 0;
       right: 0;
@@ -170,6 +170,8 @@ const MenuButton = styled.button`
     }
   }
   &.open {
+    position: fixed;
+    right: 28px;
     span {
       transform: translate3d(0, 10px, 0) rotate(45deg);
       &:nth-child(2) {
