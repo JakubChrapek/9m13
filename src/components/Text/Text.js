@@ -11,6 +11,7 @@ const StyledText = styled.p`
   margin: ${({ margin }) => (margin ? margin : "0")};
   text-transform: ${({ textTransform }) => textTransform};
   text-align: ${({ textAlign }) => textAlign};
+  z-index: ${({ zIndex }) => zIndex};
 `
 
 const Text = ({
@@ -24,6 +25,7 @@ const Text = ({
   margin,
   textTransform,
   textAlign,
+  zIndex,
 }) => {
   return (
     <StyledText
@@ -36,6 +38,7 @@ const Text = ({
       margin={margin}
       textTransform={textTransform}
       textAlign={textAlign}
+      zIndex={zIndex}
     >
       {children}
     </StyledText>

@@ -197,14 +197,21 @@ const HomePage = ({ data }) => {
                 alt={postac.postacObraz.alt}
               />
               <Text
-                fontSize="30px"
-                lineHeight="36px"
+                fontSize="28px"
+                lineHeight="33px"
                 textTransform="uppercase"
                 margin="20px 0 0 0"
               >
                 {postac.postacTytul}
               </Text>
-              <Text margin="10px 0 0 0">{postac.postacOpis}</Text>
+              <Text
+                fontSize="19px"
+                lineHeight="26px"
+                margin="16px 0 0 0"
+                color="#363030"
+              >
+                {postac.postacOpis}
+              </Text>
             </Flex>
           ))}
         </CharactersGrid>
@@ -281,13 +288,43 @@ const HomePage = ({ data }) => {
       <FooterSection>
         <TeatrColumn>
           <Image
-            style={{ width: "100%", height: "156px" }}
+            style={{ maxWidth: "565px", width: "100%", height: "156px" }}
             imgStyle={{ objectFit: "contain", width: "100%", height: "156px" }}
             fluid={data.teatr.childImageSharp.fluid}
           />
-          <Text>
+          <Text
+            fontSize="13px"
+            lineHeight="17px"
+            fontWeight="600"
+            letterSpacing="1.3px"
+            textTransform="uppercase"
+            margin="-25px 0 0 150px"
+            zIndex="1"
+          >
             Wały Chrobrego 3<br />
             70-500 Szczecin
+          </Text>
+          <Text
+            fontSize="13px"
+            lineHeight="17px"
+            fontWeight="600"
+            letterSpacing="1.3px"
+            textTransform="uppercase"
+            margin="20px 0 0 150px"
+          >
+            teatr@wspolczesny.szczecin.pl
+            <br />
+            www.wspolczesny.szczecin.pl
+          </Text>
+          <Text
+            fontSize="13px"
+            lineHeight="17px"
+            fontWeight="600"
+            letterSpacing="1.3px"
+            textTransform="uppercase"
+            margin="20px 0 0 150px"
+          >
+            Stronę stworzyli: Kryptonum Studio & Dobra Treść
           </Text>
         </TeatrColumn>
         <MinisterstwoColumn>
@@ -297,8 +334,17 @@ const HomePage = ({ data }) => {
           />
         </MinisterstwoColumn>
         <SocialColumn>
-          <Text>Nasze social media</Text>
-          <Flex>
+          <Text
+            fontSize="13px"
+            lineHeight="17px"
+            fontWeight="600"
+            letterSpacing="1.3px"
+            textTransform="uppercase"
+            margin="0 0 35px"
+          >
+            Nasze social media
+          </Text>
+          <Flex width="100%" justifyContent="space-between">
             <img src={fb} alt="Facebook icon" />
             <img src={ig} alt="Instagram icon" />
             <img src={yt} alt="Youtube icon" />

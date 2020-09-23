@@ -6,6 +6,9 @@ const NavigationWrapper = styled.nav`
   max-width: 1440px;
   margin: 0 auto;
   padding: 40px 75px;
+  @media (max-width: 960px) {
+    padding: 25px 20px;
+  }
   height: 140px;
   display: flex;
   justify-content: space-around;
@@ -22,14 +25,21 @@ const NavigationWrapper = styled.nav`
 `
 
 const Logo = styled.div`
+  display: flex;
+  align-items: stretch;
   font-weight: 600;
   font-size: 24px;
   line-height: 28px;
+  @media (max-width: 1190px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
   letter-spacing: 0.02em;
   flex: 0 0 25%;
   a {
     display: inline-flex;
     flex-direction: column;
+    justify-content: center;
     flex-wrap: wrap;
   }
 `
@@ -38,7 +48,11 @@ const NavigationList = styled.ul`
   display: flex;
   align-items: stretch;
   flex: 0 0 75%;
+  flex-wrap: wrap;
   list-style: none;
+  @media (max-width: 1190px) {
+    padding-left: 20px;
+  }
 `
 
 const NavigationListItem = styled.li`
@@ -47,8 +61,18 @@ const NavigationListItem = styled.li`
   font-weight: 600;
   font-size: 18px;
   line-height: 18px;
+  @media (max-width: 1190px) {
+    font-size: 17px;
+    line-height: 17px;
+  }
   letter-spacing: 0.02em;
   margin-right: 70px;
+  @media (max-width: 1290px) {
+    margin-right: 50px;
+  }
+  @media (max-width: 960px) {
+    margin-right: 30px;
+  }
   &:last-child {
     margin-right: 0;
   }

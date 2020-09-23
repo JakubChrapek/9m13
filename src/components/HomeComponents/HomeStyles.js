@@ -5,11 +5,30 @@ import { motion } from "framer-motion"
 
 export const HeroSection = styled.div`
   height: calc(100vh - 180px);
+  @media (max-width: 960px) {
+    height: calc(100vh - 120px);
+  }
   max-width: 1440px;
   margin: 0 auto 240px;
+  @media (max-width: 1246px) {
+    margin: 0 auto 140px;
+  }
+  @media (max-width: 1086px) {
+    margin: 0 auto 80px;
+    height: calc(90vh - 120px);
+  }
+  @media (max-width: 920px) {
+    margin: 0 auto 20px;
+  }
+  @media (max-width: 870px) {
+    height: calc(75vh - 120px);
+  }
   display: flex;
   padding-left: 165px;
   position: relative;
+  @media (max-width: 1000px) {
+    padding-left: 75px;
+  }
 `
 export const TextWrapper = styled.div`
   width: 55%;
@@ -17,17 +36,33 @@ export const TextWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  @media (max-width: 1032px) {
+    width: 65%;
+  }
+  @media (max-width: 908px) {
+    padding-top: 80px;
+    justify-content: flex-start;
+  }
+}
 `
 
 export const StyledHeader = styled.h2`
   font-size: 70px;
   line-height: 101px;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0;
   color: #000;
-  @media (max-width: 1340px) {
+  @media (max-width: 1400px) {
     font-size: 56px;
     line-height: 80px;
+  }
+  @media (max-width: 1150px) {
+    font-size: 48px;
+    line-height: 68px;
+  }
+  @media (max-width: 908px) {
+    font-size: 40px;
+    line-height: 58px;
   }
 `
 
@@ -35,6 +70,9 @@ export const ImagesWrapper = styled.div`
   width: 60%;
   height: 100%;
   overflow: hidden;
+  @media (max-width: 1032px) {
+    width: 65%;
+  }
 `
 
 export const VideoContainer = styled.div`
@@ -58,14 +96,23 @@ export const StyledImage = styled(Image)`
 export const CircleBigger = styled.svg`
   position: absolute;
   width: 45%;
-  top: 0px;
-  right: -8%;
+  top: 5%;
+  right: -10%;
+  @media (min-width: 1660px) {
+    width: 50%;
+    right: -15%;
+  }
 `
 export const CircleSmaller = styled.svg`
   position: absolute;
-  width: 27.5%;
-  top: 25%;
-  right: 12.5%;
+  width: 31%;
+  top: 28%;
+  right: 8.5%;
+  @media (min-width: 1660px) {
+    width: 35%;
+    top: 27%;
+    right: 4.5%;
+  }
 `
 export const TextWithBackground = styled.span`
   background-color: ${({ bg }) => bg};
@@ -80,6 +127,11 @@ export const StyledButton = styled.button`
   max-width: 305px;
   min-width: 200px;
   padding: 20px 0px;
+  @media (max-width: 908px) {
+    padding: 16px 0px;
+    min-width: 160px;
+    max-width: 185px;
+  }
   border: 1px solid ${({ theme }) => theme.colors.black};
   margin: ${({ margin }) => margin};
   color: ${({ theme }) => theme.colors.white};
@@ -275,24 +327,29 @@ export const NamesWrapper = styled.div`
 
 export const FooterSection = styled.footer`
   display: flex;
-  padding: 130px 85px 90px 65px;
+  padding: 130px 85px 20px 65px;
   max-width: 1440px;
+  margin: 0 auto;
 `
 
 export const TeatrColumn = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 3 3 40%;
+  flex: 5 5 50%;
 `
 
 export const MinisterstwoColumn = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1 1 30%;
+  flex: 3 3 30%;
+  margin-top: 32px;
 `
 
 export const SocialColumn = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1 1 30%;
+  flex: 2 2 20%;
+  margin-top: 66px;
+  align-items: center;
+  padding: 0 46px;
 `
