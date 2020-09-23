@@ -18,7 +18,7 @@ export const HeroSection = styled.div`
     height: calc(90vh - 120px);
   }
   @media (max-width: 920px) {
-    margin: 0 auto 20px;
+    margin: 0 auto 60px;
   }
   @media (max-width: 870px) {
     height: calc(75vh - 120px);

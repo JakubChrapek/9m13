@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { motion } from "framer-motion"
 
 const NavigationWrapper = styled.nav`
   max-width: 1440px;
@@ -13,6 +14,12 @@ const NavigationWrapper = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: stretch;
+  @media only screen and (max-width: 767px) {
+    justify-content: space-between;
+    align-items: center;
+    height: unset;
+    padding: 20px 28px;
+  }
   font-family: "HKGrotesk";
   a {
     text-decoration: none;
@@ -36,6 +43,9 @@ const Logo = styled.div`
   }
   letter-spacing: 0.02em;
   flex: 0 0 25%;
+  @media only screen and (max-width: 767px) {
+    flex: 0 0 75%;
+  }
   a {
     display: inline-flex;
     flex-direction: column;
@@ -53,9 +63,40 @@ const NavigationList = styled.ul`
   @media (max-width: 1190px) {
     padding-left: 20px;
   }
+  @media (max-width: 767px) {
+    visibility: none;
+    display: none;
+    &.open {
+      display: flex;
+      visibility: visible;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: ${({ theme }) => theme.colors.white};
+      z-index: 3;
+      padding: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        margin-right: 0;
+        margin-bottom: 40px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        font-size: 30px;
+        line-height: 44px;
+        font-weight: 400;
+        letter-spacing: 1.25px;
+      }
+    }
+  }
 `
 
-const NavigationListItem = styled.li`
+const NavigationListItem = styled(motion.li)`
   display: flex;
   align-items: stretch;
   font-weight: 600;
@@ -98,32 +139,87 @@ const SkipNavLink = styled(Link)`
     transform: translateY(0);
   }
 `
-const Navigation = () => (
-  <NavigationWrapper>
-    <SkipNavLink to="#main">Skip navigation</SkipNavLink>
-    <Logo>
-      <Link to="/">
-        <span>numer 9</span> <span>mieszkania 13</span>
-      </Link>
-    </Logo>
-    <NavigationList>
-      <NavigationListItem>
-        <StyledNavLink to="/spectacle">Spektakl</StyledNavLink>
-      </NavigationListItem>
-      <NavigationListItem>
-        <StyledNavLink to="/actors">Postacie</StyledNavLink>
-      </NavigationListItem>
-      <NavigationListItem>
-        <StyledNavLink to="/creators">Realizatorzy</StyledNavLink>
-      </NavigationListItem>
-      <NavigationListItem>
-        <StyledNavLink to="/blog">Konteksty</StyledNavLink>
-      </NavigationListItem>
-      <NavigationListItem>
-        <StyledNavLink to="/workshop">Warsztat</StyledNavLink>
-      </NavigationListItem>
-    </NavigationList>
-  </NavigationWrapper>
-)
 
+const MenuButton = styled.button`
+  display: none;
+  border: none;
+  padding: 0;
+  width: 26px;
+  height: 24px;
+  background-color: transparent;
+  position: relative;
+  z-index: 4;
+  :focus {
+    outline: 2px solid ${({ theme }) => theme.colors.black};
+    outline-offset: 8px;
+  }
+  span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 26px;
+    height: 2px;
+    background-color: ${({ theme }) => theme.colors.black};
+    transition: opacity 0.2s ${({ theme }) => theme.transition.cubicBezier},
+      transform 0.2s ${({ theme }) => theme.transition.cubicBezier};
+    &:nth-child(2) {
+      top: 10px;
+    }
+    &:last-child {
+      top: 20px;
+    }
+  }
+  &.open {
+    span {
+      transform: translate3d(0, 10px, 0) rotate(45deg);
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:last-child {
+        transform: translate3d(0, -10px, 0) rotate(-45deg);
+      }
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    visibility: visible;
+    display: block;
+  }
+`
+
+const Navigation = () => {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <NavigationWrapper>
+      <SkipNavLink to="#main">Skip navigation</SkipNavLink>
+      <Logo>
+        <Link to="/">
+          <span>numer 9</span> <span>mieszkania 13</span>
+        </Link>
+      </Logo>
+      <NavigationList className={open ? "open" : ""}>
+        <NavigationListItem onClick={() => setOpen(false)}>
+          <StyledNavLink to="/spectacle">Spektakl</StyledNavLink>
+        </NavigationListItem>
+        <NavigationListItem onClick={() => setOpen(false)}>
+          <StyledNavLink to="/actors">Postacie</StyledNavLink>
+        </NavigationListItem>
+        <NavigationListItem onClick={() => setOpen(false)}>
+          <StyledNavLink to="/creators">Realizatorzy</StyledNavLink>
+        </NavigationListItem>
+        <NavigationListItem onClick={() => setOpen(false)}>
+          <StyledNavLink to="/blog">Konteksty</StyledNavLink>
+        </NavigationListItem>
+        <NavigationListItem onClick={() => setOpen(false)}>
+          <StyledNavLink to="/workshop">Warsztat</StyledNavLink>
+        </NavigationListItem>
+      </NavigationList>
+      <MenuButton className={open ? "open" : ""} onClick={() => setOpen(!open)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </MenuButton>
+    </NavigationWrapper>
+  )
+}
 export default Navigation
