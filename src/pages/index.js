@@ -5,6 +5,7 @@ import Image from "gatsby-image"
 import styled, { ThemeContext } from "styled-components"
 import { useInView } from "react-intersection-observer"
 import { motion, AnimateSharedLayout } from "framer-motion"
+import useViewport from "../components/hooks/useViewport"
 import fb from "../assets/images/footerImages/facebook.svg"
 import ig from "../assets/images/footerImages/instagram.svg"
 import yt from "../assets/images/footerImages/youtube.svg"
@@ -48,7 +49,8 @@ const HomePage = ({ data }) => {
   const namesList = useRef(null)
   const creatorsContentList = useRef(null)
   const [activeContentItem, setActiveContentItem] = useState(null)
-
+  const { width } = useViewport()
+  const mobileBreakpoint = 767
   const [names, setNames] = useState(
     data.allDatoCmsTworca.nodes.map((_, iterator) =>
       iterator === 0 ? true : false
@@ -56,13 +58,18 @@ const HomePage = ({ data }) => {
   )
 
   const changeSlide = slideNumber => {
-    setNames(
-      names.map((name, iterator) => (iterator === slideNumber ? true : false))
-    )
+    if (width > mobileBreakpoint) {
+      setNames(
+        names.map((name, iterator) => (iterator === slideNumber ? true : false))
+      )
+    }
   }
 
   useEffect(() => {
     setActiveContentItem(creatorsContentList.current.children[0])
+    if (width <= mobileBreakpoint) {
+      setNames(names.map(name => true))
+    }
   }, [])
 
   return (
@@ -142,40 +149,36 @@ const HomePage = ({ data }) => {
       <DetailsSection>
         <PeopleDetailsWrapper>
           <RealisatorsWrapper>
-            <Text fontSize="52px" lineHeight="60px" color="#fff">
+            <Text as="h3" fontSize="52px" lineHeight="60px" color="#fff">
               Realizatorzy:
             </Text>
-            <Text margin="42px 0 0" color="#fff">
-              <ul>
-                <li>reżyseria i montaż: Daria Kopiec</li>
-                <li>scenariusz: Zuzanna Bojda</li>
-                <li>muzyka: Natalia Czekała</li>
-                <li>scenografia: Aleksandra Starzyńska</li>
-                <li>animacja filmowa: Magdalena Parszewska</li>
-                <li>postprodukcja filmowa, efekty specjalne: Jacek Mazur</li>
-                <li>reżyseria dźwięku: Agata Chodyra</li>
-                <li>współpraca operatorska: Piotr Chodura</li>
-                <li>korekcja barwna: Jarosław Sterczewski</li>
-              </ul>
-            </Text>
+            <ul>
+              <li>reżyseria i montaż: Daria Kopiec</li>
+              <li>scenariusz: Zuzanna Bojda</li>
+              <li>muzyka: Natalia Czekała</li>
+              <li>scenografia: Aleksandra Starzyńska</li>
+              <li>animacja filmowa: Magdalena Parszewska</li>
+              <li>postprodukcja filmowa, efekty specjalne: Jacek Mazur</li>
+              <li>reżyseria dźwięku: Agata Chodyra</li>
+              <li>współpraca operatorska: Piotr Chodura</li>
+              <li>korekcja barwna: Jarosław Sterczewski</li>
+            </ul>
           </RealisatorsWrapper>
           <CrewWrapper>
-            <Text fontSize="52px" lineHeight="60px" color="#fff">
+            <Text as="h3" fontSize="52px" lineHeight="60px" color="#fff">
               Obsada:
             </Text>
-            <Text margin="42px 0 0" color="#fff">
-              <ul>
-                <li>reżyseria i montaż: Daria Kopiec</li>
-                <li>scenariusz: Zuzanna Bojda</li>
-                <li>muzyka: Natalia Czekała</li>
-                <li>scenografia: Aleksandra Starzyńska</li>
-                <li>animacja filmowa: Magdalena Parszewska</li>
-                <li>postprodukcja filmowa, efekty specjalne: Jacek Mazur</li>
-                <li>reżyseria dźwięku: Agata Chodyra</li>
-                <li>współpraca operatorska: Piotr Chodura</li>
-                <li>korekcja barwna: Jarosław Sterczewski</li>
-              </ul>
-            </Text>
+            <ul>
+              <li>reżyseria i montaż: Daria Kopiec</li>
+              <li>scenariusz: Zuzanna Bojda</li>
+              <li>muzyka: Natalia Czekała</li>
+              <li>scenografia: Aleksandra Starzyńska</li>
+              <li>animacja filmowa: Magdalena Parszewska</li>
+              <li>postprodukcja filmowa, efekty specjalne: Jacek Mazur</li>
+              <li>reżyseria dźwięku: Agata Chodyra</li>
+              <li>współpraca operatorska: Piotr Chodura</li>
+              <li>korekcja barwna: Jarosław Sterczewski</li>
+            </ul>
           </CrewWrapper>
         </PeopleDetailsWrapper>
       </DetailsSection>
@@ -191,12 +194,13 @@ const HomePage = ({ data }) => {
         </Text>
         <CharactersGrid>
           {data.allDatoCmsPostac.nodes.map(postac => (
-            <Flex column margin={postac.postacMargin}>
+            <Flex key={postac.postacTytul} column margin={postac.postacMargin}>
               <Image
                 fluid={postac.postacObraz.fluid}
                 alt={postac.postacObraz.alt}
               />
               <Text
+                as="h3"
                 fontSize="28px"
                 lineHeight="33px"
                 textTransform="uppercase"
@@ -247,6 +251,7 @@ const HomePage = ({ data }) => {
               fontSize="52px"
               lineHeight="60px"
               color="#fff"
+              as="h2"
             >
               Twórcy
             </Text>
@@ -381,7 +386,7 @@ export const query = graphql`
     teatr: file(name: { eq: "teatr-współczesny-w-szczecinie" }) {
       childImageSharp {
         fluid {
-          src
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }

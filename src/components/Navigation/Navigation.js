@@ -128,6 +128,9 @@ const SkipNavLink = styled(Link)`
   position: absolute;
   top: 10px;
   right: 60px;
+  @media only screen and (max-width: 767px) {
+    right: 90px;
+  }
   font-weight: 600;
   transform: translateY(-200%);
   transition: transform
