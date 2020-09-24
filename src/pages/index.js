@@ -5,7 +5,7 @@ import Image from "gatsby-image"
 import styled, { ThemeContext } from "styled-components"
 import { useInView } from "react-intersection-observer"
 import { motion, AnimateSharedLayout } from "framer-motion"
-import useViewport from "../components/hooks/useViewport"
+import useCurrentWidth from "../components/hooks/useCurrentWidth"
 import fb from "../assets/images/footerImages/facebook.svg"
 import ig from "../assets/images/footerImages/instagram.svg"
 import yt from "../assets/images/footerImages/youtube.svg"
@@ -49,7 +49,7 @@ const HomePage = ({ data }) => {
   const namesList = useRef(null)
   const creatorsContentList = useRef(null)
   const [activeContentItem, setActiveContentItem] = useState(null)
-  const { width } = useViewport()
+  let width = useCurrentWidth()
   const mobileBreakpoint = 767
   const [names, setNames] = useState(
     data.allDatoCmsTworca.nodes.map((_, iterator) =>
@@ -58,6 +58,7 @@ const HomePage = ({ data }) => {
   )
 
   const changeSlide = slideNumber => {
+    console.log("WIDTH", width)
     if (width > mobileBreakpoint) {
       setNames(
         names.map((name, iterator) => (iterator === slideNumber ? true : false))
@@ -66,11 +67,10 @@ const HomePage = ({ data }) => {
   }
 
   useEffect(() => {
-    setActiveContentItem(creatorsContentList.current.children[0])
     if (width <= mobileBreakpoint) {
       setNames(names.map(name => true))
     }
-  }, [])
+  }, [width])
 
   return (
     <>
@@ -231,7 +231,11 @@ const HomePage = ({ data }) => {
         <CreatorsWrapper>
           <ContentWrapperList>
             <AnimateSharedLayout>
-              <motion.ul layout ref={creatorsContentList}>
+              <motion.ul
+                mobile={width <= mobileBreakpoint}
+                layout
+                ref={creatorsContentList}
+              >
                 {data.allDatoCmsTworca.nodes.map(
                   (tworca, iterator) =>
                     names[iterator] && (
@@ -292,11 +296,28 @@ const HomePage = ({ data }) => {
       </CreatorsSection>
       <FooterSection>
         <TeatrColumn>
-          <Image
-            style={{ maxWidth: "565px", width: "100%", height: "156px" }}
-            imgStyle={{ objectFit: "contain", width: "100%", height: "156px" }}
-            fluid={data.teatr.childImageSharp.fluid}
-          />
+          {width > mobileBreakpoint ? (
+            <Image
+              style={{ maxWidth: "565px", width: "100%", height: "156px" }}
+              imgStyle={{
+                objectFit: "contain",
+                width: "100%",
+                height: "156px",
+              }}
+              fluid={data.teatr.childImageSharp.fluid}
+            />
+          ) : (
+            <Image
+              style={{ maxWidth: "100%", width: "309px", height: "74px" }}
+              imgStyle={{
+                objectFit: "contain",
+                maxWidth: "100%",
+                width: "309px",
+                height: "74px",
+              }}
+              fluid={data.teatr.childImageSharp.fluid}
+            />
+          )}
           <Text
             fontSize="13px"
             lineHeight="17px"
@@ -333,10 +354,25 @@ const HomePage = ({ data }) => {
           </Text>
         </TeatrColumn>
         <MinisterstwoColumn>
-          <Image
-            imgStyle={{ objectFit: "contain", width: "100%", height: "240px" }}
-            fluid={data.ministerstwo.childImageSharp.fluid}
-          />
+          {width > mobileBreakpoint ? (
+            <Image
+              imgStyle={{
+                objectFit: "contain",
+                width: "100%",
+                height: "240px",
+              }}
+              fluid={data.ministerstwo.childImageSharp.fluid}
+            />
+          ) : (
+            <Image
+              imgStyle={{
+                objectFit: "contain",
+                width: "256px",
+                height: "256px",
+              }}
+              fluid={data.ministerstwo.childImageSharp.fluid}
+            />
+          )}
         </MinisterstwoColumn>
         <SocialColumn>
           <Text

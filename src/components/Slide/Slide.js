@@ -16,6 +16,7 @@ const Slide = ({ creator, description }) => {
         textTransform="uppercase"
         fontWeight="600"
         margin="0 0 24px"
+        as="h3"
       >
         {creator}
       </Text>

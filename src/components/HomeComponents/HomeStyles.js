@@ -366,7 +366,7 @@ export const CreatorsWrapper = styled.div`
     max-width: 100%;
   }
   @media only screen and (max-width: 767px) {
-    padding: 60px 28px;
+    padding: 60px 16px 60px 28px;
     height: 100vh;
     flex-wrap: wrap;
   }
@@ -380,9 +380,6 @@ export const ContentWrapperList = styled.div`
   margin: 0;
   position: relative;
 
-  @media only screen and (max-width: 767px) {
-    flex: 0 0 100%;
-  }
   ul {
     padding: 0;
     margin: 0;
@@ -390,36 +387,82 @@ export const ContentWrapperList = styled.div`
     overflow: hidden;
     width: 100%;
 
-    /* &::-webkit-scrollbar {
-      background-color: rgba(255, 255, 255, 0.4);
-      width: 8px;
-      border-radius: 4px;
-    }
-    &::-webkit-scrollbar-button {
-      background-color: blue;
-    }
-    &::-webkit-scrollbar-track {
-      background-color: green;
-    }
-    &::-webkit-scrollbar-track-piece {
-      background-color: red;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: pink;
-    }
-    &::-webkit-scrollbar-corner {
-      background-color: yellow;
-    }
-    &::-webkit-resizer {
-      background-color: gray;
-    } */
-
     li {
       width: 100%;
       list-style: none;
       padding: 0;
       margin: 0;
       opacity: 1;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    flex: 0 0 100%;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: linear-gradient(
+        0deg,
+        rgba(27, 31, 29, 0.22) 0%,
+        rgba(27, 31, 29, 1) 100%
+      );
+    }
+    ul {
+      overflow: auto;
+      height: 460px;
+      padding-right: 12px;
+
+      li {
+        margin-top: 36px;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      h3 {
+        color: rgba(255, 255, 255, 0.56);
+        font-size: 21px;
+        line-height: 21px;
+        font-weight: 400;
+        margin: 0 0 18px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 22px;
+      }
+      &::-webkit-scrollbar {
+        background-color: #1b1f1d;
+        width: 8px;
+        border-radius: 0;
+      }
+      &::-webkit-scrollbar-button {
+        background-color: #1b1f1d;
+        height: 0px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: #1b1f1d;
+        border: 1px solid #bebfbb;
+        border-radius: 0;
+      }
+      &::-webkit-scrollbar-track-piece {
+        background-color: #1b1f1d;
+        border: 1px solid #bebfbb;
+        border-radius: 0;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 0;
+      }
+      &::-webkit-scrollbar-corner {
+        background-color: #1b1f1d;
+      }
+      &::-webkit-resizer {
+        background-color: #1b1f1d;
+      }
     }
   }
 `
@@ -483,6 +526,7 @@ export const NamesWrapper = styled.div`
       text-align: center;
       font-size: 30px;
       line-height: 40px;
+      padding-right: 12px;
     }
   }
 `
@@ -492,12 +536,34 @@ export const FooterSection = styled.footer`
   padding: 130px 85px 20px 65px;
   max-width: 1440px;
   margin: 0 auto;
+  @media only screen and (max-width: 767px) {
+    padding: 20px 65px 65px;
+    flex-direction: column;
+    max-width: 100vw;
+  }
 `
 
 export const TeatrColumn = styled.div`
   display: flex;
   flex-direction: column;
   flex: 5 5 50%;
+  @media only screen and (max-width: 767px) {
+    flex: 0 0 100%;
+    position: relative;
+    right: 65px;
+    > div,
+    img,
+    picture {
+      max-width: 100% !important;
+    }
+
+    p {
+      margin: 0 0 16px 82px;
+      :first-child {
+        margin-top: 32px;
+      }
+    }
+  }
 `
 
 export const MinisterstwoColumn = styled.div`
@@ -505,6 +571,11 @@ export const MinisterstwoColumn = styled.div`
   flex-direction: column;
   flex: 3 3 30%;
   margin-top: 32px;
+  @media only screen and (max-width: 767px) {
+    flex: 0 0 100%;
+    order: -1;
+    margin-top: 0;
+  }
 `
 
 export const SocialColumn = styled.div`
@@ -514,4 +585,7 @@ export const SocialColumn = styled.div`
   margin-top: 66px;
   align-items: center;
   padding: 0 46px;
+  @media only screen and (max-width: 767px) {
+    flex: 0 0 100%;
+  }
 `
