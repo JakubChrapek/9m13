@@ -6,6 +6,7 @@ import styled, { ThemeContext } from "styled-components"
 import { useInView } from "react-intersection-observer"
 import { motion, AnimateSharedLayout } from "framer-motion"
 import useCurrentWidth from "../components/hooks/useCurrentWidth"
+import TeatrLogo from "../assets/images/footerImages/LogoTeatrBlack.svg"
 import fb from "../assets/images/footerImages/facebook.svg"
 import ig from "../assets/images/footerImages/instagram.svg"
 import yt from "../assets/images/footerImages/youtube.svg"
@@ -296,7 +297,8 @@ const HomePage = ({ data }) => {
       </CreatorsSection>
       <FooterSection>
         <TeatrColumn>
-          {width > mobileBreakpoint ? (
+          <img src={TeatrLogo} alt="Teatr Współczesny w Szczecinie" />
+          {/* {width > mobileBreakpoint ? (
             <Image
               style={{ maxWidth: "565px", width: "100%", height: "156px" }}
               imgStyle={{
@@ -317,7 +319,7 @@ const HomePage = ({ data }) => {
               }}
               fluid={data.teatr.childImageSharp.fluid}
             />
-          )}
+          )} */}
           <Text
             fontSize="13px"
             lineHeight="17px"
@@ -354,25 +356,14 @@ const HomePage = ({ data }) => {
           </Text>
         </TeatrColumn>
         <MinisterstwoColumn>
-          {width > mobileBreakpoint ? (
-            <Image
-              imgStyle={{
-                objectFit: "contain",
-                width: "100%",
-                height: "240px",
-              }}
-              fluid={data.ministerstwo.childImageSharp.fluid}
-            />
-          ) : (
-            <Image
-              imgStyle={{
-                objectFit: "contain",
-                width: "256px",
-                height: "256px",
-              }}
-              fluid={data.ministerstwo.childImageSharp.fluid}
-            />
-          )}
+          <Image
+            imgStyle={{
+              objectFit: "contain",
+              width: "256px",
+              height: "256px",
+            }}
+            fluid={data.ministerstwo.childImageSharp.fluid}
+          />
         </MinisterstwoColumn>
         <SocialColumn>
           <Text
@@ -385,7 +376,7 @@ const HomePage = ({ data }) => {
           >
             Nasze social media
           </Text>
-          <Flex width="100%" justifyContent="space-between">
+          <Flex width="156px" justifyContent="space-between">
             <img src={fb} alt="Facebook icon" />
             <img src={ig} alt="Instagram icon" />
             <img src={yt} alt="Youtube icon" />
