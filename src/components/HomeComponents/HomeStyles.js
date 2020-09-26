@@ -6,34 +6,34 @@ import { motion } from "framer-motion"
 
 export const HeroSection = styled.div`
   height: calc(100vh - 180px);
-  @media (max-width: 960px) {
+  @media only screen and (max-width: 960px) {
     height: calc(100vh - 120px);
   }
   max-width: 1440px;
   margin: 0 auto 240px;
-  @media (max-width: 1246px) {
+  @media only screen and (max-width: 1246px) {
     margin: 0 auto 140px;
   }
-  @media (max-width: 1146px) {
+  @media only screen and (max-width: 1146px) {
     margin: 0 auto 80px;
     height: calc(90vh - 120px);
   }
-  @media (max-width: 1020px) {
+  @media only screen and (max-width: 1020px) {
     margin: 0 auto 60px;
   }
-  @media (max-width: 960px) {
+  @media only screen and (max-width: 960px) {
     margin: 0 auto 0;
   }
-  @media (max-width: 870px) {
+  @media only screen and (max-width: 870px) {
     height: calc(75vh - 80px);
   }
   display: flex;
   padding-left: 165px;
   position: relative;
-  @media (max-width: 1000px) {
+  @media only screen and (max-width: 1000px) {
     padding-left: 75px;
   }
-  @media (max-width: 500px) {
+  @media only screen and (max-width: 500px) {
     padding: 0 28px;
     margin: 0 auto 0;
     height: unset;
@@ -46,23 +46,23 @@ export const TextWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  @media (max-width: 1032px) {
+  @media only screen and (max-width: 1032px) {
     width: 65%;
   }
-  @media (max-width: 908px) {
+  @media only screen and (max-width: 908px) {
     padding-top: 80px;
     justify-content: flex-start;
   }
-  @media (max-width: 750px) {
+  @media only screen and (max-width: 750px) {
     padding-top: 60px;
     width: 75%;
   }
-  @media (max-width: 608px) {
+  @media only screen and (max-width: 608px) {
     width: 85%;
   }
-  @media (max-width: 500px) {
+  @media only screen and (max-width: 500px) {
     width: 100%;
-    padding-top: 90px;
+    padding-top: 70px;
   }
 `
 
@@ -72,19 +72,19 @@ export const StyledHeader = styled.h2`
   font-weight: 600;
   margin: 0;
   color: #000;
-  @media (max-width: 1400px) {
+  @media only screen and (max-width: 1400px) {
     font-size: 56px;
     line-height: 80px;
   }
-  @media (max-width: 1150px) {
+  @media only screen and (max-width: 1150px) {
     font-size: 48px;
     line-height: 68px;
   }
-  @media (max-width: 908px) {
+  @media only screen and (max-width: 908px) {
     font-size: 40px;
     line-height: 58px;
   }
-  @media (max-width: 500px) {
+  @media only screen and (max-width: 500px) {
     font-size: 30px;
     line-height: 46px;
   }
@@ -94,20 +94,20 @@ export const ImagesWrapper = styled.div`
   width: 60%;
   height: 100%;
   overflow: hidden;
-  @media (max-width: 1032px) {
+  @media only screen and (max-width: 1032px) {
     width: 65%;
   }
-  @media (max-width: 750px) {
+  @media only screen and (max-width: 750px) {
     width: 50%;
     position: absolute;
     right: 0;
     bottom: 0px;
     height: unset;
   }
-  @media (max-width: 608px) {
+  @media only screen and (max-width: 608px) {
     width: 55%;
   }
-  @media (max-width: 500px) {
+  @media only screen and (max-width: 500px) {
     width: 100vw;
     position: relative;
     left: -28px;
@@ -123,13 +123,13 @@ export const VideoContainer = styled.div`
   width: 100%;
   padding: 30px 75px 105px;
   flex-direction: column;
-  @media (max-width: 1281px) {
+  @media only screen and (max-width: 1281px) {
     padding: 30px 75px 55px;
   }
-  @media (max-width: 1070px) {
+  @media only screen and (max-width: 1070px) {
     padding: 30px 75px 35px;
   }
-  @media (max-width: 920px) {
+  @media only screen and (max-width: 920px) {
     padding: 30px 28px 35px;
   }
   @media only screen and (max-width: 500px) {
@@ -137,6 +137,10 @@ export const VideoContainer = styled.div`
     > p {
       width: 150px;
     }
+  }
+
+  iframe .vp-controls-wrapper .vp-title .headers a {
+    color: #fff !important;
   }
 `
 
@@ -158,7 +162,7 @@ export const CircleBigger = styled.svg`
   width: 45%;
   top: 5%;
   right: -12%;
-  @media (min-width: 1660px) {
+  @media only screen and (min-width: 1660px) {
     width: 50%;
     right: -15%;
   }
@@ -183,7 +187,7 @@ export const CircleSmaller = styled.svg`
   width: 33%;
   top: 30%;
   right: 7%;
-  @media (min-width: 1660px) {
+  @media only screen and (min-width: 1660px) {
     width: 35%;
     top: 27%;
     right: 4.5%;
@@ -223,7 +227,7 @@ export const StyledButton = styled.button`
     outline: 2px solid ${({ theme }) => theme.colors.black};
     outline-offset: 8px;
   }
-  @media (max-width: 908px) {
+  @media only screen and (max-width: 908px) {
     padding: 16px 0px;
     min-width: 160px;
     max-width: 185px;
@@ -233,7 +237,7 @@ export const StyledButton = styled.button`
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.grayDarkest};
 
-  @media (max-width: 500px) {
+  @media only screen and (max-width: 500px) {
     margin: 16px 0 0;
     width: 80%;
     padding: 12px 0;
@@ -248,13 +252,13 @@ export const VideoSection = styled.section`
   justify-content: center;
   width: 100vw;
   height: calc(100vh + 235px);
-  @media (min-width: 1440px) {
+  @media only screen and (min-width: 1440px) {
     height: 100vh;
   }
-  @media (max-width: 1281px) {
+  @media only screen and (max-width: 1281px) {
     height: calc(100vh + 75px);
   }
-  @media (max-width: 1070px) {
+  @media only screen and (max-width: 1070px) {
     height: calc(56.25vw + 150px);
   }
   max-height: 1020px;
@@ -267,10 +271,10 @@ export const VideoSection = styled.section`
 export const VideoIframe = styled.iframe`
   border: 0;
   margin-top: 40px;
-  @media (max-width: 1281px) {
+  @media only screen and (max-width: 1281px) {
     margin-top: 20px;
   }
-  @media (max-width: 1081px) {
+  @media only screen and (max-width: 1081px) {
     margin-top: 20px;
   }
 `
@@ -280,6 +284,21 @@ export const ArtBriefSection = styled.div`
   max-width: 635px;
   margin: 0 auto;
   padding: 170px 0 135px;
+
+  @media only screen and (max-width: 1130px) {
+    width: 50%;
+    padding: 140px 0 110px;
+  }
+
+  @media only screen and (max-width: 910px) {
+    width: 60%;
+  }
+
+  @media only screen and (max-width: 700px) {
+    width: 70%;
+    padding: 130px 0 100px;
+  }
+
   @media only screen and (max-width: 500px) {
     width: 100%;
     padding: 48px 28px 56px;
@@ -304,6 +323,24 @@ export const PeopleDetailsWrapper = styled.div`
   flex-direction: column;
   padding: 115px 210px 140px 160px;
 
+  @media only screen and (max-width: 1440px) {
+    padding: 105px 160px 130px 110px;
+  }
+
+  @media only screen and (max-width: 1010px) {
+    padding: 105px 100px 130px 100px;
+  }
+
+  @media only screen and (max-width: 725px) {
+    padding: 85px 40px 110px 40px;
+
+    h3 {
+      font-size: 34px;
+      line-height: 34px;
+      margin-bottom: 0;
+    }
+  }
+
   @media only screen and (max-width: 500px) {
     padding: 80px 30px;
     h3 {
@@ -318,9 +355,12 @@ export const RealisatorsWrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
+  h3 {
+    margin-bottom: 10px;
+  }
   ul {
     padding: 0;
-    margin: 42px 0 0;
+    margin: 32px 0 0;
     color: #fff;
     li {
       list-style: none;
@@ -330,9 +370,19 @@ export const RealisatorsWrapper = styled.div`
       font-weight: 400;
     }
   }
-  @media only screen and (max-width: 500px) {
+
+  @media only screen and (max-width: 725px) {
     ul {
       margin-top: 22px;
+      li {
+        font-size: 17px;
+        line-height: 24px;
+      }
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    ul {
+      margin-top: 16px;
       li {
         font-size: 16px;
         line-height: 22px;
@@ -345,10 +395,17 @@ export const RealisatorsWrapper = styled.div`
 export const CrewWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 42px;
+  margin-top: -12px;
+
+  @media only screen and (max-width: 860px) {
+    margin-top: 64px;
+  }
+  h3 {
+    margin-bottom: 10px;
+  }
   ul {
     padding: 0;
-    margin: 42px 0 0;
+    margin: 32px 0 0;
     color: #fff;
     li {
       list-style: none;
@@ -356,6 +413,15 @@ export const CrewWrapper = styled.div`
       font-size: 20px;
       line-height: 27px;
       font-weight: 400;
+    }
+  }
+  @media only screen and (max-width: 725px) {
+    ul {
+      margin-top: 22px;
+      li {
+        font-size: 17px;
+        line-height: 24px;
+      }
     }
   }
   @media only screen and (max-width: 500px) {
@@ -385,9 +451,22 @@ export const CharactersWrapper = styled.section`
 export const CharactersGrid = styled.div`
   margin-top: 75px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(318px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(318px, 1fr));
   grid-row-gap: 120px;
   grid-column-gap: 40px;
+  @media only screen and (max-width: 1030px) {
+    grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+    > div {
+      h3 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 17px;
+        line-height: 23px;
+        letter-spacing: 0.01em;
+      }
+    }
+  }
   @media only screen and (max-width: 500px) {
     margin-top: 60px;
     grid-template-columns: repeat(1, 1fr);
@@ -415,22 +494,33 @@ export const CreatorsSection = styled(motion.section)`
   height: 100vh;
   background-color: ${({ bg, theme }) => (bg ? bg : theme.colors.grayDarkest)};
   overflow: hidden;
+  @media only screen and (max-width: 767px) {
+    height: unset;
+  }
 `
 
 export const CreatorsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   max-width: 1440px;
   margin: 0 auto;
   padding: 130px 200px 150px 180px;
   @media only screen and (max-width: 1440px) {
     max-width: 100%;
   }
-  @media only screen and (max-width: 500px) {
-    padding: 60px 16px 60px 28px;
-    height: 100vh;
+  @media only screen and (max-width: 1220px) {
+    padding: 80px 60px;
+  }
+  @media only screen and (max-width: 970px) {
+    padding: 80px 40px;
+  }
+  @media only screen and (max-width: 767px) {
+    padding: 80px 16px 80px 28px;
     flex-wrap: wrap;
+  }
+  @media only screen and (max-width: 500px) {
+    padding: 50px 16px 80px 28px;
   }
 `
 
@@ -456,10 +546,39 @@ export const ContentWrapperList = styled.div`
       margin: 0;
       opacity: 1;
     }
+
+    p {
+      color: rgba(255, 255, 255, 0.82);
+    }
   }
-  @media only screen and (max-width: 500px) {
+
+  @media only screen and (max-width: 920px) {
+    margin-top: 16px;
+
+    ul {
+      li {
+        margin-top: 24px;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      h3 {
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 400;
+        margin: 0 0 18px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+  @media only screen and (max-width: 767px) {
     flex: 0 0 100%;
     position: relative;
+    margin-top: 16px;
     &:after {
       content: "";
       position: absolute;
@@ -534,6 +653,7 @@ export const NamesWrapper = styled.div`
   flex-direction: column;
   flex: 0 0 45%;
   margin-left: 120px;
+
   ul {
     padding: 0;
     margin: 0;
@@ -575,8 +695,48 @@ export const NamesWrapper = styled.div`
       }
     }
   }
+  @media only screen and (max-width: 1220px) {
+    margin-left: 100px;
+    h2 {
+      font-size: 42px;
+      line-height: 56px;
+    }
+    ul {
+      li {
+        p {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 1120px) {
+    h2 {
+      font-size: 42px;
+      line-height: 56px;
+    }
+    ul {
+      li {
+        svg {
+          width: 26px;
+        }
+      }
+    }
+  }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 970px) {
+    h2 {
+      font-size: 38px;
+      line-height: 52px;
+      margin-bottom: 20px;
+    }
+    ul li p {
+      font-size: 22px;
+      line-height: 30px;
+    }
+    margin-left: 70px;
+  }
+
+  @media only screen and (max-width: 767px) {
     flex: 0 0 100%;
     margin-left: 0;
     order: -1;
