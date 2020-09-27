@@ -1,7 +1,5 @@
-import React from "react"
 import styled from "styled-components"
 import Image from "gatsby-image"
-import Text from "../Text/Text"
 import { motion } from "framer-motion"
 
 export const HeroSection = styled.div`
@@ -154,6 +152,18 @@ export const StyledImage = styled(Image)`
     width: 85%;
     margin: 0 0 0 auto;
     right: -40px;
+  }
+`
+
+export const LogoImage = styled(Image)`
+  object-fit: cover;
+  max-width: 150px;
+
+  @media only screen and (max-width: 1410px) {
+    max-width: 120px;
+  }
+  @media only screen and (max-width: 1338px) {
+    max-width: 64px;
   }
 `
 
@@ -663,7 +673,13 @@ export const NamesWrapper = styled.div`
       margin: 0;
       cursor: pointer;
       position: relative;
-
+      button {
+        display: block;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+        outline: none;
+      }
       &:hover {
         svg {
           transform: scaleX(1);
@@ -758,46 +774,69 @@ export const FooterSection = styled.footer`
   flex-wrap: wrap;
   padding: 130px 65px 20px 65px;
   max-width: 1440px;
+  position: relative;
   margin: 0 auto;
+  max-height: 460px;
   @media only screen and (max-width: 1140px) {
     padding: 110px 45px 20px 45px;
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 1017px) {
+    max-height: unset;
+  }
+  @media only screen and (max-width: 768px) {
     padding: 20px 65px 65px;
+    max-height: unset;
     flex-direction: column;
     max-width: 100vw;
+  }
+  @media only screen and (max-width: 568px) {
+    padding: 20px 0 65px;
   }
 `
 
 export const TeatrColumn = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 4 4 40%;
+  flex: 4 4 45%;
   p {
-    margin: 0 0 16px 25.5%;
-    :first-child {
-      margin-top: 32px;
+    margin: 0 0 16px 158px;
+  }
+  h3 {
+    margin: -82px 0 32px 158px;
+  }
+  @media only screen and (max-width: 1410px) {
+    p {
+      margin: 0 0 16px 128px;
+    }
+    h3 {
+      margin: -66px 0 32px 128px;
     }
   }
-  @media only screen and (max-width: 980px) {
-    flex: 1 1 50%;
+  @media only screen and (max-width: 1338px) {
+    p {
+      margin: 0 0 16px 72px;
+    }
+    h3 {
+      font-size: 18px;
+      margin: -40px 0 32px 72px;
+    }
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 1017px) {
+    flex: 1 1 70%;
+  }
+  @media only screen and (max-width: 768px) {
     flex: 0 0 100%;
     position: relative;
-    right: 65px;
-    > div,
-    img,
-    picture {
-      max-width: 100% !important;
-    }
+    margin-top: 24px;
 
     p {
-      margin: 0 0 16px 82px;
-      :first-child {
-        margin-top: 32px;
-      }
+      font-weight: 300;
+      margin: 0 8px 16px 28px;
+    }
+    h3 {
+      font-size: 11px;
+      margin: -40px 8px 32px 64px;
     }
   }
 `
@@ -805,21 +844,21 @@ export const TeatrColumn = styled.div`
 export const MinisterstwoColumn = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 3 3 30%;
+  flex: 3 3 35%;
   margin-top: -16px;
   img,
   picture {
     left: 50% !important;
     transform: translateX(-50%);
   }
-  @media only screen and (max-width: 980px) {
-    flex: 1 1 50%;
+  @media only screen and (max-width: 1017px) {
+    flex: 1 1 30%;
     margin-top: -22px;
     div[aria-hidden="true"] {
-      padding-bottom: 242px;
+      padding-bottom: 242px !important;
     }
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 768px) {
     flex: 0 0 100%;
     order: -1;
     margin-top: 0;
@@ -829,15 +868,23 @@ export const MinisterstwoColumn = styled.div`
 export const SocialColumn = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 3 3 30%;
-  margin-top: 66px;
+  flex: 3 3 20%;
+  margin-top: 24px;
   align-items: center;
-  padding: 0 46px;
-  @media only screen and (max-width: 980px) {
-    flex: 1 1 100%;
-    margin-top: 42px;
+  padding: 0 16px;
+
+  @media only screen and (max-width: 1040px) {
+    padding: 0;
   }
-  @media only screen and (max-width: 500px) {
-    flex: 0 0 100%;
+
+  @media only screen and (max-width: 1017px) {
+    flex: 1 1 100%;
+    margin: 42px 0 32px 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    h3 {
+      font-weight: 300;
+    }
   }
 `
