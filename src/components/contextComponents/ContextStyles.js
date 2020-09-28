@@ -19,6 +19,7 @@ export const HeroWrapper = styled.section`
   min-height: 60vh;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.grayDarkest};
+  position: relative;
 `
 
 export const LeftWrapper = styled.div`
@@ -26,7 +27,41 @@ export const LeftWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1 1 25%;
+  @media only screen and (max-width: 1340px) {
+    flex: 1 1 20%;
+  }
   margin-bottom: 100px;
+  img,
+  picture {
+    z-index: 1;
+  }
+  svg {
+    position: absolute;
+    left: -13%;
+    top: 9%;
+    z-index: 0;
+    width: 33%;
+    circle {
+      opacity: 20%;
+    }
+
+    :last-child {
+      left: -15.5%;
+      top: unset;
+      bottom: 17%;
+      width: 25.5%;
+    }
+  }
+`
+
+export const NavWrapper = styled.div`
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  left: 0;
+  top: 0;
+  flex: 1 1 20%;
 `
 
 export const CenterWrapper = styled.div`
@@ -65,8 +100,8 @@ export const CenterWrapper = styled.div`
             transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
           }
         }
-        :hover {+
-          svg {
+        :hover {
+          + svg {
             transform: translateX(8px);
           }
           h3:after {
@@ -86,7 +121,60 @@ export const RightWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   flex: 1 1 25%;
+  @media only screen and (max-width: 1340px) {
+    flex: 1 1 20%;
+  }
   margin-top: 52px;
+  img,
+  picture {
+    z-index: 1;
+  }
+  svg {
+    position: absolute;
+    right: -17.5%;
+    bottom: 8%;
+    z-index: 0;
+    width: 33%;
+
+    :last-child {
+      right: -7%;
+      bottom: 10%;
+      width: 25.5%;
+      circle {
+        fill: #1b1f1d;
+        opacity: 20%;
+      }
+    }
+  }
+`
+
+export const MainWrapper = styled.main`
+  margin: 0 auto;
+  padding: 150px 0 50px 75px;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  max-width: 1440px;
+
+  h2 {
+  }
+
+  div {
+    flex: 1 1 60%;
+    section {
+      max-width: 632px;
+    }
+  }
+  ${NavWrapper} {
+    nav {
+      position: fixed;
+      top: 0;
+    }
+  }
+`
+
+export const StickyNav = styled.nav`
+  position: sticky;
+  top: 0;
+  left: 0;
 `
