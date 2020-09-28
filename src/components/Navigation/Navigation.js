@@ -75,7 +75,7 @@ const NavigationList = styled.ul`
       right: 0;
       bottom: 0;
       background-color: ${({ theme }) => theme.colors.white};
-      z-index: 3;
+      z-index: 5;
       padding: 0;
       flex-direction: column;
       justify-content: center;
@@ -213,7 +213,7 @@ const Navigation = () => {
           <StyledNavLink to="/creators">Realizatorzy</StyledNavLink>
         </NavigationListItem>
         <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/blog">Konteksty</StyledNavLink>
+          <StyledNavLink to="/contexts">Konteksty</StyledNavLink>
         </NavigationListItem>
         <NavigationListItem onClick={() => setOpen(false)}>
           <StyledNavLink to="/workshop">Warsztat</StyledNavLink>
