@@ -20,6 +20,7 @@ export const HeroWrapper = styled.section`
   margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.grayDarkest};
   position: relative;
+  overflow: hidden;
 `
 
 export const LeftWrapper = styled.div`
@@ -140,7 +141,41 @@ export const RightWrapper = styled.div`
 `
 
 export const NavWrapper = styled.div`
-  flex: 1 1 20%;
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      a {
+        text-decoration: none;
+        color: #000;
+        font-size: 13px;
+        line-height: 16px;
+        text-transform: uppercase;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: calc(50% - 1px);
+          height: 1px;
+          width: 100%;
+          background-color: #000;
+          transform: scaleX(0);
+          transform-origin: right center;
+          transition: transform
+            ${({ theme }) =>
+              `${theme.transition.time} ${theme.transition.cubicBezier}`};
+        }
+        &.active {
+          &:after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
 `
 
 export const MainWrapper = styled.div`
@@ -170,14 +205,7 @@ export const MainWrapper = styled.div`
   }
 `
 
-export const StickyNav = styled.nav`
-  /* position: sticky;
-  top: 0;
-  left: 0; */
-`
-
 export const StyledSection = styled.section`
-  /* border-top: ${({ lineTop }) => lineTop && "3px solid #1b1f1d"}; */
   margin: ${({ margin }) => margin};
   padding: ${({ padding }) => padding};
   position: relative;
