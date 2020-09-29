@@ -2,6 +2,10 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import { motion } from "framer-motion"
 
+export const HiddenOverflowWrapper = styled.div`
+  overflow: hidden;
+`
+
 export const HeroSection = styled.div`
   height: calc(100vh - 180px);
   @media only screen and (max-width: 960px) {

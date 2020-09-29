@@ -54,16 +54,6 @@ export const LeftWrapper = styled.div`
   }
 `
 
-export const NavWrapper = styled.div`
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  left: 0;
-  top: 0;
-  flex: 1 1 20%;
-`
-
 export const CenterWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -149,12 +139,19 @@ export const RightWrapper = styled.div`
   }
 `
 
-export const MainWrapper = styled.main`
-  margin: 0 auto;
-  padding: 150px 0 50px 75px;
-  display: grid;
-  grid-template-columns: 20% 1fr;
+export const NavWrapper = styled.div`
+  flex: 1 1 20%;
+`
+
+export const MainWrapper = styled.div`
+  margin: 150px auto;
+  padding: 0 0 50px 75px;
+  display: flex;
   max-width: 1440px;
+
+  span {
+    font-weight: 600;
+  }
 
   h2 {
   }
@@ -166,15 +163,31 @@ export const MainWrapper = styled.main`
     }
   }
   ${NavWrapper} {
-    nav {
-      position: fixed;
-      top: 0;
-    }
+    flex: 1 1 20%;
+    align-self: flex-start;
+    position: sticky;
+    top: 150px;
   }
 `
 
 export const StickyNav = styled.nav`
-  position: sticky;
+  /* position: sticky;
   top: 0;
-  left: 0;
+  left: 0; */
+`
+
+export const StyledSection = styled.section`
+  /* border-top: ${({ lineTop }) => lineTop && "3px solid #1b1f1d"}; */
+  margin: ${({ margin }) => margin};
+  padding: ${({ padding }) => padding};
+  position: relative;
+`
+
+export const SectionSpacer = styled.span`
+  position: absolute;
+  left: -20px;
+  top: 0;
+  background-color: #1b1f1d;
+  width: calc(100% + 120px);
+  height: 3px;
 `

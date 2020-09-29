@@ -3,6 +3,8 @@ import {
   MainWrapper,
   StickyNav,
   NavWrapper,
+  StyledSection,
+  SectionSpacer,
 } from "../contextComponents/ContextStyles"
 import Text from "../Text/Text"
 
@@ -36,25 +38,25 @@ const ContextContentSection = () => {
             Opowieści kamienicy
           </Text>
           <Text>
-            Słowo <b> izolacja</b> przewijało się ostatnimi czasy dosyć często w
-            rozmowach, tych zasłyszanych i tych, przeprowadzanych - w
+            Słowo <span> izolacja</span> przewijało się ostatnimi czasy dosyć
+            często w rozmowach, tych zasłyszanych i tych, przeprowadzanych - w
             tramwajach, w kolejkach, poczekalniach, parkach, w domach, podczas
             spotkań towarzyskich, podczas konferencji dotyczących pracy, podczas
             śniadań i kolacji.
           </Text>
           <Text margin="32px 0 0">
             Pandemia, której się nie spodziewaliśmy, sprawiła, że wiele i wielu
-            z nas zostało zmuszonych do <b> zamknięcia się</b> na pewien czas w
-            domu, czy też przynajmniej - do spędzenia w nim większej ilości
-            czasu, niż dotychczas.{" "}
+            z nas zostało zmuszonych do <span> zamknięcia się</span> na pewien
+            czas w domu, czy też przynajmniej - do spędzenia w nim większej
+            ilości czasu, niż dotychczas.{" "}
           </Text>
         </section>
         <section id="dom">
           <Text
             as="h3"
-            margin="24px 0"
-            fontSize="30px"
-            lineHeight="36px"
+            margin="50px 0 26px"
+            fontSize="38px"
+            lineHeight="46px"
             fontWeight="400"
           >
             Dom
@@ -62,42 +64,53 @@ const ContextContentSection = () => {
 
           <Text>
             Dom jest tym czymś, co zwykle przewija się w pierwszych rysunkach
-            dzieci. <b> W dom</b> jest jedną z pierwszych wspólnych zabaw.{" "}
-            <b> Domem </b>
+            dzieci. <span> W dom</span> jest jedną z pierwszych wspólnych zabaw.{" "}
+            <span> Domem </span>
             nazywamy konkretną przestrzeń, budynek, instytucję społeczną. Ale
             dom to też miejsce, z którego się pochodzi, do którego się wraca, za
             którym się tęskni, albo którego się nienawidzi, który można stracić
             wraz z odejściem jakiejś osoby.
           </Text>
-          <Text>
-            Niektórzy bardzo chcą mieć <b> swój dom</b> . Inni ciągle zmieniają
-            miejsca zamieszkania. Dla niektórych dom to pierwsze miejsce, w
-            jakim się żyło, dla innych - plecak z najpotrzebniejszymi rzeczami.
-            Dom to też przestrzeń metaforyczna, zbiór pragnień, uczuć,
+          <Text margin="32px 0 0">
+            Niektórzy bardzo chcą mieć <span> swój dom</span> . Inni ciągle
+            zmieniają miejsca zamieszkania. Dla niektórych dom to pierwsze
+            miejsce, w jakim się żyło, dla innych - plecak z najpotrzebniejszymi
+            rzeczami. Dom to też przestrzeń metaforyczna, zbiór pragnień, uczuć,
             możliwości. Dom równa się często: melancholia.
           </Text>
         </section>
         <section id="przestrzeń">
           <Text
             as="h3"
-            margin="24px 0"
-            fontSize="30px"
-            lineHeight="36px"
+            margin="50px 0 26px"
+            fontSize="38px"
+            lineHeight="46px"
             fontWeight="400"
           >
             Przestrzeń
           </Text>
-          <Text>
-            Nasze wspomnienia wiążą się z przestrzeniami.  Wypełniamy
-            architekturę.  A jaki wpływ architektura ma na nas? Czym jest pamięć
-            budynków? Ile tajemnic kryją szczeliny w podłogach, pęknięcia w
-            ścianach? Jeśli my wypełniamy architekturę, czy ona wypełnia nas?
-            Bywa, że przestrzeń nas ogranicza. A w jaki sposób my ograniczamy
-            przestrzeń?  Czy kamienica sprzed stu lat chce być odnowiona? I
-            jeszcze raz? I jeszcze? Czy chce mieć parking? Czy odczuwa burzenie
-            ścian? 
+          <Text lineHeight="32px" letterSpacing="0.1em">
+            Nasze wspomnienia wiążą się z przestrzeniami.
+            <br />
+            Wypełniamy architekturę.
+            <br />A jaki wpływ architektura ma na nas?
+            <br />
+            Czym jest pamięć budynków? Ile tajemnic kryją szczeliny w podłogach,
+            pęknięcia w ścianach?
+            <br />
+            Jeśli my wypełniamy architekturę, czy ona wypełnia nas?
+            <br />
+            Bywa, że przestrzeń nas ogranicza.
+            <br />A w jaki sposób my ograniczamy przestrzeń?
+            <br />
+            Czy kamienica sprzed stu lat chce być odnowiona? I jeszcze raz? I
+            jeszcze?
+            <br />
+            Czy chce mieć parking?
+            <br />
+            Czy odczuwa burzenie ścian? 
           </Text>
-          <Text>
+          <Text margin="44px 0 0">
             Jeśli w jednym budynku mieszkalnym znajduje się dziesięć mieszkań, a
             przynajmniej w pięciu lokatorzy czują się samotni, to jak bardzo
             samotny czuje się budynek? O ile w ogóle... Te pytania towarzyszyły
@@ -107,9 +120,9 @@ const ContextContentSection = () => {
         <section id="kamienica">
           <Text
             as="h3"
-            margin="24px 0"
-            fontSize="30px"
-            lineHeight="36px"
+            margin="60px 0 26px"
+            fontSize="38px"
+            lineHeight="46px"
             fontWeight="400"
           >
             Kamienica
@@ -121,7 +134,7 @@ const ContextContentSection = () => {
             wywiadów, w których każdy opowiada o nietypowym zajściu, jakie miało
             miejsce w ich budynku mieszkalnym.
           </Text>
-          <Text>
+          <Text margin="32px 0 0">
             Forma wywiadów jest pretekstem do tego, by poznać rodzaje samotności
             tych postaci, a co za tym idzie w punkcie kulminacyjnym - ich
             tęsknoty, pragnienia. Chciałyśmy, aby każdy z mieszkańców kamienicy
@@ -134,9 +147,9 @@ const ContextContentSection = () => {
         <section id="mieszkańcy">
           <Text
             as="h3"
-            margin="24px 0"
-            fontSize="30px"
-            lineHeight="36px"
+            margin="26px 0 26px"
+            fontSize="38px"
+            lineHeight="46px"
             fontWeight="400"
           >
             Mieszkańcy
@@ -151,7 +164,7 @@ const ContextContentSection = () => {
             sugerują, że na nowych mieszkańców starych mieszkań przechodzą losy
             poprzednich lokatorów.
           </Text>
-          <Text>
+          <Text margin="32px 0 0">
             Zestawienie realistycznych postaci, jakimi są lokatorzy z
             abstrakcyjnymi - Kamienicą, duchami oraz - tajemniczym Drzewem,
             które także wypowiada się w dramacie, pozwoliło nam budować
@@ -160,16 +173,22 @@ const ContextContentSection = () => {
             zmianie swojego bycia. Konsekwencje tej metamorfozy mogą być
             ostateczne, apokaliptyczne - już nie tylko dla budynku.
           </Text>
-          <Text>
+          <Text margin="32px 0 0">
             Rozprawiając o mieszkaniu, zawsze mówimy o czymś więcej. O czymś, co
             było przed nami, co jest i co, być może - będzie.
           </Text>
-          <Text>Zuzanna Bojda</Text>
+          <Text margin="32px 0 0">Zuzanna Bojda</Text>
         </section>
-        <section lineTop id="o dotyku">
+        <StyledSection
+          padding="62px 0 0"
+          margin="62px 0 0"
+          lineTop
+          id="o dotyku"
+        >
+          <SectionSpacer />
           <Text
             as="h2"
-            margin="0 0 52px"
+            margin="0 0 26px"
             fontSize="52px"
             lineHeight="60px"
             fontWeight="400"
@@ -180,7 +199,7 @@ const ContextContentSection = () => {
             Jak encyklopedia definiuje tak oczywiste dla nas pojęcia, jak
             bliskość, czucie, dotyk?
           </Text>
-          <Text>
+          <Text margin="32px 0 0">
             „Dotyk, zmysł dotyku: rodzaj czucia, zdolność odczuwania działania
             bodźców mechanicznych na powierzchnię skóry za pomocą receptorów w
             skórze właściwej i głębokiej warstwie naskórka. Czucie:
@@ -188,7 +207,7 @@ const ContextContentSection = () => {
             wewnętrznego organizmu ludzkiego i zwierzęcego oraz przetwarzanie
             jej na wrażenia zmysłowe.”
           </Text>
-        </section>
+        </StyledSection>
         <section id="czułość drzew">
           <Text
             as="h3"
@@ -219,7 +238,7 @@ const ContextContentSection = () => {
         <section id="eksperyment harlowa">
           <Text
             as="h3"
-            margin="24px 0"
+            margin="40px 0 20px"
             fontSize="30px"
             lineHeight="36px"
             fontWeight="400"
@@ -242,7 +261,7 @@ const ContextContentSection = () => {
         <section id="temple">
           <Text
             as="h3"
-            margin="24px 0"
+            margin="40px 0 20px"
             fontSize="30px"
             lineHeight="36px"
             fontWeight="400"
@@ -269,7 +288,7 @@ const ContextContentSection = () => {
             poskromu i ku swojemu zaskoczeniu - natychmiast poczuła się lepiej.
             Postanowiła zbudować podobne urządzenie także dla siebie.
           </Text>
-          <Text>
+          <Text margin="70px 0" fontSize="30px" lineHeight="41px">
             „Po dodaniu miękkich obić poczułam coś innego, niż tylko odprężenie.
             Poczułam serdeczność w stosunku do ludzi, pojawiły się uczucia
             społeczne, miałam przyjemniejsze sny.”
@@ -278,7 +297,7 @@ const ContextContentSection = () => {
         <section id="dotyk">
           <Text
             as="h3"
-            margin="24px 0"
+            margin="0 0 20px"
             fontSize="30px"
             lineHeight="36px"
             fontWeight="400"
@@ -306,7 +325,7 @@ const ContextContentSection = () => {
         <section id="blisko">
           <Text
             as="h3"
-            margin="24px 0"
+            margin="40px 0 20px"
             fontSize="30px"
             lineHeight="36px"
             fontWeight="400"
@@ -323,20 +342,26 @@ const ContextContentSection = () => {
             możliwości”. Uczuć, które mimo bliskiej odległości i możności
             „dotknięcia” – czasem tak trudno jest zaspokoić.
           </Text>
-          <Text>Jagoda Prześluga</Text>
+          <Text margin="20px 0 0">Jagoda Prześluga</Text>
         </section>
-        <section id="odczuwanie" lineTop>
+        <StyledSection
+          padding="62px 0 0"
+          margin="62px 0 0"
+          lineTop
+          id="odczuwanie"
+        >
+          <SectionSpacer />
           <Text
             as="h2"
-            margin="0 0 52px"
+            margin="0 0 36px"
             fontSize="52px"
             lineHeight="60px"
             fontWeight="400"
           >
             Odczuwanie architektury
           </Text>
-          <Text>
-            <b> Architektura to bardzo szczególna sztuka funkcjonalna:</b>{" "}
+          <Text margin="32px 0 0">
+            <span> Architektura to bardzo szczególna sztuka funkcjonalna:</span>{" "}
             zamyka przestrzeń, byśmy mogli w niej zamieszkać i ustanawia ramy
             dla naszego życia. […] Nawet najbardziej abstrakcyjna rzeźba,
             ograniczona do czysto geometrycznych form, nie stanie się
@@ -344,17 +369,18 @@ const ContextContentSection = () => {
             Architektura to kształty tworzone wokół człowieka, formy służące
             mieszkaniu, a nie tylko oglądaniu od zewnątrz.
           </Text>
-          <Text>
-            <b> Architekt jest jakby producentem teatralnym,</b> człowiekiem
-            aranżującym scenę, na której toczy się nasze życie. Od tego, w jaki
-            sposób to zrobi, zależy nieskończenie wiele. Jeśli jego zamiary się
-            powiodą, odegra rolę doskonałego gospodarza, który stara się
-            zapewnić gościom wszelkie wygody, aby życie z nim było miłym
+          <Text margin="32px 0 0">
+            <span> Architekt jest jakby producentem teatralnym,</span>{" "}
+            człowiekiem aranżującym scenę, na której toczy się nasze życie. Od
+            tego, w jaki sposób to zrobi, zależy nieskończenie wiele. Jeśli jego
+            zamiary się powiodą, odegra rolę doskonałego gospodarza, który stara
+            się zapewnić gościom wszelkie wygody, aby życie z nim było miłym
             doświadczeniem.
           </Text>
-          <Text>
-            Jednak <b> działalność producenta jest trudna z kilku powodów.</b>{" "}
-            Po pierwsze, musi on wiedzieć, w jaki sposób aktorzy - którzy są
+          <Text margin="32px 0 0">
+            Jednak
+            <span> działalność producenta jest trudna z kilku powodów.</span> Po
+            pierwsze, musi on wiedzieć, w jaki sposób aktorzy - którzy są
             całkiem zwykłymi ludźmi - zwykle grają; inaczej całe przedstawienie
             skończy się klapą. To, co w jednym środowisku kulturowym uznaje się
             za właściwe i naturalne, może okazać się całkiem nieodpowiednie w
@@ -362,10 +388,10 @@ const ContextContentSection = () => {
             się śmieszne w następnym, gdyż ludzie zdążyli zmienić swe gusta i
             przyzwyczajenia.
           </Text>
-          <Text>
-            <b>
+          <Text margin="32px 0 0">
+            <span>
               Architekt ma także coś wspólnego z zakładającym park ogrodnikiem.
-            </b>
+            </span>
             To jasne, że sukces ogrodnika zależy od właściwego doboru roślin.
             Nawet najpiękniejszy projekt parku na nic się nie zda, jeśli wybrane
             rośliny nie znajdą w nim właściwego dla siebie środowiska, jeśli nie
@@ -377,13 +403,13 @@ const ContextContentSection = () => {
             się w coś całkiem sprzecznego z pierwotnymi zamierzeniami
             projektanta.
           </Text>
-          <Text>
+          <Text margin="62px 0 0">
             Istnieje jeszcze jedna, bardzo ważna cecha, której nie wolno pominąć
             przy określaniu prawdziwego charakteru architektury. Jest nim
-            <b> proces twórczy</b> , czyli to, jak powstaje budynek.
+            <span> proces twórczy</span> , czyli to, jak powstaje budynek.
             Architektura nie stanowi indywidualnego dzieła artysty, jak obrazy.
           </Text>
-          <Text>
+          <Text margin="50px 0 0">
             Dla pełnego zrozumienia architektury należy pamiętać, że wykonawcy
             nie są wrażliwymi muzykami, interpretującymi zapis nutowy,
             nadającymi mu szczególny wyraz, wydobywającymi taką czy inną frazę.
@@ -391,51 +417,53 @@ const ContextContentSection = () => {
             trudzące się wspólnie nad budową mrowiska - całkiem bezosobowo
             użyczają swych umiejętności, czasem nie rozumiejąc nawet tego, co
             pomagają stworzyć. […]{" "}
-            <b>
+            <span>
               Budynek powstaje jak film bez gwiazdorów, jak rodzaj dokumentu, w
               którym wszystkie role obsadzono zwykłymi ludźmi.
-            </b>
+            </span>
           </Text>
-          <Text>
-            <b>
+          <Text margin="50px 0 0">
+            <span>
               Architektura nie jest zdolna do niesienia intymnego, osobistego
               przesłania; całkowicie brak jej wrażliwości emocjonalnej.
-            </b>
+            </span>
             Jednak ten właśnie fakt prowadzi do czegoś pozytywnego. Architekt
             musi szukać formy, która jest bardziej wymowna i skończona niż szkic
             czy osobiste studium.
           </Text>
-          <Text>
+          <Text margin="32px 0 0">
             Trzeba mieszkać w pokojach, czuć, jak się wokół zamykają, jak w
             naturalny sposób przechodzi się z jednego do drugiego.
-            <b> Trzeba uzmysłowić sobie fakturę,</b> odkryć, dlaczego użyto
-            takich, a nie innych kolorów, w jakiej mierze ich wybór zależał od
-            zorientowania pokoi w stosunku do okien i światła słonecznego. Dwa
-            mieszkania, położone jedno nad drugim, z pokojami o tych samych
-            wymiarach i otworach, mogą być absolutnie inne dzięki zasłonom,
-            tapetom i meblom.
+            <span> Trzeba uzmysłowić sobie fakturę,</span> odkryć, dlaczego
+            użyto takich, a nie innych kolorów, w jakiej mierze ich wybór
+            zależał od zorientowania pokoi w stosunku do okien i światła
+            słonecznego. Dwa mieszkania, położone jedno nad drugim, z pokojami o
+            tych samych wymiarach i otworach, mogą być absolutnie inne dzięki
+            zasłonom, tapetom i meblom.
           </Text>
-          <Text>
-            <b>
+          <Text margin="32px 0 0">
+            <span>
               Trzeba doświadczyć wpływu, jaki na koncepcję przestrzeni ma
               akustyka:{" "}
-            </b>
+            </span>
             inaczej rozchodzi się dźwięk w wielkiej katedrze, budząc echa i
             długo wibrując w powietrzu, inaczej zaś w niewielkim, wyłożonym
             boazerią pokoju, wypełnionym zasłonami, dywanami i poduszkami.
           </Text>
-          <Text>
-            <b> Widzenie wymaga pewnej aktywności ze strony patrzącego</b> - nie
-            wystarczy biernie czekać, by na siatkówce oka ukształtował się
+          <Text margin="32px 0 0">
+            <span> Widzenie wymaga pewnej aktywności ze strony patrzącego</span>{" "}
+            - nie wystarczy biernie czekać, by na siatkówce oka ukształtował się
             obraz. Siatkówka jest jak ekran kinowy, na którym nieustannie odbija
             się zmienny ciąg obrazów, ale kierujący wszystkim mózg świadomie
             notuje tylko nieliczne. Z drugiej strony wystarczy nam jedynie
             niejasne wrażenie wzrokowe albo wręcz drobny szczegół, byśmy uznali,
             że widzieliśmy taką czy inną rzecz.
           </Text>
-          <Text>Fragmenty pochodzą z książki „Odczuwanie architektury”</Text>
+          <Text margin="32px 0 0">
+            Fragmenty pochodzą z książki „Odczuwanie architektury”
+          </Text>
           <Text>Steen Eiler Rasmussen.</Text>
-        </section>
+        </StyledSection>
       </div>
     </MainWrapper>
   )
