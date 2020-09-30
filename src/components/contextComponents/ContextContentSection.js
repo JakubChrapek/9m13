@@ -8,8 +8,9 @@ import {
 } from "../contextComponents/ContextStyles"
 import Text from "../Text/Text"
 
-const ContextContentSection = () => {
+const ContextContentSection = ({ width, mobileBreakpoint }) => {
   const mainNavLinks = document.querySelectorAll("main nav ul li a")
+  const tabletBreakpoint = 970
 
   useEffect(() => {
     typeof window !== `undefined` &&
@@ -42,32 +43,35 @@ const ContextContentSection = () => {
 
   return (
     <MainWrapper>
-      <NavWrapper>
-        <nav>
-          <ul>
-            <li>
-              <a onClick={e => handleClick(e)} href="#opowiesci">
-                Opowieści kamienicy
-              </a>
-            </li>
-            <li>
-              <a onClick={e => handleClick(e)} href="#odczuwanie">
-                odczuwanie architektury
-              </a>
-            </li>
-            <li>
-              <a onClick={e => handleClick(e)} href="#dotyk">
-                o dotyku
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </NavWrapper>
+      {width >= tabletBreakpoint && (
+        <NavWrapper>
+          <nav>
+            <ul>
+              <li>
+                <a onClick={e => handleClick(e)} href="#opowiesci">
+                  Opowieści kamienicy
+                </a>
+              </li>
+              <li>
+                <a onClick={e => handleClick(e)} href="#odczuwanie">
+                  odczuwanie architektury
+                </a>
+              </li>
+              <li>
+                <a onClick={e => handleClick(e)} href="#dotyk">
+                  o dotyku
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </NavWrapper>
+      )}
       <div>
         <section id="opowiesci">
           <Text
             as="h2"
             margin="0 0 52px"
+            mobileMargin="0 0 20px"
             fontSize="52px"
             lineHeight="60px"
             fontWeight="400"
@@ -81,7 +85,8 @@ const ContextContentSection = () => {
             spotkań towarzyskich, podczas konferencji dotyczących pracy, podczas
             śniadań i kolacji.
           </Text>
-          <Text margin="32px 0 0">
+
+          <Text margin="32px 0 0" mobileMargin="20px 0 0">
             Pandemia, której się nie spodziewaliśmy, sprawiła, że wiele i wielu
             z nas zostało zmuszonych do <span> zamknięcia się</span> na pewien
             czas w domu, czy też przynajmniej - do spędzenia w nim większej
@@ -91,6 +96,7 @@ const ContextContentSection = () => {
             <Text
               as="h3"
               margin="50px 0 26px"
+              mobileMargin="20px 0"
               fontSize="38px"
               lineHeight="46px"
               fontWeight="400"
@@ -107,7 +113,8 @@ const ContextContentSection = () => {
               za którym się tęskni, albo którego się nienawidzi, który można
               stracić wraz z odejściem jakiejś osoby.
             </Text>
-            <Text margin="32px 0 0">
+
+            <Text margin="32px 0 0" mobileMargin="20px 0 0">
               Niektórzy bardzo chcą mieć <span> swój dom</span> . Inni ciągle
               zmieniają miejsca zamieszkania. Dla niektórych dom to pierwsze
               miejsce, w jakim się żyło, dla innych - plecak z
@@ -120,13 +127,14 @@ const ContextContentSection = () => {
             <Text
               as="h3"
               margin="50px 0 26px"
+              mobileMargin="32px 0 24px"
               fontSize="38px"
               lineHeight="46px"
               fontWeight="400"
             >
               Przestrzeń
             </Text>
-            <Text lineHeight="32px" letterSpacing="0.1em">
+            <Text special lineHeight="32px" letterSpacing="0.1em">
               Nasze wspomnienia wiążą się z przestrzeniami.
               <br />
               Wypełniamy architekturę.
@@ -147,7 +155,7 @@ const ContextContentSection = () => {
               <br />
               Czy odczuwa burzenie ścian? 
             </Text>
-            <Text margin="44px 0 0">
+            <Text margin="44px 0 0" mobileMargin="24px 0 32px">
               Jeśli w jednym budynku mieszkalnym znajduje się dziesięć mieszkań,
               a przynajmniej w pięciu lokatorzy czują się samotni, to jak bardzo
               samotny czuje się budynek? O ile w ogóle... Te pytania
@@ -159,6 +167,7 @@ const ContextContentSection = () => {
             <Text
               as="h3"
               margin="60px 0 26px"
+              mobileMargin="24px 0 20px"
               fontSize="38px"
               lineHeight="46px"
               fontWeight="400"
@@ -172,7 +181,8 @@ const ContextContentSection = () => {
               dokumentalnych wywiadów, w których każdy opowiada o nietypowym
               zajściu, jakie miało miejsce w ich budynku mieszkalnym.
             </Text>
-            <Text margin="32px 0 0">
+
+            <Text margin="32px 0 0" mobileMargin="20px 0 0">
               Forma wywiadów jest pretekstem do tego, by poznać rodzaje
               samotności tych postaci, a co za tym idzie w punkcie kulminacyjnym
               - ich tęsknoty, pragnienia. Chciałyśmy, aby każdy z mieszkańców
@@ -202,7 +212,8 @@ const ContextContentSection = () => {
               Duchy sugerują, że na nowych mieszkańców starych mieszkań
               przechodzą losy poprzednich lokatorów.
             </Text>
-            <Text margin="32px 0 0">
+
+            <Text margin="32px 0 0" mobileMargin="20px 0 0">
               Zestawienie realistycznych postaci, jakimi są lokatorzy z
               abstrakcyjnymi - Kamienicą, duchami oraz - tajemniczym Drzewem,
               które także wypowiada się w dramacie, pozwoliło nam budować
@@ -211,11 +222,15 @@ const ContextContentSection = () => {
               zmianie swojego bycia. Konsekwencje tej metamorfozy mogą być
               ostateczne, apokaliptyczne - już nie tylko dla budynku.
             </Text>
-            <Text margin="32px 0 0">
+
+            <Text margin="32px 0 0" mobileMargin="20px 0 0">
               Rozprawiając o mieszkaniu, zawsze mówimy o czymś więcej. O czymś,
               co było przed nami, co jest i co, być może - będzie.
             </Text>
-            <Text margin="32px 0 0">Zuzanna Bojda</Text>
+
+            <Text margin="32px 0 0" mobileMargin="20px 0 0">
+              Zuzanna Bojda
+            </Text>
           </section>
         </section>
         <StyledSection
@@ -234,7 +249,8 @@ const ContextContentSection = () => {
           >
             Odczuwanie architektury
           </Text>
-          <Text margin="32px 0 0">
+
+          <Text margin="32px 0 0" mobileMargin="20px 0 0">
             <span> Architektura to bardzo szczególna sztuka funkcjonalna:</span>{" "}
             zamyka przestrzeń, byśmy mogli w niej zamieszkać i ustanawia ramy
             dla naszego życia. […] Nawet najbardziej abstrakcyjna rzeźba,
@@ -243,7 +259,8 @@ const ContextContentSection = () => {
             Architektura to kształty tworzone wokół człowieka, formy służące
             mieszkaniu, a nie tylko oglądaniu od zewnątrz.
           </Text>
-          <Text margin="32px 0 0">
+
+          <Text margin="32px 0 0" mobileMargin="20px 0 0">
             <span> Architekt jest jakby producentem teatralnym,</span>{" "}
             człowiekiem aranżującym scenę, na której toczy się nasze życie. Od
             tego, w jaki sposób to zrobi, zależy nieskończenie wiele. Jeśli jego
@@ -251,7 +268,8 @@ const ContextContentSection = () => {
             się zapewnić gościom wszelkie wygody, aby życie z nim było miłym
             doświadczeniem.
           </Text>
-          <Text margin="32px 0 0">
+
+          <Text margin="32px 0 0" mobileMargin="20px 0 0">
             Jednak
             <span> działalność producenta jest trudna z kilku powodów.</span> Po
             pierwsze, musi on wiedzieć, w jaki sposób aktorzy - którzy są
@@ -262,7 +280,8 @@ const ContextContentSection = () => {
             się śmieszne w następnym, gdyż ludzie zdążyli zmienić swe gusta i
             przyzwyczajenia.
           </Text>
-          <Text margin="32px 0 0">
+
+          <Text margin="32px 0 0" mobileMargin="20px 0 0">
             <span>
               Architekt ma także coś wspólnego z zakładającym park ogrodnikiem.
             </span>
@@ -277,13 +296,13 @@ const ContextContentSection = () => {
             się w coś całkiem sprzecznego z pierwotnymi zamierzeniami
             projektanta.
           </Text>
-          <Text margin="62px 0 0">
+          <Text margin="62px 0 0" mobileMargin="32px 0 0">
             Istnieje jeszcze jedna, bardzo ważna cecha, której nie wolno pominąć
             przy określaniu prawdziwego charakteru architektury. Jest nim
             <span> proces twórczy</span> , czyli to, jak powstaje budynek.
             Architektura nie stanowi indywidualnego dzieła artysty, jak obrazy.
           </Text>
-          <Text margin="50px 0 0">
+          <Text margin="50px 0 0" mobileMargin="32px 0 0">
             Dla pełnego zrozumienia architektury należy pamiętać, że wykonawcy
             nie są wrażliwymi muzykami, interpretującymi zapis nutowy,
             nadającymi mu szczególny wyraz, wydobywającymi taką czy inną frazę.
@@ -296,7 +315,7 @@ const ContextContentSection = () => {
               którym wszystkie role obsadzono zwykłymi ludźmi.
             </span>
           </Text>
-          <Text margin="50px 0 0">
+          <Text margin="50px 0 0" mobileMargin="32px 0 0">
             <span>
               Architektura nie jest zdolna do niesienia intymnego, osobistego
               przesłania; całkowicie brak jej wrażliwości emocjonalnej.
@@ -305,7 +324,8 @@ const ContextContentSection = () => {
             musi szukać formy, która jest bardziej wymowna i skończona niż szkic
             czy osobiste studium.
           </Text>
-          <Text margin="32px 0 0">
+
+          <Text margin="32px 0 0" mobileMargin="20px 0 0">
             Trzeba mieszkać w pokojach, czuć, jak się wokół zamykają, jak w
             naturalny sposób przechodzi się z jednego do drugiego.
             <span> Trzeba uzmysłowić sobie fakturę,</span> odkryć, dlaczego
@@ -315,7 +335,8 @@ const ContextContentSection = () => {
             tych samych wymiarach i otworach, mogą być absolutnie inne dzięki
             zasłonom, tapetom i meblom.
           </Text>
-          <Text margin="32px 0 0">
+
+          <Text margin="32px 0 0" mobileMargin="20px 0 0">
             <span>
               Trzeba doświadczyć wpływu, jaki na koncepcję przestrzeni ma
               akustyka:{" "}
@@ -324,7 +345,8 @@ const ContextContentSection = () => {
             długo wibrując w powietrzu, inaczej zaś w niewielkim, wyłożonym
             boazerią pokoju, wypełnionym zasłonami, dywanami i poduszkami.
           </Text>
-          <Text margin="32px 0 0">
+
+          <Text margin="32px 0 0" mobileMargin="20px 0 0">
             <span> Widzenie wymaga pewnej aktywności ze strony patrzącego</span>{" "}
             - nie wystarczy biernie czekać, by na siatkówce oka ukształtował się
             obraz. Siatkówka jest jak ekran kinowy, na którym nieustannie odbija
@@ -333,13 +355,21 @@ const ContextContentSection = () => {
             niejasne wrażenie wzrokowe albo wręcz drobny szczegół, byśmy uznali,
             że widzieliśmy taką czy inną rzecz.
           </Text>
-          <Text margin="32px 0 0">
+
+          <Text margin="32px 0 0" mobileMargin="20px 0 0">
             Fragmenty pochodzą z książki „Odczuwanie architektury”
           </Text>
           <Text>Steen Eiler Rasmussen.</Text>
         </StyledSection>
 
-        <StyledSection padding="62px 0 0" margin="62px 0 0" lineTop id="dotyk">
+        <StyledSection
+          padding="62px 0 0"
+          margin="62px 0 0"
+          mobileMargin="40px 0 0"
+          mobilePadding="40px 0 0"
+          lineTop
+          id="dotyk"
+        >
           <SectionSpacer />
           <Text
             as="h2"
@@ -354,7 +384,8 @@ const ContextContentSection = () => {
             Jak encyklopedia definiuje tak oczywiste dla nas pojęcia, jak
             bliskość, czucie, dotyk?
           </Text>
-          <Text margin="32px 0 0">
+
+          <Text margin="32px 0 0" mobileMargin="20px 0 0">
             „Dotyk, zmysł dotyku: rodzaj czucia, zdolność odczuwania działania
             bodźców mechanicznych na powierzchnię skóry za pomocą receptorów w
             skórze właściwej i głębokiej warstwie naskórka. Czucie:
@@ -393,6 +424,7 @@ const ContextContentSection = () => {
             <Text
               as="h3"
               margin="40px 0 20px"
+              mobileMargin="32px 0 20px"
               fontSize="30px"
               lineHeight="36px"
               fontWeight="400"
@@ -416,6 +448,7 @@ const ContextContentSection = () => {
             <Text
               as="h3"
               margin="40px 0 20px"
+              mobileMargin="32px 0 20px"
               fontSize="30px"
               lineHeight="36px"
               fontWeight="400"
@@ -442,7 +475,12 @@ const ContextContentSection = () => {
               poskromu i ku swojemu zaskoczeniu - natychmiast poczuła się
               lepiej. Postanowiła zbudować podobne urządzenie także dla siebie.
             </Text>
-            <Text margin="70px 0" fontSize="30px" lineHeight="41px">
+            <Text
+              margin="70px 0"
+              mobileMargin="32px 0"
+              fontSize="30px"
+              lineHeight="41px"
+            >
               „Po dodaniu miękkich obić poczułam coś innego, niż tylko
               odprężenie. Poczułam serdeczność w stosunku do ludzi, pojawiły się
               uczucia społeczne, miałam przyjemniejsze sny.”
@@ -452,6 +490,7 @@ const ContextContentSection = () => {
             <Text
               as="h3"
               margin="0 0 20px"
+              mobileMargin="0 0 24px"
               fontSize="30px"
               lineHeight="36px"
               fontWeight="400"
@@ -480,6 +519,7 @@ const ContextContentSection = () => {
             <Text
               as="h3"
               margin="40px 0 20px"
+              mobileMargin="32px 0 24px"
               fontSize="30px"
               lineHeight="36px"
               fontWeight="400"

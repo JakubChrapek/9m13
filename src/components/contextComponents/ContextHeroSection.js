@@ -9,7 +9,9 @@ import {
 } from "./ContextStyles"
 import Text from "../Text/Text"
 
-const ContextHeroSection = () => {
+const ContextHeroSection = ({ width, mobileBreakpoint }) => {
+  const tabletBreakpoint = 910
+
   const data = useStaticQuery(graphql`
     query ContextHeroQuery {
       leftSide: file(name: { eq: "konteksty-kamienica-lewa" }) {
@@ -31,19 +33,21 @@ const ContextHeroSection = () => {
 
   return (
     <HeroWrapper>
-      <LeftWrapper>
-        <StyledImage
-          fluid={data.leftSide.childImageSharp.fluid}
-          alt="Część kamienicy"
-          left
-        />
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="50" fill="#C4C4C4" />
-        </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="50" fill="#1B1F1D" />
-        </svg>
-      </LeftWrapper>
+      {width >= tabletBreakpoint && (
+        <LeftWrapper>
+          <StyledImage
+            fluid={data.leftSide.childImageSharp.fluid}
+            alt="Część kamienicy"
+            left
+          />
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#C4C4C4" />
+          </svg>
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#1B1F1D" />
+          </svg>
+        </LeftWrapper>
+      )}
       <CenterWrapper>
         <ul>
           <li>
@@ -126,18 +130,20 @@ const ContextHeroSection = () => {
           </li>
         </ul>
       </CenterWrapper>
-      <RightWrapper>
-        <StyledImage
-          fluid={data.rightSide.childImageSharp.fluid}
-          alt="Część kamienicy"
-        />
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="50" fill="#C4C4C4" />
-        </svg>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="50" fill="#1B1F1D" />
-        </svg>
-      </RightWrapper>
+      {width >= tabletBreakpoint && (
+        <RightWrapper>
+          <StyledImage
+            fluid={data.rightSide.childImageSharp.fluid}
+            alt="Część kamienicy"
+          />
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#C4C4C4" />
+          </svg>
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#1B1F1D" />
+          </svg>
+        </RightWrapper>
+      )}
     </HeroWrapper>
   )
 }

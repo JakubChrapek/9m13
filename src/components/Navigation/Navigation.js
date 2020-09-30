@@ -45,6 +45,7 @@ const Logo = styled.div`
   flex: 0 0 25%;
   @media only screen and (max-width: 767px) {
     flex: 0 0 75%;
+    z-index: 6;
   }
   a {
     display: inline-flex;
@@ -151,7 +152,7 @@ const MenuButton = styled.button`
   height: 24px;
   background-color: transparent;
   position: relative;
-  z-index: 4;
+  z-index: 6 !important;
   :focus {
     outline: 2px solid ${({ theme }) => theme.colors.black};
     outline-offset: 8px;
@@ -175,6 +176,7 @@ const MenuButton = styled.button`
   &.open {
     position: fixed;
     right: 28px;
+    z-index: 6;
     span {
       transform: translate3d(0, 10px, 0) rotate(45deg);
       &:nth-child(2) {
@@ -197,7 +199,7 @@ const Navigation = () => {
   return (
     <NavigationWrapper>
       <SkipNavLink to="#main">Skip navigation</SkipNavLink>
-      <Logo>
+      <Logo onClick={() => setOpen(false)}>
         <Link to="/">
           <span>numer 9</span> <span>mieszkania 13</span>
         </Link>

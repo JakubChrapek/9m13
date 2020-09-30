@@ -9,6 +9,12 @@ const StyledText = styled.p`
     letterSpacing ? letterSpacing : "0"};
   color: ${({ color, theme }) => (color ? color : theme.colors.black)};
   margin: ${({ margin }) => (margin ? margin : "0")};
+  @media only screen and (max-width: 767px) {
+    margin: ${({ mobileMargin }) => mobileMargin};
+    font-size: ${({ special }) => special && "20px !important"};
+    line-height: ${({ special }) => special && "32px !important"};
+    letter-spacing: ${({ special }) => special && "2px !important"};
+  }
   text-transform: ${({ textTransform }) => textTransform};
   text-align: ${({ textAlign }) => textAlign};
   z-index: ${({ zIndex }) => zIndex};
@@ -23,9 +29,11 @@ const Text = ({
   lineHeight,
   letterSpacing,
   margin,
+  mobileMargin,
   textTransform,
   textAlign,
   zIndex,
+  special,
 }) => {
   return (
     <StyledText
@@ -36,9 +44,11 @@ const Text = ({
       lineHeight={lineHeight}
       letterSpacing={letterSpacing}
       margin={margin}
+      mobileMargin={mobileMargin}
       textTransform={textTransform}
       textAlign={textAlign}
       zIndex={zIndex}
+      special={special}
     >
       {children}
     </StyledText>

@@ -4,6 +4,7 @@ import styled from "styled-components"
 export const StyledImage = styled(Image)`
   object-fit: contain;
   width: 100%;
+  picture,
   picture img {
     object-fit: contain !important;
     width: 100%;
@@ -21,6 +22,10 @@ export const HeroWrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.grayDarkest};
   position: relative;
   overflow: hidden;
+  @media only screen and (max-width: 767px) {
+    height: unset;
+    min-height: unset;
+  }
 `
 
 export const LeftWrapper = styled.div`
@@ -44,13 +49,8 @@ export const LeftWrapper = styled.div`
     margin-bottom: 10%;
     margin-top: 0;
   }
-  img,
-  picture {
+  img {
     z-index: 1;
-    @media only screen and (max-width: 1080px) {
-      width: 175% !important;
-      height: 100%;
-    }
   }
   svg {
     position: absolute;
@@ -70,9 +70,14 @@ export const LeftWrapper = styled.div`
     }
     @media only screen and (max-width: 1080px) {
       left: -22.5%;
-      top: 2%;
-      width: 47.5%;
+      top: 12%;
+      width: 45%;
     }
+
+    @media only screen and (max-width: 960px) {
+      top: 15%;
+    }
+
     circle {
       opacity: 20%;
     }
@@ -107,11 +112,18 @@ export const CenterWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media only screen and (max-width: 910px) {
+      align-items: flex-start;
+      padding: 155px 28px;
+    }
     li {
       list-style: none;
       margin-bottom: 52px;
       @media only screen and (max-width: 1310px) {
         margin-bottom: 36px;
+      }
+      @media only screen and (max-width: 910px) {
+        margin-bottom: 52px;
       }
       &:last-child {
         margin-bottom: 0;
@@ -127,6 +139,10 @@ export const CenterWrapper = styled.div`
           }
           @media only screen and (max-width: 1080px) {
             font-size: 18px;
+          }
+          @media only screen and (max-width: 910px) {
+            font-size: 20px;
+            line-height: 24px;
           }
           :after {
             content: "";
@@ -156,6 +172,10 @@ export const CenterWrapper = styled.div`
           @media only screen and (max-width: 1080px) {
             margin-left: 16px;
           }
+          @media only screen and (max-width: 910px) {
+            margin-left: 30px;
+            flex: 0 0 31px;
+          }
 
           transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
@@ -181,7 +201,6 @@ export const RightWrapper = styled.div`
   @media only screen and (max-width: 1080px) {
     flex: 1 1 30%;
     margin-bottom: 0;
-    margin-top: 15%;
     ${StyledImage} {
       align-self: stretch;
     }
@@ -189,10 +208,6 @@ export const RightWrapper = styled.div`
   img,
   picture {
     z-index: 1;
-    @media only screen and (max-width: 1080px) {
-      width: 175% !important;
-      height: 100%;
-    }
   }
   svg {
     position: absolute;
@@ -213,9 +228,12 @@ export const RightWrapper = styled.div`
     }
 
     @media only screen and (max-width: 1080px) {
-      width: 55%;
-      right: -30%;
-      bottom: -17.5%;
+      width: 45%;
+      right: -27%;
+      bottom: 10%;
+    }
+    @media only screen and (max-width: 960px) {
+      bottom: 14%;
     }
     :last-child {
       right: -7%;
@@ -224,6 +242,13 @@ export const RightWrapper = styled.div`
       @media only screen and (max-width: 1640px) {
         right: -7%;
         bottom: 15%;
+      }
+      @media only screen and (max-width: 1080px) {
+        right: -2%;
+        bottom: 19%;
+      }
+      @media only screen and (max-width: 960px) {
+        bottom: 22%;
       }
       circle {
         fill: #1b1f1d;
@@ -277,11 +302,13 @@ export const MainWrapper = styled.div`
   display: flex;
   max-width: 1440px;
 
-  span {
-    font-weight: 600;
+  @media only screen and (max-width: 767px) {
+    margin: 0 auto;
+    padding: 50px 28px 60px;
   }
 
-  h2 {
+  span {
+    font-weight: 600;
   }
 
   div {
@@ -296,12 +323,29 @@ export const MainWrapper = styled.div`
     position: sticky;
     top: 150px;
   }
+
+  @media only screen and (max-width: 767px) {
+    h2,
+    h3 {
+      font-size: 26px;
+      line-height: 32px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
 `
 
 export const StyledSection = styled.section`
   margin: ${({ margin }) => margin};
   padding: ${({ padding }) => padding};
   position: relative;
+
+  @media only screen and (max-width: 767px) {
+    margin: ${({ mobileMargin }) => mobileMargin};
+    padding: ${({ mobilePadding }) => mobilePadding};
+  }
 `
 
 export const SectionSpacer = styled.span`
@@ -310,5 +354,9 @@ export const SectionSpacer = styled.span`
   top: 0;
   background-color: #1b1f1d;
   width: calc(100% + 120px);
+  @media only screen and (max-width: 810px) {
+    left: 0;
+    max-width: 100%;
+  }
   height: 3px;
 `
