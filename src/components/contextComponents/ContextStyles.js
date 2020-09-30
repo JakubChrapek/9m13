@@ -14,7 +14,7 @@ export const StyledImage = styled(Image)`
 export const HeroWrapper = styled.section`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   height: calc(100vh - 140px);
   min-height: 60vh;
   margin: 0 auto;
@@ -28,13 +28,29 @@ export const LeftWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1 1 25%;
-  @media only screen and (max-width: 1340px) {
-    flex: 1 1 20%;
+  @media only screen and (max-width: 1640px) {
+    flex: 1 1 30%;
+  }
+  @media only screen and (max-width: 1310px) {
+    flex: 1 1 35%;
+    align-items: flex-start;
+    margin-top: 10%;
   }
   margin-bottom: 100px;
+
+  @media only screen and (max-width: 1080px) {
+    flex: 1 1 30%;
+    align-items: stretch;
+    margin-bottom: 10%;
+    margin-top: 0;
+  }
   img,
   picture {
     z-index: 1;
+    @media only screen and (max-width: 1080px) {
+      width: 175% !important;
+      height: 100%;
+    }
   }
   svg {
     position: absolute;
@@ -42,6 +58,21 @@ export const LeftWrapper = styled.div`
     top: 9%;
     z-index: 0;
     width: 33%;
+    @media only screen and (max-width: 1640px) {
+      left: -15%;
+      top: 10%;
+      width: 37.5%;
+    }
+    @media only screen and (max-width: 1310px) {
+      left: -17.5%;
+      top: 9%;
+      width: 42.5%;
+    }
+    @media only screen and (max-width: 1080px) {
+      left: -22.5%;
+      top: 2%;
+      width: 47.5%;
+    }
     circle {
       opacity: 20%;
     }
@@ -51,6 +82,15 @@ export const LeftWrapper = styled.div`
       top: unset;
       bottom: 17%;
       width: 25.5%;
+      @media only screen and (max-width: 1640px) {
+        left: -16%;
+        bottom: 24%;
+      }
+      @media only screen and (max-width: 1310px) {
+        width: 30%;
+        left: -18%;
+        bottom: 28%;
+      }
     }
   }
 `
@@ -70,6 +110,9 @@ export const CenterWrapper = styled.div`
     li {
       list-style: none;
       margin-bottom: 52px;
+      @media only screen and (max-width: 1310px) {
+        margin-bottom: 36px;
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -79,6 +122,12 @@ export const CenterWrapper = styled.div`
         text-decoration: none;
         h3 {
           position: relative;
+          @media only screen and (max-width: 1310px) {
+            font-size: 24px;
+          }
+          @media only screen and (max-width: 1080px) {
+            font-size: 18px;
+          }
           :after {
             content: "";
             position: absolute;
@@ -94,6 +143,9 @@ export const CenterWrapper = styled.div`
         :hover {
           + svg {
             transform: translateX(8px);
+            @media only screen and (max-width: 1080px) {
+              transform: translateX(6px);
+            }
           }
           h3:after {
             transform: scaleY(1);
@@ -101,6 +153,10 @@ export const CenterWrapper = styled.div`
         }
         svg {
           margin-left: 24px;
+          @media only screen and (max-width: 1080px) {
+            margin-left: 16px;
+          }
+
           transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
       }
@@ -113,13 +169,30 @@ export const RightWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1 1 25%;
-  @media only screen and (max-width: 1340px) {
-    flex: 1 1 20%;
+  @media only screen and (max-width: 1640px) {
+    flex: 1 1 30%;
+  }
+  @media only screen and (max-width: 1310px) {
+    flex: 1 1 35%;
+    align-items: flex-end;
+    margin-bottom: 15%;
   }
   margin-top: 52px;
+  @media only screen and (max-width: 1080px) {
+    flex: 1 1 30%;
+    margin-bottom: 0;
+    margin-top: 15%;
+    ${StyledImage} {
+      align-self: stretch;
+    }
+  }
   img,
   picture {
     z-index: 1;
+    @media only screen and (max-width: 1080px) {
+      width: 175% !important;
+      height: 100%;
+    }
   }
   svg {
     position: absolute;
@@ -128,10 +201,30 @@ export const RightWrapper = styled.div`
     z-index: 0;
     width: 33%;
 
+    @media only screen and (max-width: 1640px) {
+      width: 40%;
+      right: -23.5%;
+      bottom: 10%;
+    }
+    @media only screen and (max-width: 1310px) {
+      width: 45%;
+      right: -26%;
+      bottom: 10%;
+    }
+
+    @media only screen and (max-width: 1080px) {
+      width: 55%;
+      right: -30%;
+      bottom: -17.5%;
+    }
     :last-child {
       right: -7%;
       bottom: 10%;
       width: 25.5%;
+      @media only screen and (max-width: 1640px) {
+        right: -7%;
+        bottom: 15%;
+      }
       circle {
         fill: #1b1f1d;
         opacity: 20%;

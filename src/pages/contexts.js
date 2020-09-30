@@ -5,12 +5,20 @@ import ContextHeroSection from "../components/contextComponents/ContextHeroSecti
 import ContextContentSection from "../components/contextComponents/ContextContentSection"
 import Footer from "../components/Footer/FooterSection"
 
+import useCurrentWidth from "../components/hooks/useCurrentWidth"
+
 const ContextsPage = () => {
+  let width = useCurrentWidth()
+  const mobileBreakpoint = 767
+
   return (
     <>
       <Seo title="Konteksty" />
-      <ContextHeroSection />
-      <ContextContentSection />
+      <ContextHeroSection width={width} mobileBreakpoint={mobileBreakpoint} />
+      <ContextContentSection
+        width={width}
+        mobileBreakpoint={mobileBreakpoint}
+      />
       <Footer />
     </>
   )

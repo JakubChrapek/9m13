@@ -10,7 +10,6 @@ import Text from "../Text/Text"
 
 const ContextContentSection = () => {
   const mainNavLinks = document.querySelectorAll("main nav ul li a")
-  const navLinksRefs = []
 
   useEffect(() => {
     typeof window !== `undefined` &&
@@ -19,8 +18,6 @@ const ContextContentSection = () => {
 
         mainNavLinks.forEach(link => {
           let section = document.querySelector(link.hash)
-          console.log(section)
-
           if (
             section.offsetTop <= fromTop + 150 &&
             section.offsetTop + section.offsetHeight > fromTop
@@ -31,7 +28,7 @@ const ContextContentSection = () => {
           }
         })
       })
-  }, [navLinksRefs])
+  }, [mainNavLinks])
 
   const handleClick = e => {
     e.preventDefault()
@@ -49,14 +46,7 @@ const ContextContentSection = () => {
         <nav>
           <ul>
             <li>
-              <a
-                ref={ref => {
-                  navLinksRefs["opowiesci"] = ref
-                  return true
-                }}
-                onClick={e => handleClick(e)}
-                href="#opowiesci"
-              >
+              <a onClick={e => handleClick(e)} href="#opowiesci">
                 Opowieści kamienicy
               </a>
             </li>

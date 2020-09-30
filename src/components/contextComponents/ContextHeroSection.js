@@ -9,7 +9,7 @@ import {
 } from "./ContextStyles"
 import Text from "../Text/Text"
 
-const ContextHeroSection = ({ handleClick }) => {
+const ContextHeroSection = () => {
   const data = useStaticQuery(graphql`
     query ContextHeroQuery {
       leftSide: file(name: { eq: "konteksty-kamienica-lewa" }) {
@@ -47,7 +47,7 @@ const ContextHeroSection = ({ handleClick }) => {
       <CenterWrapper>
         <ul>
           <li>
-            <a onClick={e => handleClick(e)} href="#opowiesci">
+            <a href="#opowiesci">
               <Text
                 color="#fff"
                 fontSize="30px"
@@ -73,7 +73,7 @@ const ContextHeroSection = ({ handleClick }) => {
             </a>
           </li>
           <li>
-            <a onClick={e => handleClick(e)} href="#dotyk">
+            <a href="#dotyk">
               <Text
                 color="#fff"
                 fontSize="30px"
@@ -99,7 +99,7 @@ const ContextHeroSection = ({ handleClick }) => {
             </a>
           </li>
           <li>
-            <a onClick={e => handleClick(e)} href="#odczuwanie">
+            <a href="#odczuwanie">
               <Text
                 color="#fff"
                 fontSize="30px"
