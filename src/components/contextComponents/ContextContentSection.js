@@ -9,7 +9,10 @@ import {
 import Text from "../Text/Text"
 
 const ContextContentSection = ({ width, mobileBreakpoint }) => {
-  const mainNavLinks = document.querySelectorAll("main nav ul li a")
+  const mainNavLinks =
+    typeof window !== "undefined" &&
+    window.document &&
+    document.querySelectorAll("main nav ul li a")
   const tabletBreakpoint = 970
 
   useEffect(() => {
