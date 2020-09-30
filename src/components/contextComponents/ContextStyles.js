@@ -36,13 +36,14 @@ export const LeftWrapper = styled.div`
   @media only screen and (max-width: 1640px) {
     flex: 1 1 30%;
   }
-  @media only screen and (max-width: 1310px) {
-    flex: 1 1 35%;
-    align-items: flex-start;
-    margin-top: 10%;
-  }
   margin-bottom: 100px;
 
+  @media only screen and (max-width: 1310px) {
+    flex: 1 1 30%;
+    align-items: flex-start;
+    margin-top: 7%;
+    margin-bottom: 0;
+  }
   @media only screen and (max-width: 1080px) {
     flex: 1 1 30%;
     align-items: stretch;
@@ -66,7 +67,7 @@ export const LeftWrapper = styled.div`
     @media only screen and (max-width: 1310px) {
       left: -17.5%;
       top: 9%;
-      width: 42.5%;
+      width: 40%;
     }
     @media only screen and (max-width: 1080px) {
       left: -22.5%;
@@ -94,7 +95,7 @@ export const LeftWrapper = styled.div`
       @media only screen and (max-width: 1310px) {
         width: 30%;
         left: -18%;
-        bottom: 28%;
+        bottom: -4%;
       }
     }
   }
@@ -132,30 +133,30 @@ export const CenterWrapper = styled.div`
         display: flex;
         align-items: center;
         text-decoration: none;
-        h3 {
-          position: relative;
-          @media only screen and (max-width: 1310px) {
-            font-size: 24px;
-          }
-          @media only screen and (max-width: 1080px) {
-            font-size: 18px;
-          }
-          @media only screen and (max-width: 910px) {
-            font-size: 20px;
-            line-height: 24px;
-          }
-          :after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 100%;
-            height: 2px;
-            background-color: #fff;
-            transform: scaleY(0);
-            transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-          }
+        color: #fff;
+        position: relative;
+        @media only screen and (max-width: 1310px) {
+          font-size: 24px;
         }
+        @media only screen and (max-width: 1080px) {
+          font-size: 18px;
+        }
+        @media only screen and (max-width: 910px) {
+          font-size: 20px;
+          line-height: 24px;
+        }
+        :after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -8px;
+          width: 100%;
+          height: 2px;
+          background-color: #fff;
+          transform: scaleY(0);
+          transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
         :hover {
           + svg {
             transform: translateX(8px);
@@ -163,7 +164,7 @@ export const CenterWrapper = styled.div`
               transform: translateX(6px);
             }
           }
-          h3:after {
+          :after {
             transform: scaleY(1);
           }
         }
@@ -192,12 +193,13 @@ export const RightWrapper = styled.div`
   @media only screen and (max-width: 1640px) {
     flex: 1 1 30%;
   }
-  @media only screen and (max-width: 1310px) {
-    flex: 1 1 35%;
-    align-items: flex-end;
-    margin-bottom: 15%;
-  }
   margin-top: 52px;
+  @media only screen and (max-width: 1310px) {
+    flex: 1 1 30%;
+    align-items: flex-end;
+    margin-bottom: 2%;
+    margin-top: 0;
+  }
   @media only screen and (max-width: 1080px) {
     flex: 1 1 30%;
     margin-bottom: 0;
@@ -222,9 +224,9 @@ export const RightWrapper = styled.div`
       bottom: 10%;
     }
     @media only screen and (max-width: 1310px) {
-      width: 45%;
+      width: 40%;
       right: -26%;
-      bottom: 10%;
+      bottom: -6%;
     }
 
     @media only screen and (max-width: 1080px) {
@@ -242,6 +244,10 @@ export const RightWrapper = styled.div`
       @media only screen and (max-width: 1640px) {
         right: -7%;
         bottom: 15%;
+      }
+      @media only screen and (max-width: 1310px) {
+        right: -5%;
+        bottom: 2%;
       }
       @media only screen and (max-width: 1080px) {
         right: -2%;
@@ -297,7 +303,7 @@ export const NavWrapper = styled.div`
 `
 
 export const MainWrapper = styled.div`
-  margin: 150px auto;
+  margin: 150px auto 75px;
   padding: 0 0 50px 75px;
   display: flex;
   max-width: 1440px;

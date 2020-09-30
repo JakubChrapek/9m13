@@ -30,6 +30,14 @@ const ContextHeroSection = ({ width, mobileBreakpoint }) => {
       }
     }
   `)
+  const handleClick = e => {
+    e.preventDefault()
+    let section = document.querySelector(e.target.hash)
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+  }
 
   return (
     <HeroWrapper>
@@ -51,17 +59,8 @@ const ContextHeroSection = ({ width, mobileBreakpoint }) => {
       <CenterWrapper>
         <ul>
           <li>
-            <a href="#opowiesci">
-              <Text
-                color="#fff"
-                fontSize="30px"
-                lineHeight="1.3em"
-                fontWeight="600"
-                as="h3"
-              >
-                Zuzanna Bojda, Opowieści kamienicy
-              </Text>
-
+            <a onClick={e => handleClick(e)} href="#opowiesci">
+              Zuzanna Bojda, Opowieści kamienicy
               <svg
                 width="31"
                 height="16"
@@ -77,17 +76,8 @@ const ContextHeroSection = ({ width, mobileBreakpoint }) => {
             </a>
           </li>
           <li>
-            <a href="#dotyk">
-              <Text
-                color="#fff"
-                fontSize="30px"
-                lineHeight="1.3em"
-                fontWeight="600"
-                as="h3"
-              >
-                Jagoda Prześluga, O dotyku
-              </Text>
-
+            <a onClick={e => handleClick(e)} href="#dotyk">
+              Jagoda Prześluga, O dotyku
               <svg
                 width="31"
                 height="16"
@@ -103,17 +93,8 @@ const ContextHeroSection = ({ width, mobileBreakpoint }) => {
             </a>
           </li>
           <li>
-            <a href="#odczuwanie">
-              <Text
-                color="#fff"
-                fontSize="30px"
-                lineHeight="1.3em"
-                fontWeight="600"
-                as="h3"
-              >
-                Steen Eiler Rasmussen, Odczuwanie architektury
-              </Text>
-
+            <a onClick={e => handleClick(e)} href="#odczuwanie">
+              Steen Eiler Rasmussen, Odczuwanie architektury
               <svg
                 width="31"
                 height="16"

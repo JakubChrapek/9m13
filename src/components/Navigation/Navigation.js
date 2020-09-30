@@ -206,19 +206,19 @@ const Navigation = () => {
       </Logo>
       <NavigationList className={open ? "open" : ""}>
         <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/spectacle">Spektakl</StyledNavLink>
+          <StyledNavLink to="/#spektakl">Spektakl</StyledNavLink>
         </NavigationListItem>
         <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/actors">Postacie</StyledNavLink>
+          <StyledNavLink to="/#realizatorzy">Realizatorzy</StyledNavLink>
         </NavigationListItem>
         <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/creators">Realizatorzy</StyledNavLink>
+          <StyledNavLink to="/#postacie">Postacie</StyledNavLink>
         </NavigationListItem>
         <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/contexts">Konteksty</StyledNavLink>
+          <StyledNavLink to="/konteksty">Konteksty</StyledNavLink>
         </NavigationListItem>
         <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/workshop">Warsztat</StyledNavLink>
+          <StyledNavLink to="/warsztat">Warsztat</StyledNavLink>
         </NavigationListItem>
       </NavigationList>
       <MenuButton className={open ? "open" : ""} onClick={() => setOpen(!open)}>

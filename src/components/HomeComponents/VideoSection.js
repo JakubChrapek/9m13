@@ -4,7 +4,7 @@ import { VideoSection, VideoIframe, VideoContainer } from "./HomeStyles"
 
 const Video = () => {
   return (
-    <VideoSection>
+    <VideoSection id="spektakl">
       <VideoContainer>
         <Text
           color="#fff"

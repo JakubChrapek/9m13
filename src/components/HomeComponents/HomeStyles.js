@@ -264,7 +264,6 @@ export const VideoSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
   height: calc(100vh + 235px);
   @media only screen and (min-width: 1440px) {
     height: 100vh;
@@ -325,7 +324,6 @@ export const ArtBriefSection = styled.div`
 `
 
 export const DetailsSection = styled.section`
-  width: 100vw;
   margin: 0 auto;
   background-color: ${({ bg, theme }) => (bg ? bg : theme.colors.grayDarkest)};
 `
@@ -503,7 +501,6 @@ export const CreatorsSection = styled(motion.section)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   margin: 0 auto;
   height: 100vh;
   background-color: ${({ bg, theme }) => (bg ? bg : theme.colors.grayDarkest)};

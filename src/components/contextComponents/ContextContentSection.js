@@ -37,7 +37,6 @@ const ContextContentSection = ({ width, mobileBreakpoint }) => {
   const handleClick = e => {
     e.preventDefault()
     let section = document.querySelector(e.target.hash)
-    console.log("AAA")
     section.scrollIntoView({
       behavior: "smooth",
       block: "start",

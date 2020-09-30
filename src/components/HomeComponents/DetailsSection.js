@@ -9,7 +9,7 @@ import {
 
 const Details = () => {
   return (
-    <DetailsSection>
+    <DetailsSection id="realizatorzy">
       <PeopleDetailsWrapper>
         <RealisatorsWrapper>
           <Text as="h3" fontSize="52px" lineHeight="60px" color="#fff">

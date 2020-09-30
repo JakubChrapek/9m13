@@ -26,7 +26,7 @@ const Characters = ({ width, mobileBreakpoint }) => {
   `)
 
   return (
-    <CharactersWrapper>
+    <CharactersWrapper id="postacie">
       <Text
         fontSize="52px"
         fontWeight="400"
