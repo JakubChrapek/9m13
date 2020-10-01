@@ -1,11 +1,24 @@
 import React from "react"
 import Seo from "../components/Seo"
+import Hero from "../components/workshopComponents/heroWorkshop"
+import About from "../components/workshopComponents/aboutWorkshop"
+import HowTo from "../components/workshopComponents/howToAttend"
+import Teacher from "../components/workshopComponents/teacherWorkshop"
+import VideoSection from "../components/workshopComponents/videoSection"
+import WhoSection from "../components/workshopComponents/whoSection"
+
+import {} from "../components/workshopComponents/workshopStyles"
 
 const WorkshopPage = () => {
   return (
     <>
       <Seo title="Warsztat" />
-      Warsztat
+      <Hero />
+      <WhoSection />
+      <About />
+      <HowTo />
+      <VideoSection />
+      <Teacher />
     </>
   )
 }

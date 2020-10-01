@@ -7,4 +7,5 @@ export const Flex = styled.div`
   align-items: ${({ alignItems }) => alignItems};
   margin: ${({ margin }) => margin};
   width: ${({ width }) => width};
+  position: ${({ relative }) => relative && "relative"};
 `
