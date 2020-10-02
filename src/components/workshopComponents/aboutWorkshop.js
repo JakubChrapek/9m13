@@ -9,16 +9,15 @@ import {
 } from "./workshopStyles"
 import Text from "../Text/Text"
 import Image from "gatsby-image"
-import GifPlayer from "react-gif-player"
-import PrzebiegWarsztatuGif from "../../assets/gifs/przebieg-warsztatu.gif"
-import PrzebiegWarsztatuStill from "../../assets/gifs/przebieg-still.jpg"
+import WarsztatMP4 from "../../assets/gifs/warsztat.mp4"
+import WarsztatWEBM from "../../assets/gifs/warsztat.webm"
 
 const AboutWorkshop = () => {
-  const [playing, setPlaying] = useState(true)
-  const currentGif = useRef()
+  const [playing, setPlaying] = useState(false)
 
   const handlePauseGif = e => {
-    e.preventDefault()
+    playing ? e.target.pause() : e.target.play()
+    setPlaying(!playing)
   }
   const data = useStaticQuery(graphql`
     query aboutQuery {
@@ -61,19 +60,11 @@ const AboutWorkshop = () => {
       </WorkshopWrapper>
       <WorkshopWrapper>
         <WorkshopDiv margin="0" column relative>
-          <GifPlayer
-            gif={PrzebiegWarsztatuGif}
-            still={PrzebiegWarsztatuStill}
-            ref={currentGif}
-            pauseRef={currentGif}
-            onTogglePlay={playing => setPlaying({ playing })}
-          />
-          <GifToggleButton
-            className={!playing.playing && "show"}
-            disabled={!playing.playing}
-            onClick={e => handlePauseGif(e)}
-            playing={playing.playing}
-          />
+          <video height="300px" loop muted onClick={e => handlePauseGif(e)}>
+            <source src={WarsztatWEBM} type="video/webm" />
+            <source src={WarsztatMP4} type="video/mp4" />
+          </video>
+          <GifToggleButton className={!playing && "show"} playing={playing} />
         </WorkshopDiv>
         <WorkshopDiv column>
           <Text as="h2">Przebieg warsztatu:</Text>
