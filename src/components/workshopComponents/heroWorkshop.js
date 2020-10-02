@@ -1,13 +1,8 @@
 import React, { useState, useRef } from "react"
-import AnimacjaPoklatkowaGif from "../../assets/gifs/animacja-poklatkowa.gif"
-import AnimacjaStill from "../../assets/gifs/animacja-still.jpg"
-import Animacjawebm from "../../assets/gifs/warsztat.webm"
-import Animacjamp4 from "../../assets/gifs/warsztat.mp4"
 
 import { Flex } from "../Flex/Flex"
 import { Wrapper, GifToggleButton, VideoIframe } from "./workshopStyles"
 import Text from "../Text/Text"
-import GifPlayer from "react-gif-player"
 
 const HeroWorkshop = () => {
   const [playing, setPlaying] = useState(true)
