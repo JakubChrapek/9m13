@@ -8,7 +8,7 @@ const NavigationWrapper = styled.nav`
   margin: 0 auto;
   padding: 40px 75px;
   @media (max-width: 960px) {
-    padding: 25px 20px;
+    padding: 25px 28px;
   }
   height: 140px;
   display: flex;

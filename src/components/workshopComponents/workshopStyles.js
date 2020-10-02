@@ -54,19 +54,65 @@ export const Wrapper = styled.section`
   justify-content: center;
   align-items: stretch;
   padding: 30px 160px 30px 180px;
+  max-width: 1440px;
   @media only screen and (max-width: 1440px) {
     padding: 30px 90px 30px 120px;
   }
-  max-width: 1440px;
+  @media only screen and (max-width: 1306px) {
+    padding: 30px 70px 30px 90px;
+  }
+  @media only screen and (max-width: 1153px) {
+    padding: 30px 40px 30px 60px;
+  }
+  @media only screen and (max-width: 1007px) {
+    padding: 30px 75px 30px;
+    max-width: 100%;
+    flex-direction: column;
+  }
+  @media (max-width: 960px) {
+    padding: 30px 28px;
+  }
 
   div:first-child {
     flex: 1 1 40%;
     align-self: center;
+    @media only screen and (max-width: 1007px) {
+      flex: 1 1 100%;
+      order: 1;
+      margin: 0 -14px 0 14px;
+      width: 420px;
+      align-self: flex-start;
+    }
+    @media only screen and (max-width: 500px) {
+      width: unset;
+    }
     h1 {
       font-size: 52px;
       line-height: 62px;
       font-weight: 600;
       margin-right: -40%;
+      @media only screen and (max-width: 1306px) {
+        font-size: 42px;
+        line-height: 50px;
+      }
+      @media only screen and (max-width: 1153px) {
+        font-size: 36px;
+        line-height: 44px;
+        margin-right: -20%;
+      }
+      @media only screen and (max-width: 1007px) {
+        font-size: 30px;
+        line-height: 41px;
+        margin: 50px 0 0;
+      }
+      @media only screen and (max-width: 838px) {
+        margin: 20px 0 0;
+      }
+      @media only screen and (max-width: 350px) {
+        font-size: 26px;
+        line-height: 36px;
+        margin: 0 0 0;
+      }
     }
     p {
       margin-top: 24px;
@@ -74,6 +120,27 @@ export const Wrapper = styled.section`
       line-height: 50px;
       letter-spacing: 0.05em;
       margin-right: -35%;
+      @media only screen and (max-width: 1306px) {
+        font-size: 26px;
+        line-height: 42px;
+      }
+      @media only screen and (max-width: 1153px) {
+        font-size: 22px;
+        line-height: 38px;
+        margin-right: -25%;
+      }
+      @media only screen and (max-width: 1007px) {
+        font-size: 22px;
+        line-height: 36px;
+        margin-right: 0;
+        margin-top: 18px;
+      }
+      @media only screen and (max-width: 350px) {
+        font-size: 18px;
+        line-height: 30px;
+        margin-right: 0;
+        margin-top: 12px;
+      }
     }
     h1,
     p {
@@ -84,8 +151,34 @@ export const Wrapper = styled.section`
 
   div:last-child {
     flex: 1 1 60%;
+    @media only screen and (max-width: 1306px) {
+      flex: 1 1 70%;
+    }
     height: 60vh;
-    max-height: 700px;
+    max-height: 450px;
+    @media only screen and (max-width: 1153px) {
+      max-height: 350px;
+    }
+    @media only screen and (max-width: 1007px) {
+      flex: 1 1 100%;
+      order: 0;
+      max-height: 450px;
+    }
+    @media only screen and (max-width: 680px) {
+      max-height: 350px;
+    }
+    @media only screen and (max-width: 625px) {
+      max-height: 320px;
+    }
+    @media only screen and (max-width: 515px) {
+      max-height: 260px;
+    }
+    @media only screen and (max-width: 425px) {
+      max-height: 210px;
+    }
+    @media only screen and (max-width: 385px) {
+      max-height: 180px;
+    }
   }
   .gif_player {
     flex: unset !important;
@@ -108,7 +201,19 @@ export const WhoWrapper = styled.section`
   align-items: flex-start;
   padding: 120px 110px 90px 50px;
   @media only screen and (max-width: 1260px) {
-    padding: 120px 110px 30px 50px;
+    padding: 120px 110px 60px 50px;
+  }
+  @media only screen and (max-width: 1260px) {
+    padding: 100px 90px 60px 40px;
+  }
+  @media only screen and (max-width: 840px) {
+    padding: 60px 60px 60px 40px;
+  }
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 60px 28px;
   }
   max-width: 1440px;
 `
@@ -117,6 +222,20 @@ export const ImageWrapper = styled.div`
   display: flex;
   flex: 1 1 45%;
   margin-right: 110px;
+  @media only screen and (max-width: 944px) {
+    margin-right: 70px;
+  }
+  @media only screen and (max-width: 840px) {
+    margin-right: 60px;
+  }
+  @media only screen and (max-width: 768px) {
+    margin-right: 0;
+    flex: 1 1 100%;
+    width: 100%;
+    order: -1;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
   justify-content: flex-end;
   .gatsby-image-wrapper {
     width: 100%;
@@ -137,6 +256,11 @@ export const TextWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 75px;
+  @media only screen and (max-width: 768px) {
+    flex: 1 1 100%;
+    order: 1;
+    margin-top: 40px;
+  }
   h2 {
     font-size: 52px;
     line-height: 60px;
@@ -148,6 +272,11 @@ export const TextWrapper = styled.div`
       font-size: 34px;
       line-height: 42px;
     }
+    @media only screen and (max-width: 768px) {
+      margin-top: 0;
+      font-size: 30px;
+      line-height: 41px;
+    }
   }
   ul {
     padding: 0;
@@ -158,10 +287,38 @@ export const TextWrapper = styled.div`
     @media only screen and (max-width: 1263px) {
       margin: 24px 0 0;
     }
+    @media only screen and (max-width: 768px) {
+      margin: 8px 0 0;
+    }
     li {
       font-size: 20px;
       line-height: 33px;
       list-style: none;
+      @media only screen and (max-width: 944px) {
+        font-size: 18px;
+        line-height: 30px;
+      }
+      @media only screen and (max-width: 768px) {
+        font-size: 16px;
+        line-height: 27px;
+        letter-spacing: 0.01em;
+      }
+    }
+
+    @media only screen and (max-width: 944px) {
+      + p {
+        margin-top: 70px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      + p {
+        margin-top: 40px;
+        font-size: 17px;
+        line-height: 27px;
+        letter-spacing: 0.1em;
+      }
     }
   }
 `

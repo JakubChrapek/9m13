@@ -22,7 +22,7 @@ const WhoSection = () => {
       <ImageWrapper>
         <Image
           fluid={data.warsztat.childImageSharp.fluid}
-          alt="Magdalena Parszewska z lampami błyskowymi i sprzętem do tworzenia animacji poklatowej"
+          alt="Magdalena Parszewska z lampami błyskowymi i sprzętem do tworzenia animacji poklatkowej"
         />
       </ImageWrapper>
       <TextWrapper column>
@@ -48,7 +48,7 @@ const WhoSection = () => {
         >
           Stwórz własną produkcję krótkometrażową w warunkach domowych przy
           użyciu darmowych aplikacji do animacji poklatkowej i ogólnodostępnych
-          materiałów plastycznych. Przekonaj się, że można zrobić własną
+          materiałów plastycznych. Przekonaj się, że można zrobić własną
           animację, bez użycia profesjonalnego sprzętu, używając do tego
           przedmiotów codziennego użytku, które znajdziesz w domu. Można ożywić
           i wprawić w ruch wszystko, ogranicza nas tylko nasza wyobraźnia!

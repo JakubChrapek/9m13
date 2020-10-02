@@ -17,7 +17,7 @@ const HeroWorkshop = () => {
       <Flex column>
         <Text as="h1">Warsztaty z animacji poklatkowej online</Text>
         <Text>
-          Weź udział w bezpłatnych warsztatach animacji poklatowej online!
+          Weź udział w bezpłatnych warsztatach animacji poklatkowej online!
         </Text>
       </Flex>
       <Flex justifyContent="center" alignItems="center" relative column>
