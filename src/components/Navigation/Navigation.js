@@ -212,7 +212,7 @@ const Navigation = () => {
           <StyledNavLink to="/#realizatorzy">Realizatorzy</StyledNavLink>
         </NavigationListItem>
         <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/#postacie">Postacie</StyledNavLink>
+          <StyledNavLink to="/#postaci">postaci</StyledNavLink>
         </NavigationListItem>
         <NavigationListItem onClick={() => setOpen(false)}>
           <StyledNavLink to="/konteksty">Konteksty</StyledNavLink>

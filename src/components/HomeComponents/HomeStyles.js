@@ -4,9 +4,11 @@ import { motion } from "framer-motion"
 
 export const HiddenOverflowWrapper = styled.div`
   overflow: hidden;
+  background-color: #fff;
 `
 
 export const HeroSection = styled.div`
+  background-color: #fff;
   height: calc(100vh - 180px);
   @media only screen and (max-width: 960px) {
     height: calc(100vh - 120px);

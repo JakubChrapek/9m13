@@ -55,13 +55,13 @@ const ContextContentSection = ({ width, mobileBreakpoint }) => {
                 </a>
               </li>
               <li>
-                <a onClick={e => handleClick(e)} href="#odczuwanie">
-                  odczuwanie architektury
+                <a onClick={e => handleClick(e)} href="#dotyk">
+                  o dotyku
                 </a>
               </li>
               <li>
-                <a onClick={e => handleClick(e)} href="#dotyk">
-                  o dotyku
+                <a onClick={e => handleClick(e)} href="#odczuwanie">
+                  odczuwanie architektury
                 </a>
               </li>
             </ul>
@@ -238,6 +238,185 @@ const ContextContentSection = ({ width, mobileBreakpoint }) => {
         <StyledSection
           padding="62px 0 0"
           margin="62px 0 0"
+          mobileMargin="40px 0 0"
+          mobilePadding="40px 0 0"
+          lineTop
+          id="dotyk"
+        >
+          <SectionSpacer />
+          <Text
+            as="h2"
+            margin="0 0 26px"
+            fontSize="52px"
+            lineHeight="60px"
+            fontWeight="400"
+          >
+            O dotyku
+          </Text>
+          <Text>
+            Jak encyklopedia definiuje tak oczywiste dla nas pojęcia, jak
+            bliskość, czucie, dotyk?
+          </Text>
+
+          <Text margin="32px 0 0" mobileMargin="20px 0 0">
+            „Dotyk, zmysł dotyku: rodzaj czucia, zdolność odczuwania działania
+            bodźców mechanicznych na powierzchnię skóry za pomocą receptorów w
+            skórze właściwej i głębokiej warstwie naskórka. Czucie:
+            fizjologiczne odbieranie informacji ze środowiska zewnętrznego i
+            wewnętrznego organizmu ludzkiego i zwierzęcego oraz przetwarzanie
+            jej na wrażenia zmysłowe.”
+          </Text>
+          <section id="czułość drzew">
+            <Text
+              as="h3"
+              margin="24px 0"
+              fontSize="30px"
+              lineHeight="36px"
+              fontWeight="400"
+            >
+              Czułość drzew
+            </Text>
+            <Text>
+              Dotyk jest czymś naturalnym, większość z nas go pragnie, wszyscy –
+              potrzebują. „Odbieramy informację z zewnątrz” i przetwarzamy je na
+              własne wrażenia – dotyk może nas stymulować na różne sposoby. Za
+              pomocą tego zmysłu odczuwamy ból, przyjemność czy ulgę. Od
+              pierwszych dni życia to czułość i bliskość rodzica wobec dziecka
+              kształtują zdrowe więzi, przynoszące skutki w dorosłym życiu.
+              Przytulamy się do bliskich nam osób. Owijamy szczelnie kocem w
+              chłodny dzień. Popularna od kilku lat na całym świecie japońska,
+              prozdrowotna praktyka  Shinrin-yoku, leśnych kąpieli, daje
+              ukojenie poprzez bliski kontakt z naturą, a zwłaszcza – drzewami.
+              Nawet pięciominutowe przytulenie pnia drzewa (w ciszy lasu i z
+              wyłączonym telefonem komórkowym) redukuje stres, obniża ciśnienie
+              krwi i dodaje energii. Czuły kontakt z naturą uspokaja, poprawia
+              odporność, a nawet może pomóc w zaburzeniach snu.
+            </Text>
+          </section>
+          <section id="eksperyment harlowa">
+            <Text
+              as="h3"
+              margin="40px 0 20px"
+              mobileMargin="32px 0 20px"
+              fontSize="30px"
+              lineHeight="36px"
+              fontWeight="400"
+            >
+              Eksperyment Harlowa
+            </Text>
+            <Text>
+              Już w latach 60. amerykański psycholog Harry Harlow przeprowadził
+              pewien eksperyment – z etycznego punktu widzenia uznawany dziś za
+              niepoprawny, ale dowodzący ogromnej potrzeby bliskości wszystkich
+              żywych istot. Harlow oddzielił młode małpki – makaki od ich matek
+              i umieścił w klatce z dwiema „sztucznymi” małpami-matkami – jedną
+              wykonaną z twardego tworzywa, ale trzymającą butelkę z mlekiem dla
+              małpek i drugą, szmacianą, miękką, lecz niewyposażoną w pokarm.
+              Małpiątka częściej wybierały miękką kukłę, do której mogły się
+              przytulić, w hierarchii stawiając potrzebę bliskości ponad
+              odczuciem głodu.
+            </Text>
+          </section>
+          <section id="temple">
+            <Text
+              as="h3"
+              margin="40px 0 20px"
+              mobileMargin="32px 0 20px"
+              fontSize="30px"
+              lineHeight="36px"
+              fontWeight="400"
+            >
+              Temple i "maszyna do przytulania"
+            </Text>
+            <Text>
+              Dla niektórych bezpośredni dotyk drugiego człowieka czy nawet
+              przedmiotu jest trudny. Cierpiąca na autyzm Temple Grandin, której
+              mózg jest zbudowany inaczej niż większości ludzi (podobnie jak
+              mózgi wszystkich dotkniętych autyzmem), od dziecka borykała się z
+              uczuciem nieprzystawalności. Fascynowały ją wirujące przedmioty,
+              drażnił dźwięk spłukiwanej toalety, odgłosy ssania, alarmy. Miała
+              trudności z algebrą, językiem, dopiero w wieku 4 lat (wspierana
+              przez niezwykle zdeterminowaną matkę) nauczyła się mówić.
+            </Text>
+            <Text>
+              Temple w wieku dojrzewania zaczęła doświadczać silnych lęków.
+              Pracując na ranczu w Arizonie zupełnie przez przypadek odkryła,
+              jak uspokajająco działa na zwierzęta wprowadzanie do specjalnego,
+              uciskowego kojca - poskromu, w którym je umieszczano w celu np.
+              wykonania zastrzyku. Silny ucisk działał na krowy wyciszająco.
+              Niedługo później, podczas nagłego ataku paniki, Temple weszła do
+              poskromu i ku swojemu zaskoczeniu - natychmiast poczuła się
+              lepiej. Postanowiła zbudować podobne urządzenie także dla siebie.
+            </Text>
+            <Text
+              margin="70px 0"
+              mobileMargin="32px 0"
+              fontSize="24px"
+              lineHeight="38px"
+              special
+            >
+              „Po dodaniu miękkich obić poczułam coś innego, niż tylko
+              odprężenie. Poczułam serdeczność w stosunku do ludzi, pojawiły się
+              uczucia społeczne, miałam przyjemniejsze sny.”
+            </Text>
+          </section>
+          <section id="dotyk">
+            <Text
+              as="h3"
+              margin="0 0 20px"
+              mobileMargin="0 0 24px"
+              fontSize="30px"
+              lineHeight="36px"
+              fontWeight="400"
+            >
+              Czy czuły dotyk może boleć?
+            </Text>
+            <Text>
+              Dla Temple bezpośredni dotyk drugiego człowieka nie był możliwy –
+              nadwrażliwa na bodźce dziewczynka reagowała paniką, dotyk sprawiał
+              jej niemalże fizyczny ból. Potrzeba dotyku – mimo jej schorzenia –
+              nie została jednak stłumiona, Temple musiała jedynie znaleźć
+              metodę na to, by móc kontrolować siłę, natężenie i czas ucisku.
+            </Text>
+            <Text>
+              Stworzona przez nią „maszyna do przytulania” i wnikliwa obserwacja
+              zachowania zwierząt pomogły jej ukończyć szkołę i studia z tytułem
+              psychologa i zoologa. Dzięki swojej niezwykłej wrażliwości do dziś
+              angażuje się w pomoc osobom cierpiącym na autyzm. Zajmuje się
+              także projektowaniem specjalnych urządzeń do humanitarnego uboju
+              zwierząt. Napisała wiele książek, prowadzi wykłady i szkolenia,
+              które pomagają ludziom lepiej zrozumieć autystyków i ich sposób
+              widzenia, a przede wszystkim – ODCZUWANIA świata.
+            </Text>
+          </section>
+          <section id="blisko">
+            <Text
+              as="h3"
+              margin="40px 0 20px"
+              mobileMargin="32px 0 24px"
+              fontSize="30px"
+              lineHeight="36px"
+              fontWeight="400"
+            >
+              Tak blisko, tak daleko
+            </Text>
+            <Text>
+              Postać Temple Grandin i jej słynna maszyna do przytulania były
+              inspiracją także dla twórców spektaklu „numer 9 mieszkania 13”, w
+              którym bohaterowie – mieszkańcy jednej kamienicy, obcujący ze sobą
+              na co dzień (przez sam fakt zamieszkiwania jednego budynku i
+              mijania się na jego korytarzach), tak naprawdę zamknięci są w
+              jednym miejscu – w  domu, będącym, jak pisze autorka „zbiorem
+              pragnień, uczuć, możliwości”. Uczuć, które mimo bliskiej
+              odległości i możności „dotknięcia” – czasem tak trudno jest
+              zaspokoić.
+            </Text>
+            <Text margin="20px 0 0">Jagoda Prześluga</Text>
+          </section>
+        </StyledSection>
+        <StyledSection
+          padding="62px 0 0"
+          margin="62px 0 0"
           lineTop
           id="odczuwanie"
         >
@@ -362,185 +541,6 @@ const ContextContentSection = ({ width, mobileBreakpoint }) => {
             Fragmenty pochodzą z książki „Odczuwanie architektury”
           </Text>
           <Text>Steen Eiler Rasmussen.</Text>
-        </StyledSection>
-
-        <StyledSection
-          padding="62px 0 0"
-          margin="62px 0 0"
-          mobileMargin="40px 0 0"
-          mobilePadding="40px 0 0"
-          lineTop
-          id="dotyk"
-        >
-          <SectionSpacer />
-          <Text
-            as="h2"
-            margin="0 0 26px"
-            fontSize="52px"
-            lineHeight="60px"
-            fontWeight="400"
-          >
-            O dotyku
-          </Text>
-          <Text>
-            Jak encyklopedia definiuje tak oczywiste dla nas pojęcia, jak
-            bliskość, czucie, dotyk?
-          </Text>
-
-          <Text margin="32px 0 0" mobileMargin="20px 0 0">
-            „Dotyk, zmysł dotyku: rodzaj czucia, zdolność odczuwania działania
-            bodźców mechanicznych na powierzchnię skóry za pomocą receptorów w
-            skórze właściwej i głębokiej warstwie naskórka. Czucie:
-            fizjologiczne odbieranie informacji ze środowiska zewnętrznego i
-            wewnętrznego organizmu ludzkiego i zwierzęcego oraz przetwarzanie
-            jej na wrażenia zmysłowe.”
-          </Text>
-          <section id="czułość drzew">
-            <Text
-              as="h3"
-              margin="24px 0"
-              fontSize="30px"
-              lineHeight="36px"
-              fontWeight="400"
-            >
-              Czułość drzew
-            </Text>
-            <Text>
-              Dotyk jest czymś naturalnym, większość z nas go pragnie, wszyscy –
-              potrzebują. „Odbieramy informację z zewnątrz” i przetwarzamy je na
-              własne wrażenia – dotyk może nas stymulować na różne sposoby. Za
-              pomocą tego zmysłu odczuwamy ból, przyjemność czy ulgę. Od
-              pierwszych dni życia to czułość i bliskość rodzica wobec dziecka
-              kształtują zdrowe więzi, przynoszące skutki w dorosłym życiu.
-              Przytulamy się do bliskich nam osób. Owijamy szczelnie kocem w
-              chłodny dzień. Popularna od kilku lat na całym świecie japońska,
-              prozdrowotna praktyka  Shinrin-yoku, leśnych kąpieli, daje
-              ukojenie poprzez bliski kontakt z naturą, a zwłaszcza – drzewami.
-              Nawet pięciominutowe przytulenie pnia drzewa (w ciszy lasu i z
-              wyłączonym telefonem komórkowym) redukuje stres, obniża ciśnienie
-              krwi i dodaje energii. Czuły kontakt z naturą uspokaja, poprawia
-              odporność, a nawet może pomóc w zaburzeniach snu.
-            </Text>
-          </section>
-          <section id="eksperyment harlowa">
-            <Text
-              as="h3"
-              margin="40px 0 20px"
-              mobileMargin="32px 0 20px"
-              fontSize="30px"
-              lineHeight="36px"
-              fontWeight="400"
-            >
-              Eksperyment Harlowa
-            </Text>
-            <Text>
-              Już w latach 60. amerykański psycholog Harry Harlow przeprowadził
-              pewien eksperyment – z etycznego punktu widzenia uznawany dziś za
-              niepoprawny, ale dowodzący ogromnej potrzeby bliskości wszystkich
-              żywych istot. Harlow oddzielił młode małpki – makaki od ich matek
-              i umieścił w klatce z dwiema „sztucznymi” małpami-matkami – jedną
-              wykonaną z twardego tworzywa, ale trzymającą butelkę z mlekiem dla
-              małpek i drugą, szmacianą, miękką, lecz niewyposażoną w pokarm.
-              Małpiątka częściej wybierały miękką kukłę, do której mogły się
-              przytulić, w hierarchii stawiając potrzebę bliskości ponad
-              odczuciem głodu.
-            </Text>
-          </section>
-          <section id="temple">
-            <Text
-              as="h3"
-              margin="40px 0 20px"
-              mobileMargin="32px 0 20px"
-              fontSize="30px"
-              lineHeight="36px"
-              fontWeight="400"
-            >
-              Temple i "maszyna do przytulania"
-            </Text>
-            <Text>
-              Dla niektórych bezpośredni dotyk drugiego człowieka czy nawet
-              przedmiotu jest trudny. Cierpiąca na autyzm Temple Grandin, której
-              mózg jest zbudowany inaczej niż większości ludzi (podobnie jak
-              mózgi wszystkich dotkniętych autyzmem), od dziecka borykała się z
-              uczuciem nieprzystawalności. Fascynowały ją wirujące przedmioty,
-              drażnił dźwięk spłukiwanej toalety, odgłosy ssania, alarmy. Miała
-              trudności z algebrą, językiem, dopiero w wieku 4 lat (wspierana
-              przez niezwykle zdeterminowaną matkę) nauczyła się mówić.
-            </Text>
-            <Text>
-              Temple w wieku dojrzewania zaczęła doświadczać silnych lęków.
-              Pracując na ranczu w Arizonie zupełnie przez przypadek odkryła,
-              jak uspokajająco działa na zwierzęta wprowadzanie do specjalnego,
-              uciskowego kojca - poskromu, w którym je umieszczano w celu np.
-              wykonania zastrzyku. Silny ucisk działał na krowy wyciszająco.
-              Niedługo później, podczas nagłego ataku paniki, Temple weszła do
-              poskromu i ku swojemu zaskoczeniu - natychmiast poczuła się
-              lepiej. Postanowiła zbudować podobne urządzenie także dla siebie.
-            </Text>
-            <Text
-              margin="70px 0"
-              mobileMargin="32px 0"
-              fontSize="30px"
-              lineHeight="41px"
-            >
-              „Po dodaniu miękkich obić poczułam coś innego, niż tylko
-              odprężenie. Poczułam serdeczność w stosunku do ludzi, pojawiły się
-              uczucia społeczne, miałam przyjemniejsze sny.”
-            </Text>
-          </section>
-          <section id="dotyk">
-            <Text
-              as="h3"
-              margin="0 0 20px"
-              mobileMargin="0 0 24px"
-              fontSize="30px"
-              lineHeight="36px"
-              fontWeight="400"
-            >
-              Czy czuły dotyk może boleć?
-            </Text>
-            <Text>
-              Dla Temple bezpośredni dotyk drugiego człowieka nie był możliwy –
-              nadwrażliwa na bodźce dziewczynka reagowała paniką, dotyk sprawiał
-              jej niemalże fizyczny ból. Potrzeba dotyku – mimo jej schorzenia –
-              nie została jednak stłumiona, Temple musiała jedynie znaleźć
-              metodę na to, by móc kontrolować siłę, natężenie i czas ucisku.
-            </Text>
-            <Text>
-              Stworzona przez nią „maszyna do przytulania” i wnikliwa obserwacja
-              zachowania zwierząt pomogły jej ukończyć szkołę i studia z tytułem
-              psychologa i zoologa. Dzięki swojej niezwykłej wrażliwości do dziś
-              angażuje się w pomoc osobom cierpiącym na autyzm. Zajmuje się
-              także projektowaniem specjalnych urządzeń do humanitarnego uboju
-              zwierząt. Napisała wiele książek, prowadzi wykłady i szkolenia,
-              które pomagają ludziom lepiej zrozumieć autystyków i ich sposób
-              widzenia, a przede wszystkim – ODCZUWANIA świata.
-            </Text>
-          </section>
-          <section id="blisko">
-            <Text
-              as="h3"
-              margin="40px 0 20px"
-              mobileMargin="32px 0 24px"
-              fontSize="30px"
-              lineHeight="36px"
-              fontWeight="400"
-            >
-              Tak blisko, tak daleko
-            </Text>
-            <Text>
-              Postać Temple Grandin i jej słynna maszyna do przytulania były
-              inspiracją także dla twórców spektaklu „numer 9 mieszkania 13”, w
-              którym bohaterowie – mieszkańcy jednej kamienicy, obcujący ze sobą
-              na co dzień (przez sam fakt zamieszkiwania jednego budynku i
-              mijania się na jego korytarzach), tak naprawdę zamknięci są w
-              jednym miejscu – w  domu, będącym, jak pisze autorka „zbiorem
-              pragnień, uczuć, możliwości”. Uczuć, które mimo bliskiej
-              odległości i możności „dotknięcia” – czasem tak trudno jest
-              zaspokoić.
-            </Text>
-            <Text margin="20px 0 0">Jagoda Prześluga</Text>
-          </section>
         </StyledSection>
       </div>
     </MainWrapper>

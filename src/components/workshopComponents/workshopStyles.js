@@ -48,7 +48,7 @@ export const GifToggleButton = styled.button`
     `}
 `
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -57,7 +57,7 @@ export const Wrapper = styled.div`
   max-width: 1440px;
 
   div:first-child {
-    flex: 1 1 45%;
+    flex: 1 1 40%;
     h1 {
       font-size: 52px;
       line-height: 62px;
@@ -79,8 +79,8 @@ export const Wrapper = styled.div`
   }
 
   div:last-child {
-    flex: 1 1 55%;
-    height: 50vh;
+    flex: 1 1 60%;
+    max-height: 55vh;
   }
   .gif_player {
     flex: unset !important;
@@ -96,12 +96,12 @@ export const Wrapper = styled.div`
   }
 `
 
-export const WhoWrapper = styled.div`
+export const WhoWrapper = styled.section`
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 120px 110px 30px 50px;
+  padding: 120px 110px 90px 50px;
   @media only screen and (max-width: 1260px) {
     padding: 120px 110px 30px 50px;
   }
@@ -161,6 +161,10 @@ export const TextWrapper = styled.div`
   }
 `
 
+export const WorkshopSection = styled.section`
+  background-color: #1b1f1d;
+`
+
 export const WorkshopWrapper = styled.div`
   margin: 0 auto;
   display: flex;
@@ -168,4 +172,136 @@ export const WorkshopWrapper = styled.div`
   align-items: flex-start;
   padding: 83px 78px 150px 83px;
   max-width: 1440px;
+
+  div {
+    flex: 1 1 50%;
+  }
+
+  div:first-child {
+    margin-left: 107px;
+    align-self: center;
+  }
+
+  div:last-child {
+    justify-self: flex-start;
+  }
+
+  h2 {
+    color: #fff;
+    font-size: 38px;
+    line-height: 46px;
+    font-weight: 600;
+  }
+
+  ul {
+    color: #fff;
+    padding: 0;
+    margin: 52px 0 0;
+    @media only screen and (max-width: 1390px) {
+      margin: 32px 0 0;
+    }
+    @media only screen and (max-width: 1263px) {
+      margin: 24px 0 0;
+    }
+    li {
+      font-size: 20px;
+      line-height: 33px;
+      list-style-type: "- ";
+    }
+  }
+`
+
+export const WorkshopDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: ${({ margin }) => `${margin} !important`};
+  padding: ${({ padding }) => padding};
+  flex: ${({ flex }) => flex};
+  align-self: center;
+
+  :last-child {
+    margin-left: 107px;
+  }
+  .gif_player {
+    flex: unset !important;
+    width: 100%;
+    height: 100%;
+    margin-left: 0 !important;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    &:hover + button {
+      opacity: 1;
+    }
+  }
+`
+
+export const HowToWrapper = styled.section`
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 180px 185px 90px;
+`
+
+export const HowToTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: ${({ justifyContent }) => justifyContent};
+  align-items: ${({ alignItems }) => alignItems};
+  margin: ${({ margin }) => margin};
+  padding: ${({ padding }) => padding};
+  flex: ${({ flex }) => flex};
+  text-align: ${({ alignItems }) => alignItems === "flex-end" && "right"};
+  ul {
+    padding: 0;
+    padding-inline-start: 1em;
+    margin: 0;
+
+    li {
+      list-style-type: "- ";
+    }
+  }
+`
+
+export const VideoWrapper = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 100px 78px 70px;
+  @media only screen and (max-width: 1320px) {
+    padding: 60px 50px 40px;
+  }
+  max-width: 1440px;
+  height: calc(100vh + 235px);
+  max-height: 1020px;
+  p {
+    color: #fff;
+    width: 565px;
+    max-width: 100%;
+    text-align: center;
+  }
+`
+export const VideoIframe = styled.iframe`
+  border: 0;
+`
+
+export const TeacherWrapper = styled.section`
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 190px 170px 30px 78px;
+`
+
+export const TeacherBox = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: ${({ justifyContent }) => justifyContent};
+  align-items: ${({ alignItems }) => alignItems};
+  flex: ${({ flex }) => flex};
+  flex-direction: ${({ column }) => column && "column"};
 `

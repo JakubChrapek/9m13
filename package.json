@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
+    "@n8tb1t/use-scroll-position": "^1.0.47",
     "babel-plugin-styled-components": "^1.11.1",
     "dotenv": "^8.2.0",
     "framer-motion": "^2.6.15",

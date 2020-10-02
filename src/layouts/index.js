@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import GlobalStyle from "../assets/styles/GlobalStyle"
 import Navigation from "../components/Navigation/Navigation"
 import Wrapper from "../components/Wrapper/Wrapper"
+import ScrollToTop from "../components/ScrollToTop/ScrollToTop"
 import styled, { ThemeProvider } from "styled-components"
+import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 const PageWrapper = styled.div`
   padding: 0;
@@ -23,14 +25,27 @@ const theme = {
   },
 }
 
-const PageLayout = ({ children }) => (
-  <PageWrapper>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Navigation />
-      <Wrapper>{children}</Wrapper>
-    </ThemeProvider>
-  </PageWrapper>
-)
+const PageLayout = ({ children }) => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useScrollPosition(
+    ({ currPos, prevPos }) => {
+      const isShow = currPos.y < prevPos.y
+      if (isShow !== isVisible) setIsVisible(isShow)
+    },
+    [isVisible]
+  )
+
+  return (
+    <PageWrapper>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Navigation />
+        <ScrollToTop isVisible={isVisible} />
+        <Wrapper>{children}</Wrapper>
+      </ThemeProvider>
+    </PageWrapper>
+  )
+}
 
 export default PageLayout

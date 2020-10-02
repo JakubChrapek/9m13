@@ -26,7 +26,7 @@ const Characters = ({ width, mobileBreakpoint }) => {
   `)
 
   return (
-    <CharactersWrapper id="postacie">
+    <CharactersWrapper id="postaci">
       <Text
         fontSize="52px"
         fontWeight="400"
@@ -34,7 +34,7 @@ const Characters = ({ width, mobileBreakpoint }) => {
         as="h2"
         textAlign="center"
       >
-        Postacie
+        postaci
       </Text>
       <CharactersGrid>
         {data.allDatoCmsPostac.nodes.map(postac => (

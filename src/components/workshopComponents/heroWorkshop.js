@@ -13,10 +13,6 @@ const HeroWorkshop = () => {
   const [playing, setPlaying] = useState(true)
   const currentGif = useRef()
 
-  const handlePlayGif = () => {
-    currentGif.play()
-  }
-
   const handlePauseGif = e => {
     e.preventDefault()
   }
@@ -36,7 +32,6 @@ const HeroWorkshop = () => {
           ref={currentGif}
           pauseRef={currentGif}
           onTogglePlay={playing => setPlaying({ playing })}
-          autoplay
         />
         <GifToggleButton
           className={!playing.playing && "show"}
