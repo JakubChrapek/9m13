@@ -52,17 +52,21 @@ export const Wrapper = styled.section`
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   padding: 30px 160px 30px 180px;
+  @media only screen and (max-width: 1440px) {
+    padding: 30px 90px 30px 120px;
+  }
   max-width: 1440px;
 
   div:first-child {
     flex: 1 1 40%;
+    align-self: center;
     h1 {
       font-size: 52px;
       line-height: 62px;
       font-weight: 600;
-      margin-right: -15%;
+      margin-right: -40%;
     }
     p {
       margin-top: 24px;
@@ -80,7 +84,8 @@ export const Wrapper = styled.section`
 
   div:last-child {
     flex: 1 1 60%;
-    max-height: 55vh;
+    height: 60vh;
+    max-height: 700px;
   }
   .gif_player {
     flex: unset !important;
@@ -262,6 +267,31 @@ export const HowToTextWrapper = styled.div`
       list-style-type: "- ";
     }
   }
+  a {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    &:focus {
+      outline: 2px solid ${({ theme }) => theme.colors.black};
+      outline-offset: 5px;
+    }
+
+    :after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      height: 2px;
+      width: 100%;
+      background-color: #000;
+
+      transition: transform
+        ${({ theme }) => `0.2s ${theme.transition.cubicBezier}`};
+    }
+    :hover:after {
+      transform: translateY(-5px);
+    }
+  }
 `
 
 export const VideoWrapper = styled.div`
@@ -289,19 +319,45 @@ export const VideoIframe = styled.iframe`
 `
 
 export const TeacherWrapper = styled.section`
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   padding: 190px 170px 30px 78px;
 `
 
 export const TeacherBox = styled.div`
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
   justify-content: ${({ justifyContent }) => justifyContent};
   align-items: ${({ alignItems }) => alignItems};
   flex: ${({ flex }) => flex};
   flex-direction: ${({ column }) => column && "column"};
+  align-self: ${({ alignSelf }) => alignSelf};
+  margin: ${({ margin }) => margin};
+  h3 {
+    font-size: 52px;
+    line-height: 62px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+  }
+`
+
+export const TeacherImageWrapper = styled.div`
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: flex-start;
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: 100%;
+    max-width: 437px;
+    img {
+      width: 100%;
+      height: 100%;
+      max-width: 437px;
+      object-fit: contain;
+    }
+  }
 `

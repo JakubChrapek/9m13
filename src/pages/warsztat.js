@@ -8,6 +8,7 @@ import VideoSection from "../components/workshopComponents/videoSection"
 import WhoSection from "../components/workshopComponents/whoSection"
 
 import {} from "../components/workshopComponents/workshopStyles"
+import Footer from "../components/Footer/FooterSection"
 
 const WorkshopPage = () => {
   return (
@@ -19,6 +20,7 @@ const WorkshopPage = () => {
       <HowTo />
       <VideoSection />
       <Teacher />
+      <Footer />
     </>
   )
 }

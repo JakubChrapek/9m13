@@ -54,8 +54,11 @@ const HowToAttend = () => {
             </li>
             <li>
               wydrukowane materiały (
-              <a target="_blank" href="">
-                POBIERZ
+              <a
+                download="9m13 warsztaty"
+                href="https://www.datocms-assets.com/34173/1601655469-numer9-mieszkania-13materialy-warsztaty.rar"
+              >
+                pobierz
               </a>
               ) lub jeśli nie masz możliwości wydruku, przygotuj kilka małych
               przedmiotów codziennego użytku, które chcesz ożywić - kolorowe i

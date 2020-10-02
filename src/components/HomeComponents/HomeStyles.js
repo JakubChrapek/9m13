@@ -241,7 +241,7 @@ export const StyledButton = styled.button`
   z-index: 4;
   &:focus {
     outline: 2px solid ${({ theme }) => theme.colors.black};
-    outline-offset: 8px;
+    outline-offset: 5px;
   }
   @media only screen and (max-width: 908px) {
     padding: 16px 0px;

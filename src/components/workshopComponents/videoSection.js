@@ -7,11 +7,11 @@ const VideoSection = () => {
     <WorkshopSection>
       <VideoWrapper>
         <VideoIframe
-          src="https://player.vimeo.com/video/458423947"
+          src="https://www.youtube.com/embed/T_1i6S2lBdY"
           width="100%"
           height="100%"
           frameborder="0"
-          allow="autoplay; fullscreen"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></VideoIframe>
         <Text

@@ -26,7 +26,7 @@ const NavigationWrapper = styled.nav`
     color: inherit;
     :focus {
       outline: 2px solid ${({ theme }) => theme.colors.black};
-      outline-offset: 8px;
+      outline-offset: 5px;
     }
   }
 `
@@ -139,7 +139,7 @@ const SkipNavLink = styled(Link)`
 
   &:focus {
     outline: 2px solid ${({ theme }) => theme.colors.black};
-    outline-offset: 8px;
+    outline-offset: 5px;
     transform: translateY(0);
   }
 `
@@ -155,7 +155,7 @@ const MenuButton = styled.button`
   z-index: 6 !important;
   :focus {
     outline: 2px solid ${({ theme }) => theme.colors.black};
-    outline-offset: 8px;
+    outline-offset: 5px;
   }
   span {
     position: absolute;
