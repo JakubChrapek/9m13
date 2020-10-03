@@ -39,12 +39,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `9-mieszkania-13`,
-        short_name: `teatr-wspolczesny-szczecin`,
+        name: `Teatr Współczesny Szczecin`,
+        short_name: `9m13`,
         lang: `pl`,
         start_url: `/`,
         background_color: `#1B1F1D`,
-        theme_color: `#fff`,
+        theme_color: `#1B1F1D`,
         display: `minimal-ui`,
         icon: `src/assets/favicons/icon.png`, // This path is relative to the root of the site.
       },
