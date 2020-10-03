@@ -39,8 +39,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `blog-template`,
-        short_name: `blog`,
+        name: `9-mieszkania-13`,
+        short_name: `teatr-wspolczesny-szczecin`,
         lang: `pl`,
         start_url: `/`,
         background_color: `#1B1F1D`,
@@ -52,11 +52,9 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        // You can find your read-only API token under the Settings > API tokens
-        // section of your administrative area:
         apiToken: process.env.API_DATO_CMS,
       },
     },
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
