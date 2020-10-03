@@ -135,6 +135,8 @@ export const CenterWrapper = styled.div`
         text-decoration: none;
         color: #fff;
         position: relative;
+        font-size: 30px;
+        line-height: 36px;
         @media only screen and (max-width: 1310px) {
           font-size: 24px;
         }

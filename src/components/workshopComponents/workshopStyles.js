@@ -589,6 +589,7 @@ export const VideoWrapper = styled.div`
   }
   @media only screen and (max-width: 500px) {
     height: 90vh;
+    min-height: 640px;
   }
   p {
     color: #fff;

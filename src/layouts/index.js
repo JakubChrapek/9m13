@@ -29,8 +29,8 @@ const PageLayout = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false)
 
   useScrollPosition(
-    ({ currPos, prevPos }) => {
-      const isShow = currPos.y < prevPos.y
+    ({ currPos }) => {
+      const isShow = currPos.y < -1200
       if (isShow !== isVisible) setIsVisible(isShow)
     },
     [isVisible]
