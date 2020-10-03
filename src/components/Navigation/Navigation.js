@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 
 const NavigationWrapper = styled.nav`
   max-width: 1440px;
@@ -55,7 +55,7 @@ const Logo = styled.div`
   }
 `
 
-const NavigationList = styled.ul`
+const NavigationList = styled(motion.ul)`
   display: flex;
   align-items: stretch;
   flex: 0 0 75%;
@@ -65,35 +65,34 @@ const NavigationList = styled.ul`
     padding-left: 20px;
   }
   @media (max-width: 767px) {
-    visibility: none;
+    /* visibility: none;
     display: none;
-    &.open {
-      display: flex;
-      visibility: visible;
-      position: fixed;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background-color: ${({ theme }) => theme.colors.white};
-      z-index: 5;
-      padding: 0;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      li {
-        margin-right: 0;
-        margin-bottom: 40px;
-        &:last-child {
-          margin-bottom: 0;
-        }
-        font-size: 30px;
-        line-height: 44px;
-        font-weight: 400;
-        letter-spacing: 1.25px;
+    &.open { */
+    display: flex;
+    visibility: visible;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ${({ theme }) => theme.colors.white};
+    z-index: 5;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    li {
+      margin-right: 0;
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
       }
+      font-size: 30px;
+      line-height: 44px;
+      font-weight: 400;
+      letter-spacing: 1.25px;
     }
+    /* } */
   }
 `
 
@@ -204,23 +203,32 @@ const Navigation = () => {
           <span>numer 9</span> <span>mieszkania 13</span>
         </Link>
       </Logo>
-      <NavigationList className={open ? "open" : ""}>
-        <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/#spektakl">Spektakl</StyledNavLink>
-        </NavigationListItem>
-        <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/#realizatorzy">Realizatorzy</StyledNavLink>
-        </NavigationListItem>
-        <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/#postaci">postaci</StyledNavLink>
-        </NavigationListItem>
-        <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/konteksty">Konteksty</StyledNavLink>
-        </NavigationListItem>
-        <NavigationListItem onClick={() => setOpen(false)}>
-          <StyledNavLink to="/warsztat">Warsztat</StyledNavLink>
-        </NavigationListItem>
-      </NavigationList>
+      <AnimatePresence>
+        {open && (
+          <NavigationList
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className={open ? "open" : ""}
+          >
+            <NavigationListItem onClick={() => setOpen(false)}>
+              <StyledNavLink to="/#spektakl">Spektakl</StyledNavLink>
+            </NavigationListItem>
+            <NavigationListItem onClick={() => setOpen(false)}>
+              <StyledNavLink to="/#tworcy">Twórcy</StyledNavLink>
+            </NavigationListItem>
+            <NavigationListItem onClick={() => setOpen(false)}>
+              <StyledNavLink to="/#postaci">Postaci</StyledNavLink>
+            </NavigationListItem>
+            <NavigationListItem onClick={() => setOpen(false)}>
+              <StyledNavLink to="/konteksty">Konteksty</StyledNavLink>
+            </NavigationListItem>
+            <NavigationListItem onClick={() => setOpen(false)}>
+              <StyledNavLink to="/warsztat">Warsztat</StyledNavLink>
+            </NavigationListItem>
+          </NavigationList>
+        )}
+      </AnimatePresence>
       <MenuButton className={open ? "open" : ""} onClick={() => setOpen(!open)}>
         <span></span>
         <span></span>

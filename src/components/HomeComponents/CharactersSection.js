@@ -34,7 +34,7 @@ const Characters = ({ width, mobileBreakpoint }) => {
         as="h2"
         textAlign="center"
       >
-        postaci
+        Postaci
       </Text>
       <CharactersGrid>
         {data.allDatoCmsPostac.nodes.map(postac => (

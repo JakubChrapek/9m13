@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Flex } from "../Flex/Flex"
 import {

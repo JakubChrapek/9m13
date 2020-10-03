@@ -7,9 +7,8 @@ import {
   RightWrapper,
   CenterWrapper,
 } from "./ContextStyles"
-import Text from "../Text/Text"
 
-const ContextHeroSection = ({ width, mobileBreakpoint }) => {
+const ContextHeroSection = ({ width }) => {
   const tabletBreakpoint = 910
 
   const data = useStaticQuery(graphql`
@@ -40,7 +39,12 @@ const ContextHeroSection = ({ width, mobileBreakpoint }) => {
   }
 
   return (
-    <HeroWrapper>
+    <HeroWrapper
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
       {width >= tabletBreakpoint && (
         <LeftWrapper>
           <StyledImage

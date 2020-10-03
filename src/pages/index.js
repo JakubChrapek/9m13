@@ -17,7 +17,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Seo title="Home" />
+      <Seo title="Strona główna" />
       <Hero />
       <Video />
       <Description />

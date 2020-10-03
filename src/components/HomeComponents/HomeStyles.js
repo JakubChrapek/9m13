@@ -7,7 +7,7 @@ export const HiddenOverflowWrapper = styled.div`
   background-color: #fff;
 `
 
-export const HeroSection = styled.div`
+export const HeroSection = styled(motion.div)`
   background-color: #fff;
   height: calc(100vh - 180px);
   @media only screen and (max-width: 960px) {

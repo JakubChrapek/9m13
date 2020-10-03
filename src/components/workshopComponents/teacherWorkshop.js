@@ -6,7 +6,6 @@ import {
   TeacherImageWrapper,
   TeacherBox,
 } from "./workshopStyles"
-import { Flex } from "../Flex/Flex"
 import Image from "gatsby-image"
 
 const TeacherWorkshop = () => {

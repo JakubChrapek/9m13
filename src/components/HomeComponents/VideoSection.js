@@ -1,17 +1,11 @@
-import React, { useState, useEffect } from "react"
-import Text from "../Text/Text"
-import {
-  VideoSection,
-  VideoIframe,
-  VideoContainer,
-  PremieraSection,
-} from "./HomeStyles"
+import React from "react"
+import { PremieraSection } from "./HomeStyles"
 
 import { AnimatePresence, motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
 const Video = () => {
-  const [parentRef, parentInView, parentEntry] = useInView({
+  const [parentRef, parentInView] = useInView({
     threshold: 0.2,
     triggerOnce: true,
   })

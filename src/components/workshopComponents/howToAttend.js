@@ -49,6 +49,7 @@ const HowToAttend = () => {
               darmowa aplikacja Stop Motion Studio, do pobrania{" "}
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://play.google.com/store/apps/details?id=com.cateater.stopmotionstudio&hl=pl"
               >
                 stąd

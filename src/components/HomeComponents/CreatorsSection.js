@@ -40,6 +40,7 @@ const Creators = ({ width, mobileBreakpoint }) => {
 
   return (
     <CreatorsSection
+      id="tworcy"
       initial={{
         opacity: 0,
       }}

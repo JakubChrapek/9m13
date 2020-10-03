@@ -1,19 +1,17 @@
-import React, { useState, useRef } from "react"
+import React from "react"
 
 import { Flex } from "../Flex/Flex"
-import { Wrapper, GifToggleButton, VideoIframe } from "./workshopStyles"
+import { Wrapper, VideoIframe } from "./workshopStyles"
 import Text from "../Text/Text"
 
 const HeroWorkshop = () => {
-  const [playing, setPlaying] = useState(true)
-  const currentGif = useRef()
-
-  const handlePauseGif = e => {
-    e.preventDefault()
-  }
-
   return (
-    <Wrapper>
+    <Wrapper
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
       <Flex column>
         <Text as="h1">Warsztaty z animacji poklatkowej online</Text>
         <Text>
@@ -28,6 +26,10 @@ const HeroWorkshop = () => {
           frameborder="0"
           allow="autoplay; fullscreen"
           allowfullscreen
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.4, duration: 0.4 }}
         ></VideoIframe>
       </Flex>
     </Wrapper>

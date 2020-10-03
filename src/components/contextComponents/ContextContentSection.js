@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react"
+import React from "react"
 import {
   MainWrapper,
-  StickyNav,
   NavWrapper,
   StyledSection,
   SectionSpacer,
@@ -9,24 +8,17 @@ import {
 import Text from "../Text/Text"
 import { useInView } from "react-intersection-observer"
 
-const ContextContentSection = ({ width, mobileBreakpoint }) => {
-  const [opowiesciRef, opowiesciInView, opowiesciEntry] = useInView({
-    /* Optional options */
+const ContextContentSection = ({ width }) => {
+  const [opowiesciRef, opowiesciInView] = useInView({
     threshold: 0.05,
   })
-  const [dotykRef, dotykInView, dotykEntry] = useInView({
-    /* Optional options */
+  const [dotykRef, dotykInView] = useInView({
     threshold: 0.05,
   })
-  const [architekturaRef, architekturaInView, architekturaEntry] = useInView({
-    /* Optional options */
+  const [architekturaRef, architekturaInView] = useInView({
     threshold: 0.05,
   })
 
-  const mainNavLinks =
-    typeof window !== "undefined" &&
-    window.document &&
-    document.querySelectorAll("main nav ul li a")
   const tabletBreakpoint = 970
 
   const handleClick = e => {

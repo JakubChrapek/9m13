@@ -1,4 +1,6 @@
 import styled, { css } from "styled-components"
+import { motion } from "framer-motion"
+
 export const GifToggleButton = styled.button`
   background-color: rgba(0, 0, 0, 0.5);
   border: 2px dashed #ffffffcc;
@@ -53,7 +55,7 @@ export const GifToggleButton = styled.button`
     `}
 `
 
-export const Wrapper = styled.section`
+export const Wrapper = styled(motion.section)`
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -199,7 +201,7 @@ export const Wrapper = styled.section`
   }
 `
 
-export const WhoWrapper = styled.section`
+export const WhoWrapper = styled(motion.section)`
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -603,7 +605,7 @@ export const VideoWrapper = styled.div`
     text-align: center;
   }
 `
-export const VideoIframe = styled.iframe`
+export const VideoIframe = styled(motion.iframe)`
   border: 0;
 `
 

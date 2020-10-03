@@ -1,6 +1,6 @@
 import Image from "gatsby-image"
 import styled from "styled-components"
-
+import { motion } from "framer-motion"
 export const StyledImage = styled(Image)`
   object-fit: contain;
   width: 100%;
@@ -12,7 +12,7 @@ export const StyledImage = styled(Image)`
   }
 `
 
-export const HeroWrapper = styled.section`
+export const HeroWrapper = styled(motion.section)`
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -156,7 +156,7 @@ export const CenterWrapper = styled.div`
           content: "";
           position: absolute;
           left: 0;
-          bottom: -8px;
+          bottom: -7px;
           width: 100%;
           height: 2px;
           background-color: #fff;
@@ -274,10 +274,19 @@ export const RightWrapper = styled.div`
 export const NavWrapper = styled.div`
   ul {
     padding: 0;
+    display: flex;
+    flex-direction: column;
+
     li {
       list-style: none;
       padding: 0;
       margin: 0;
+      transition: transform
+        ${({ theme }) =>
+          `${theme.transition.time} ${theme.transition.cubicBezier}`};
+      &:hover {
+        transform: translateX(8px);
+      }
       a {
         text-decoration: none;
         color: #000;
@@ -303,6 +312,7 @@ export const NavWrapper = styled.div`
             ${({ theme }) =>
               `${theme.transition.time} ${theme.transition.cubicBezier}`};
         }
+
         &.active {
           &:after {
             transform: scaleX(1);

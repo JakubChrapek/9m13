@@ -13,7 +13,6 @@ import Footer from "../components/Footer/FooterSection"
 
 const WorkshopPage = () => {
   let width = useCurrentWidth()
-  const mobileBreakpoint = 767
   return (
     <>
       <Seo title="Warsztat" />

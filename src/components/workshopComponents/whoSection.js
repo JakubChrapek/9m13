@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Flex } from "../Flex/Flex"
 import { WhoWrapper, ImageWrapper, TextWrapper } from "./workshopStyles"
 import Text from "../Text/Text"
 import Image from "gatsby-image"
@@ -18,7 +17,12 @@ const WhoSection = () => {
     }
   `)
   return (
-    <WhoWrapper>
+    <WhoWrapper
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ delay: 0.6, duration: 0.4 }}
+    >
       <ImageWrapper>
         <Image
           fluid={data.warsztat.childImageSharp.fluid}
