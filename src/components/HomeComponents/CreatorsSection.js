@@ -35,6 +35,8 @@ const Creators = ({ width, mobileBreakpoint }) => {
       setNames(
         names.map((_, iterator) => (iterator === slideNumber ? true : false))
       )
+    } else {
+      setNames(names.map(_ => true))
     }
   }
 
@@ -56,8 +58,8 @@ const Creators = ({ width, mobileBreakpoint }) => {
               layout
               ref={creatorsContentList}
             >
-              {data.allDatoCmsTworca.nodes.map(
-                (tworca, iterator) =>
+              {data.allDatoCmsTworca.nodes.map((tworca, iterator) =>
+                width >= mobileBreakpoint ? (
                   names[iterator] && (
                     <Slide
                       creator={tworca.imieNazwisko}
@@ -65,6 +67,13 @@ const Creators = ({ width, mobileBreakpoint }) => {
                       description={tworca.tworcaOpis}
                     />
                   )
+                ) : (
+                  <Slide
+                    creator={tworca.imieNazwisko}
+                    key={tworca.imieNazwisko}
+                    description={tworca.tworcaOpis}
+                  />
+                )
               )}
             </motion.ul>
           </AnimateSharedLayout>
