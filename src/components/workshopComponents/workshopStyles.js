@@ -215,6 +215,9 @@ export const WhoWrapper = styled.section`
     align-items: flex-start;
     padding: 60px 28px;
   }
+  @media only screen and (max-width: 500px) {
+    padding: 40px 28px 60px;
+  }
   max-width: 1440px;
 `
 
@@ -333,14 +336,61 @@ export const WorkshopWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   padding: 83px 78px 150px 83px;
+  @media only screen and (max-width: 960px) {
+    padding: 83px 78px 110px 83px;
+  }
+  @media only screen and (max-width: 860px) {
+    padding: 60px 40px 60px 60px;
+  }
+  @media only screen and (max-width: 900px) {
+    &:last-child {
+      padding-left: 40px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 24px 28px 104px 28px;
+    &:last-child {
+      padding: 24px 28px 104px 28px;
+    }
+    &:first-child {
+      padding-bottom: 0px;
+    }
+  }
+
   max-width: 1440px;
 
   div {
     flex: 1 1 50%;
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  > div:last-child {
+    @media only screen and (max-width: 768px) {
+      order: -1;
+    }
   }
 
   div:first-child {
     margin-left: 107px;
+
+    @media only screen and (max-width: 1260px) {
+      margin-left: 80px;
+    }
+    @media only screen and (max-width: 960px) {
+      margin-left: 0px;
+      &.gatsby-image-wrapper {
+        margin-left: 60px;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      &.gatsby-image-wrapper {
+        margin-left: 0px;
+        max-width: 400px;
+      }
+    }
     align-self: center;
   }
 
@@ -353,6 +403,13 @@ export const WorkshopWrapper = styled.div`
     font-size: 38px;
     line-height: 46px;
     font-weight: 600;
+    @media only screen and (max-width: 1180px) {
+      font-size: 30px;
+      line-height: 46px;
+    }
+    @media only screen and (max-width: 768px) {
+      margin-top: 40px;
+    }
   }
 
   ul {
@@ -365,10 +422,18 @@ export const WorkshopWrapper = styled.div`
     @media only screen and (max-width: 1263px) {
       margin: 24px 0 0;
     }
+    @media only screen and (max-width: 768px) {
+      margin: 12px 0 0;
+    }
     li {
       font-size: 20px;
       line-height: 33px;
       list-style-type: "- ";
+      @media only screen and (max-width: 1180px) {
+        font-size: 17px;
+        line-height: 28px;
+        letter-spacing: 0.05em;
+      }
     }
   }
 `
@@ -382,9 +447,25 @@ export const WorkshopDiv = styled.div`
   flex: ${({ flex }) => flex};
   align-self: center;
 
+  @media only screen and (max-width: 768px) {
+    align-items: flex-start;
+    align-self: flex-start !important;
+    width: unset !important;
+    &:first-child {
+      margin-top: 20px !important;
+    }
+  }
   :last-child {
     margin-left: 107px;
+    @media only screen and (max-width: 960px) {
+      margin-left: 70px;
+    }
+    @media only screen and (max-width: 768px) {
+      order: 1 !important;
+      margin-left: 0;
+    }
   }
+
   .gif_player {
     flex: unset !important;
     width: 100%;
@@ -404,6 +485,18 @@ export const HowToWrapper = styled.section`
   margin: 0 auto;
   max-width: 1440px;
   padding: 180px 185px 90px;
+  @media only screen and (max-width: 1140px) {
+    padding: 120px 125px 60px;
+  }
+  @media only screen and (max-width: 860px) {
+    padding: 90px 100px 60px;
+  }
+  @media only screen and (max-width: 768px) {
+    padding: 70px 60px;
+  }
+  @media only screen and (max-width: 768px) {
+    padding: 70px 28px;
+  }
 `
 
 export const HowToTextWrapper = styled.div`
@@ -415,6 +508,31 @@ export const HowToTextWrapper = styled.div`
   padding: ${({ padding }) => padding};
   flex: ${({ flex }) => flex};
   text-align: ${({ alignItems }) => alignItems === "flex-end" && "right"};
+
+  @media only screen and (max-width: 860px) {
+    :first-child {
+      margin: 0 0 83px;
+    }
+    :last-child {
+      margin: 0 10% 0 0;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    :last-child {
+      margin: 0;
+    }
+  }
+  p {
+    @media only screen and (max-width: 1180px) {
+      font-size: 17px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+      &:first-child {
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
+  }
   ul {
     padding: 0;
     padding-inline-start: 1em;
@@ -458,12 +576,20 @@ export const VideoWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 100px 78px 70px;
-  @media only screen and (max-width: 1320px) {
-    padding: 60px 50px 40px;
-  }
+
   max-width: 1440px;
   height: calc(100vh + 235px);
   max-height: 1020px;
+  @media only screen and (max-width: 1320px) {
+    padding: 60px 50px 40px;
+  }
+  @media only screen and (max-width: 768px) {
+    padding: 68px 28px 100px;
+    height: calc(80vh);
+  }
+  @media only screen and (max-width: 500px) {
+    height: 90vh;
+  }
   p {
     color: #fff;
     width: 565px;
@@ -481,6 +607,17 @@ export const TeacherWrapper = styled.section`
   display: flex;
   justify-content: center;
   padding: 190px 170px 30px 78px;
+  @media only screen and (max-width: 1000px) {
+    padding: 120px 60px 30px;
+  }
+  @media only screen and (max-width: 768px) {
+    padding: 80px 60px 30px;
+    flex-direction: column;
+  }
+  @media only screen and (max-width: 482px) {
+    padding: 80px 28px 30px;
+    flex-direction: column;
+  }
 `
 
 export const TeacherBox = styled.div`
@@ -491,14 +628,46 @@ export const TeacherBox = styled.div`
   flex-direction: ${({ column }) => column && "column"};
   align-self: ${({ alignSelf }) => alignSelf};
   margin: ${({ margin }) => margin};
+  @media only screen and (max-width: 1200px) {
+    &:last-child {
+      margin-bottom: 60px;
+    }
+  }
+  @media only screen and (max-width: 1010px) {
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+  @media only screen and (max-width: 911px) {
+    &:first-child {
+      margin-right: 70px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    &:last-child {
+      margin-top: 32px;
+    }
+  }
+
   h3 {
     font-size: 52px;
     line-height: 62px;
+    @media only screen and (max-width: 1200px) {
+      font-size: 30px;
+      line-height: 50px;
+    }
   }
   p {
     font-size: 20px;
     line-height: 33px;
     letter-spacing: 0.05em;
+    @media only screen and (max-width: 1200px) {
+      font-size: 17px;
+      line-height: 28px;
+    }
+    @media only screen and (max-width: 768px) {
+      margin-top: 12px;
+    }
   }
 `
 

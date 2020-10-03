@@ -12,7 +12,7 @@ import Image from "gatsby-image"
 import WarsztatMP4 from "../../assets/gifs/warsztat.mp4"
 import WarsztatWEBM from "../../assets/gifs/warsztat.webm"
 
-const AboutWorkshop = () => {
+const AboutWorkshop = ({ currentWidth }) => {
   const [playing, setPlaying] = useState(false)
 
   const handlePauseGif = e => {
@@ -60,7 +60,18 @@ const AboutWorkshop = () => {
       </WorkshopWrapper>
       <WorkshopWrapper>
         <WorkshopDiv margin="0" column relative>
-          <video height="300px" loop muted onClick={e => handlePauseGif(e)}>
+          <video
+            height={
+              currentWidth < 860
+                ? currentWidth < 460
+                  ? "200px"
+                  : "240px"
+                : "300px"
+            }
+            loop
+            muted
+            onClick={e => handlePauseGif(e)}
+          >
             <source src={WarsztatWEBM} type="video/webm" />
             <source src={WarsztatMP4} type="video/mp4" />
           </video>

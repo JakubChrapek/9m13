@@ -11,6 +11,7 @@ const HowToAttend = () => {
         </Text>
         <Text
           margin="40px 0 0"
+          mobileMargin="24px 0 0"
           fontSize="20px"
           lineHeight="33px"
           letterSpacing="0.05em"
@@ -30,6 +31,7 @@ const HowToAttend = () => {
 
         <Text
           margin="40px 0 0"
+          mobileMargin="24px 0 0"
           fontSize="20px"
           lineHeight="33px"
           letterSpacing="0.05em"
