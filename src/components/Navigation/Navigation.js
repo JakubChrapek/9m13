@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
+import useCurrentWidth from "../../components/hooks/useCurrentWidth"
 
 const NavigationWrapper = styled.nav`
   max-width: 1440px;
@@ -194,6 +195,7 @@ const MenuButton = styled.button`
 
 const Navigation = () => {
   const [open, setOpen] = useState(false)
+  let width = useCurrentWidth()
 
   return (
     <NavigationWrapper>
@@ -204,7 +206,7 @@ const Navigation = () => {
         </Link>
       </Logo>
       <AnimatePresence>
-        {open && (
+        {(width >= 767 || open) && (
           <NavigationList
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
