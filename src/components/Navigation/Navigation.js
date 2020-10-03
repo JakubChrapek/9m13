@@ -231,7 +231,12 @@ const Navigation = () => {
           </NavigationList>
         )}
       </AnimatePresence>
-      <MenuButton className={open ? "open" : ""} onClick={() => setOpen(!open)}>
+      <MenuButton
+        title="menu button for toggling mobile menu"
+        aria-label="menu button for toggling mobile menu"
+        className={open ? "open" : ""}
+        onClick={() => setOpen(!open)}
+      >
         <span></span>
         <span></span>
         <span></span>
