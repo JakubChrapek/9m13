@@ -14,6 +14,17 @@ import {
 import fb from "../../assets/images/footerImages/facebook.svg"
 import ig from "../../assets/images/footerImages/instagram.svg"
 import yt from "../../assets/images/footerImages/youtube.svg"
+import styled from "styled-components"
+
+const StyledLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.colors.black};
+    outline-offset: 4px;
+  }
+`
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -108,9 +119,15 @@ const Footer = () => {
           Nasze social media
         </Text>
         <Flex width="156px" justifyContent="space-between">
-          <img src={fb} alt="Facebook icon" />
-          <img src={ig} alt="Instagram icon" />
-          <img src={yt} alt="Youtube icon" />
+          <StyledLink href="https://www.facebook.com/teatrwspolczesnywszczecinie/">
+            <img src={fb} alt="Facebook icon" />
+          </StyledLink>
+          <StyledLink href="https://www.instagram.com/wspolczesny_szczecin/">
+            <img src={ig} alt="Instagram icon" />
+          </StyledLink>
+          <StyledLink href="https://www.youtube.com/channel/UCS6NK77RoyqxMUx7np0M6Gg">
+            <img src={yt} alt="Youtube icon" />
+          </StyledLink>
         </Flex>
       </SocialColumn>
     </FooterSection>

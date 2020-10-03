@@ -15,6 +15,11 @@ export const GifToggleButton = styled.button`
   top: 50%;
   transform: translate(-50%, -50%) scale(1) rotate(0deg);
   transition: transform 0.4s, opacity 0.4s;
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.colors.white};
+    outline-offset: 5px;
+  }
+
   &:hover {
     background-color: #000;
   }

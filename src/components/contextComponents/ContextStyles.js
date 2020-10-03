@@ -137,6 +137,11 @@ export const CenterWrapper = styled.div`
         position: relative;
         font-size: 30px;
         line-height: 36px;
+        &:focus {
+          outline: 2px solid ${({ theme }) => theme.colors.white};
+          outline-offset: 5px;
+        }
+
         @media only screen and (max-width: 1310px) {
           font-size: 24px;
         }
@@ -280,6 +285,10 @@ export const NavWrapper = styled.div`
         line-height: 16px;
         text-transform: uppercase;
         position: relative;
+        &:focus {
+          outline: 2px solid ${({ theme }) => theme.colors.black};
+          outline-offset: 2px;
+        }
         &:after {
           content: "";
           position: absolute;

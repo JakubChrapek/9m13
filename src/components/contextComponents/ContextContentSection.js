@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useRef, useState } from "react"
 import {
   MainWrapper,
   StickyNav,
@@ -7,32 +7,27 @@ import {
   SectionSpacer,
 } from "../contextComponents/ContextStyles"
 import Text from "../Text/Text"
+import { useInView } from "react-intersection-observer"
 
 const ContextContentSection = ({ width, mobileBreakpoint }) => {
+  const [opowiesciRef, opowiesciInView, opowiesciEntry] = useInView({
+    /* Optional options */
+    threshold: 0.05,
+  })
+  const [dotykRef, dotykInView, dotykEntry] = useInView({
+    /* Optional options */
+    threshold: 0.05,
+  })
+  const [architekturaRef, architekturaInView, architekturaEntry] = useInView({
+    /* Optional options */
+    threshold: 0.05,
+  })
+
   const mainNavLinks =
     typeof window !== "undefined" &&
     window.document &&
     document.querySelectorAll("main nav ul li a")
   const tabletBreakpoint = 970
-
-  useEffect(() => {
-    typeof window !== `undefined` &&
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY
-
-        mainNavLinks.forEach(link => {
-          let section = document.querySelector(link.hash)
-          if (
-            section.offsetTop <= fromTop + 150 &&
-            section.offsetTop + section.offsetHeight > fromTop
-          ) {
-            link.classList.add("active")
-          } else {
-            link.classList.remove("active")
-          }
-        })
-      })
-  }, [mainNavLinks])
 
   const handleClick = e => {
     e.preventDefault()
@@ -50,17 +45,29 @@ const ContextContentSection = ({ width, mobileBreakpoint }) => {
           <nav>
             <ul>
               <li>
-                <a onClick={e => handleClick(e)} href="#opowiesci">
+                <a
+                  className={opowiesciInView && "active"}
+                  onClick={e => handleClick(e)}
+                  href="#opowiesci"
+                >
                   Opowieści kamienicy
                 </a>
               </li>
               <li>
-                <a onClick={e => handleClick(e)} href="#dotyk">
+                <a
+                  className={dotykInView && "active"}
+                  onClick={e => handleClick(e)}
+                  href="#dotyk"
+                >
                   o dotyku
                 </a>
               </li>
               <li>
-                <a onClick={e => handleClick(e)} href="#odczuwanie">
+                <a
+                  className={architekturaInView && "active"}
+                  onClick={e => handleClick(e)}
+                  href="#odczuwanie"
+                >
                   odczuwanie architektury
                 </a>
               </li>
@@ -69,7 +76,7 @@ const ContextContentSection = ({ width, mobileBreakpoint }) => {
         </NavWrapper>
       )}
       <div>
-        <section id="opowiesci">
+        <section id="opowiesci" ref={opowiesciRef}>
           <Text
             as="h2"
             margin="0 0 52px"
@@ -242,6 +249,7 @@ const ContextContentSection = ({ width, mobileBreakpoint }) => {
           mobilePadding="40px 0 0"
           lineTop
           id="dotyk"
+          ref={dotykRef}
         >
           <SectionSpacer />
           <Text
@@ -257,7 +265,6 @@ const ContextContentSection = ({ width, mobileBreakpoint }) => {
             Jak encyklopedia definiuje tak oczywiste dla nas pojęcia, jak
             bliskość, czucie, dotyk?
           </Text>
-
           <Text margin="32px 0 0" mobileMargin="20px 0 0">
             „Dotyk, zmysł dotyku: rodzaj czucia, zdolność odczuwania działania
             bodźców mechanicznych na powierzchnię skóry za pomocą receptorów w
@@ -360,7 +367,7 @@ const ContextContentSection = ({ width, mobileBreakpoint }) => {
               uczucia społeczne, miałam przyjemniejsze sny.”
             </Text>
           </section>
-          <section id="dotyk">
+          <section id="czulyDotyk">
             <Text
               as="h3"
               margin="0 0 20px"
@@ -419,6 +426,7 @@ const ContextContentSection = ({ width, mobileBreakpoint }) => {
           margin="62px 0 0"
           lineTop
           id="odczuwanie"
+          ref={architekturaRef}
         >
           <SectionSpacer />
           <Text

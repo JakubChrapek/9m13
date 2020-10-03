@@ -77,6 +77,9 @@ const ScrollToTop = ({ isVisible }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={handleClick}
+          role="button"
+          aria-pressed="false"
+          tabindex="0"
         >
           <span></span>
           <span></span>

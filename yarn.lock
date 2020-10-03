@@ -12532,6 +12532,13 @@ react-helmet@^6.1.0:
     react-fast-compare "^3.1.1"
     react-side-effect "^2.1.0"
 
+react-hook-intersection-observer@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-hook-intersection-observer/-/react-hook-intersection-observer-0.1.0.tgz#bcba5a29ac267112ce3747a954492da6acffef26"
+  integrity sha512-WQZj3HVoVBHEu5BrzcTTD5FuslPsxwgV2xhnAanCF6Gzkkqw5c74o2K3E7J80mKfUhQqI/81ODvQQD/Ytq0jBg==
+  dependencies:
+    react "^16.7.0-alpha.2"
+
 react-hot-loader@^4.12.21:
   version "4.12.21"
   resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.12.21.tgz#332e830801fb33024b5a147d6b13417f491eb975"
@@ -12634,7 +12641,7 @@ react-style-singleton@^2.1.0:
     invariant "^2.2.4"
     tslib "^1.0.0"
 
-react@^16.12.0, react@^16.8.0:
+react@^16.12.0, react@^16.7.0-alpha.2, react@^16.8.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==

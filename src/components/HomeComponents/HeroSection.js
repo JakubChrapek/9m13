@@ -26,6 +26,19 @@ const Hero = () => {
       }
     }
   `)
+
+  const handleClick = e => {
+    e.preventDefault()
+    let section =
+      typeof window !== "undefined" &&
+      window.document &&
+      document.querySelector("#spektakl")
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+  }
+
   return (
     <HiddenOverflowWrapper>
       <HeroSection>
@@ -42,7 +55,9 @@ const Hero = () => {
               kiedy jest samotność?
             </TextWithBackground>
           </StyledHeader>
-          <StyledButton margin="40px 0 0">Zobacz</StyledButton>
+          <StyledButton onClick={e => handleClick(e)} margin="40px 0 0">
+            Zobacz
+          </StyledButton>
         </TextWrapper>
         <ImagesWrapper>
           <StyledImage fluid={data.file.childImageSharp.fluid} />

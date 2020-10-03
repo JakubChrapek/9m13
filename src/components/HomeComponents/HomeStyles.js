@@ -261,6 +261,69 @@ export const StyledButton = styled.button`
     font-weight: 400;
   }
 `
+export const PremieraSection = styled.section`
+  background-color: ${({ theme }) => theme.colors.grayDarkest};
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  height: 560px;
+  > div {
+    max-width: 1440px;
+    padding: 100px 185px 80px 100px;
+    @media only screen and (max-width: 1200px) {
+      padding: 100px 115px 80px 70px;
+    }
+    @media only screen and (max-width: 586px) {
+      padding: 48px 28px;
+    }
+    .first,
+    .second,
+    .third {
+      display: block;
+    }
+    span {
+      color: #fff;
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      line-height: 48px;
+      @media only screen and (max-width: 586px) {
+        font-size: 30px;
+        line-height: 43px;
+      }
+      @media only screen and (max-width: 420px) {
+        &.third {
+          font-size: 22px;
+          line-height: 30px;
+        }
+      }
+    }
+
+    .third {
+      margin-top: 40px;
+    }
+
+    .fourth {
+      margin-top: 10px;
+      padding: 0 !important;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+        transform-origin: left center;
+        transition: 0.3s transform cubic-bezier(0.76, 0, 0.24, 1);
+      }
+    }
+  }
+`
+
 export const VideoSection = styled.section`
   display: flex;
   flex-direction: column;
