@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
-const StyledText = styled.p`
+const StyledText = styled(motion.p)`
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "20px")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "400")};
   line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : "27px")};
@@ -34,9 +35,17 @@ const Text = ({
   textAlign,
   zIndex,
   special,
+  exit,
+  variants,
+  initial,
+  animate,
+  transition,
+  className,
+  props,
 }) => {
   return (
     <StyledText
+      {...props}
       as={as}
       color={color}
       fontSize={fontSize}
@@ -49,6 +58,12 @@ const Text = ({
       textAlign={textAlign}
       zIndex={zIndex}
       special={special}
+      exit={exit}
+      animate={animate}
+      variants={variants}
+      initial={initial}
+      transition={transition}
+      className={className}
     >
       {children}
     </StyledText>

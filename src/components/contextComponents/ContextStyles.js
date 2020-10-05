@@ -28,7 +28,7 @@ export const HeroWrapper = styled(motion.section)`
   }
 `
 
-export const LeftWrapper = styled.div`
+export const LeftWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +101,7 @@ export const LeftWrapper = styled.div`
   }
 `
 
-export const CenterWrapper = styled.div`
+export const CenterWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -139,6 +139,7 @@ export const CenterWrapper = styled.div`
         line-height: 36px;
         &:focus {
           outline: 2px solid ${({ theme }) => theme.colors.white};
+          outline-width: 0 0 2px 0;
           outline-offset: 5px;
         }
 
@@ -192,7 +193,7 @@ export const CenterWrapper = styled.div`
   }
 `
 
-export const RightWrapper = styled.div`
+export const RightWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -271,7 +272,7 @@ export const RightWrapper = styled.div`
   }
 `
 
-export const NavWrapper = styled.div`
+export const NavWrapper = styled(motion.div)`
   ul {
     padding: 0;
     display: flex;
@@ -323,7 +324,7 @@ export const NavWrapper = styled.div`
   }
 `
 
-export const MainWrapper = styled.div`
+export const MainWrapper = styled(motion.div)`
   margin: 150px auto 75px;
   padding: 0 0 50px 75px;
   display: flex;

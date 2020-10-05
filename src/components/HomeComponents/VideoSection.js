@@ -17,9 +17,9 @@ const Video = () => {
     animate: {
       opacity: 1,
       transition: {
-        delayChildren: 1.2,
+        delayChildren: 0,
         staggerChildren: 0.4,
-        delay: 0.4,
+        delay: 0,
         duration: 1,
         when: "beforeChildren",
       },
@@ -36,7 +36,7 @@ const Video = () => {
       opacity: 1,
       transition: {
         duration: 1.6,
-        delay: 0.4,
+        delay: 0.2,
         ease: [0.76, 0, 0.24, 1],
       },
     },
@@ -51,7 +51,7 @@ const Video = () => {
       opacity: 1,
       transition: {
         duration: 1.6,
-        delay: 0.4,
+        delay: 1.2,
         ease: [0.76, 0, 0.24, 1],
       },
     },
@@ -66,7 +66,7 @@ const Video = () => {
       opacity: 1,
       transition: {
         duration: 1.6,
-        delay: 1.6,
+        delay: 2,
         ease: [0.76, 0, 0.24, 1],
       },
     },
@@ -81,7 +81,7 @@ const Video = () => {
       scaleX: 1,
       transition: {
         duration: 0.6,
-        delay: 2.8,
+        delay: 3.1,
         ease: [0.76, 0, 0.24, 1],
       },
     },

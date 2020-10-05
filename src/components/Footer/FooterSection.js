@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Image from "gatsby-image"
 import Text from "../Text/Text"
 import { Flex } from "../Flex/Flex"
 import {
@@ -14,22 +13,29 @@ import {
 import fb from "../../assets/images/footerImages/facebook.svg"
 import ig from "../../assets/images/footerImages/instagram.svg"
 import yt from "../../assets/images/footerImages/youtube.svg"
+import ministerstwo from "../../assets/images/footerImages/ministerstwo-kultury.svg"
 import styled from "styled-components"
 
 const StyledLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 8px;
+  transition: transform ${({ theme }) => `.3s ${theme.transition.cubicBezier}`};
+
   &:focus {
     outline: 2px solid ${({ theme }) => theme.colors.black};
     outline-offset: 4px;
+  }
+  &:hover {
+    transform: scale(1.1);
   }
 `
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query FooterQuery {
-      ministerstwo: file(name: { eq: "ministerstwo-kultury-dofinansowanie" }) {
+      ministerstwo: file(name: { eq: "ministerstwo-kultury" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -49,18 +55,21 @@ const Footer = () => {
   return (
     <FooterSection>
       <TeatrColumn>
-        <LogoImage fluid={data.teatr.childImageSharp.fluid} />
-        <Text
-          fontSize="22px"
-          lineHeight="24px"
-          fontWeight="600"
-          letterSpacing="1.3px"
-          textTransform="uppercase"
-          zIndex="1"
-          as="h3"
-        >
-          Teatr współczesny w Szczecinie
-        </Text>
+        <a target="_blank" href="https://wspolczesny.szczecin.pl/">
+          <LogoImage fluid={data.teatr.childImageSharp.fluid} />
+
+          <Text
+            fontSize="22px"
+            lineHeight="24px"
+            fontWeight="600"
+            letterSpacing="1.3px"
+            textTransform="uppercase"
+            zIndex="1"
+            as="h3"
+          >
+            Teatr współczesny w Szczecinie
+          </Text>
+        </a>
         <Text
           fontSize="13px"
           lineHeight="17px"
@@ -93,17 +102,24 @@ const Footer = () => {
           textTransform="uppercase"
           margin="20px 0 0 150px"
         >
-          Stronę stworzyli: Kryptonum Studio & Dobra Treść
+          Stronę stworzyli:{" "}
+          <a
+            className="link"
+            target="_blank"
+            href="https://kryptonumstudio.com"
+          >
+            Kryptonum Studio
+          </a>{" "}
+          &{" "}
+          <a className="link" target="_blank" href="https://dobratresc.com">
+            Dobra Treść
+          </a>
         </Text>
       </TeatrColumn>
       <MinisterstwoColumn>
-        <Image
-          imgStyle={{
-            objectFit: "contain",
-            width: "256px",
-            height: "256px",
-          }}
-          fluid={data.ministerstwo.childImageSharp.fluid}
+        <img
+          src={ministerstwo}
+          alt="Ministerstwo kultury logo z dofinansowaniem"
         />
       </MinisterstwoColumn>
       <SocialColumn>
@@ -118,7 +134,7 @@ const Footer = () => {
         >
           Nasze social media
         </Text>
-        <Flex width="156px" justifyContent="space-between">
+        <Flex width="184px" justifyContent="space-between">
           <StyledLink href="https://www.facebook.com/teatrwspolczesnywszczecinie/">
             <img src={fb} alt="Facebook icon" />
           </StyledLink>

@@ -2,7 +2,7 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import { motion } from "framer-motion"
 
-export const HiddenOverflowWrapper = styled.div`
+export const HiddenOverflowWrapper = styled(motion.div)`
   overflow: hidden;
   background-color: #fff;
 `
@@ -32,6 +32,7 @@ export const HeroSection = styled(motion.div)`
     height: calc(75vh - 80px);
   }
   display: flex;
+  align-items: center;
   padding-left: 165px;
   position: relative;
   @media only screen and (max-width: 1000px) {
@@ -42,14 +43,16 @@ export const HeroSection = styled(motion.div)`
     margin: 0 auto 0;
     height: unset;
     flex-direction: column;
+
+    align-items: unset;
+    justify-content: center;
   }
 `
-export const TextWrapper = styled.div`
+export const TextWrapper = styled(motion.div)`
   width: 55%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  display: block;
+  position: relative;
+  z-index: 2;
   @media only screen and (max-width: 1032px) {
     width: 65%;
   }
@@ -68,14 +71,41 @@ export const TextWrapper = styled.div`
     width: 100%;
     padding-top: 70px;
   }
+  span {
+    font-size: 70px;
+    line-height: 101px;
+    font-weight: 600;
+    margin: 0;
+    color: #000;
+    position: relative;
+    display: inline;
+    @media only screen and (max-width: 1400px) {
+      font-size: 56px;
+      line-height: 80px;
+    }
+    @media only screen and (max-width: 1150px) {
+      font-size: 48px;
+      line-height: 68px;
+    }
+    @media only screen and (max-width: 908px) {
+      font-size: 40px;
+      line-height: 58px;
+    }
+    @media only screen and (max-width: 500px) {
+      font-size: 30px;
+      line-height: 46px;
+    }
+  }
 `
 
-export const StyledHeader = styled.h2`
+export const StyledHeader = styled(motion.h2)`
   font-size: 70px;
   line-height: 101px;
   font-weight: 600;
   margin: 0;
   color: #000;
+  position: relative;
+  display: inline;
   @media only screen and (max-width: 1400px) {
     font-size: 56px;
     line-height: 80px;
@@ -94,10 +124,11 @@ export const StyledHeader = styled.h2`
   }
 `
 
-export const ImagesWrapper = styled.div`
+export const ImagesWrapper = styled(motion.div)`
   width: 60%;
   height: 100%;
   overflow: hidden;
+  pointer-events: none;
   @media only screen and (max-width: 1032px) {
     width: 65%;
   }
@@ -119,7 +150,7 @@ export const ImagesWrapper = styled.div`
   }
 `
 
-export const VideoContainer = styled.div`
+export const VideoContainer = styled(motion.div)`
   max-width: 1440px;
   max-height: 1020px;
   display: flex;
@@ -225,11 +256,12 @@ export const CircleSmaller = styled.svg`
     bottom: 8%;
   }
 `
-export const TextWithBackground = styled.span`
+export const TextWithBackground = styled(motion.span)`
   background-color: ${({ bg }) => bg};
+  position: relative;
 `
 
-export const StyledButton = styled.button`
+export const StyledButton = styled(motion.button)`
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 0.1em;
@@ -238,7 +270,7 @@ export const StyledButton = styled.button`
   max-width: 305px;
   min-width: 200px;
   padding: 20px 0px;
-  z-index: 4;
+  z-index: 8;
   &:focus {
     outline: 2px solid ${({ theme }) => theme.colors.black};
     outline-offset: 5px;
@@ -261,7 +293,7 @@ export const StyledButton = styled.button`
     font-weight: 400;
   }
 `
-export const PremieraSection = styled.section`
+export const PremieraSection = styled(motion.section)`
   background-color: ${({ theme }) => theme.colors.grayDarkest};
   display: flex;
   flex-direction: column;
@@ -324,7 +356,7 @@ export const PremieraSection = styled.section`
   }
 `
 
-export const VideoSection = styled.section`
+export const VideoSection = styled(motion.section)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -346,7 +378,7 @@ export const VideoSection = styled.section`
   }
 `
 
-export const VideoIframe = styled.iframe`
+export const VideoIframe = styled(motion.iframe)`
   border: 0;
   margin-top: 40px;
   @media only screen and (max-width: 1281px) {
@@ -357,7 +389,7 @@ export const VideoIframe = styled.iframe`
   }
 `
 
-export const ArtBriefSection = styled.div`
+export const ArtBriefSection = styled(motion.div)`
   width: 50%;
   max-width: 635px;
   margin: 0 auto;
@@ -388,12 +420,12 @@ export const ArtBriefSection = styled.div`
   }
 `
 
-export const DetailsSection = styled.section`
+export const DetailsSection = styled(motion.section)`
   margin: 0 auto;
   background-color: ${({ bg, theme }) => (bg ? bg : theme.colors.grayDarkest)};
 `
 
-export const PeopleDetailsWrapper = styled.div`
+export const PeopleDetailsWrapper = styled(motion.div)`
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
@@ -427,13 +459,18 @@ export const PeopleDetailsWrapper = styled.div`
   }
 `
 
-export const RealisatorsWrapper = styled.div`
+export const RealisatorsWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
+  position: relative;
   h3 {
     margin-bottom: 10px;
+    font-size: 52px;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 400;
   }
   ul {
     padding: 0;
@@ -469,16 +506,21 @@ export const RealisatorsWrapper = styled.div`
   }
 `
 
-export const CrewWrapper = styled.div`
+export const CrewWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   margin-top: -12px;
+  position: relative;
 
   @media only screen and (max-width: 860px) {
     margin-top: 64px;
   }
   h3 {
     margin-bottom: 10px;
+    font-size: 52px;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 400;
   }
   ul {
     padding: 0;
@@ -513,7 +555,7 @@ export const CrewWrapper = styled.div`
   }
 `
 
-export const CharactersWrapper = styled.section`
+export const CharactersWrapper = styled(motion.section)`
   max-width: 1440px;
   margin: 0 auto;
   padding: 80px 75px 120px;
@@ -525,7 +567,7 @@ export const CharactersWrapper = styled.section`
     }
   }
 `
-export const CharactersGrid = styled.div`
+export const CharactersGrid = styled(motion.div)`
   margin-top: 75px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(318px, 1fr));
@@ -567,7 +609,7 @@ export const CreatorsSection = styled(motion.section)`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 100vh;
+  height: calc(100vh + 50px);
   background-color: ${({ bg, theme }) => (bg ? bg : theme.colors.grayDarkest)};
   overflow: hidden;
   @media only screen and (max-width: 767px) {
@@ -575,7 +617,7 @@ export const CreatorsSection = styled(motion.section)`
   }
 `
 
-export const CreatorsWrapper = styled.div`
+export const CreatorsWrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -600,7 +642,7 @@ export const CreatorsWrapper = styled.div`
   }
 `
 
-export const ContentWrapperList = styled.div`
+export const ContentWrapperList = styled(motion.div)`
   display: flex;
   flex-direction: column;
   flex: 0 0 55%;
@@ -724,7 +766,7 @@ export const ContentWrapperList = styled.div`
   }
 `
 
-export const NamesWrapper = styled.div`
+export const NamesWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   flex: 0 0 45%;
@@ -736,7 +778,7 @@ export const NamesWrapper = styled.div`
     li {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 10px 0 0;
       cursor: pointer;
       position: relative;
       button {
@@ -744,7 +786,24 @@ export const NamesWrapper = styled.div`
         border: none;
         background-color: transparent;
         box-shadow: none;
-        outline: none;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          width: 100%;
+          height: 2px;
+          background-color: #fff;
+          transform: scaleY(0);
+          transition: 0.2s transform ease-in;
+        }
+        &:focus {
+          outline: none;
+          &:after {
+            transform: scaleY(1);
+          }
+        }
       }
       &:hover {
         svg {
@@ -756,7 +815,7 @@ export const NamesWrapper = styled.div`
         position: relative;
         display: inline-block;
         transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        color: rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.4);
       }
       svg {
         position: absolute;
@@ -838,7 +897,7 @@ export const NamesWrapper = styled.div`
 export const FooterSection = styled.footer`
   display: flex;
   flex-wrap: wrap;
-  padding: 130px 65px 20px 65px;
+  padding: 130px 65px 80px 65px;
   max-width: 1440px;
   position: relative;
   margin: 0 auto;
@@ -851,32 +910,67 @@ export const FooterSection = styled.footer`
     max-height: unset;
   }
   @media only screen and (max-width: 768px) {
-    padding: 20px 65px 65px;
+    padding: 60px 65px 65px;
     max-height: unset;
     flex-direction: column;
     max-width: 100vw;
   }
   @media only screen and (max-width: 568px) {
-    padding: 20px 0 65px;
+    padding: 60px 0 65px;
+  }
+
+  a.link {
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    &:focus {
+      outline: 2px solid ${({ theme }) => theme.colors.black};
+      outline-offset: 3px;
+    }
+
+    :after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      height: 2px;
+      width: 100%;
+      background-color: #000;
+
+      transition: transform
+        ${({ theme }) => `0.2s ${theme.transition.cubicBezier}`};
+    }
+    :hover:after {
+      transform: translateY(-3px);
+    }
   }
 `
 
-export const TeatrColumn = styled.div`
+export const TeatrColumn = styled(motion.div)`
   display: flex;
   flex-direction: column;
   flex: 4 4 45%;
+  a {
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 16px;
+    &:focus {
+      outline: 2px solid ${({ theme }) => theme.colors.black};
+      outline-offset: 0px;
+    }
+  }
   p {
     margin: 0 0 16px 158px;
   }
   h3 {
-    margin: -82px 0 32px 158px;
+    margin: -82px 0 16px 158px;
   }
   @media only screen and (max-width: 1410px) {
     p {
       margin: 0 0 16px 128px;
     }
     h3 {
-      margin: -66px 0 32px 128px;
+      margin: -66px 0 16px 128px;
     }
   }
   @media only screen and (max-width: 1338px) {
@@ -885,7 +979,7 @@ export const TeatrColumn = styled.div`
     }
     h3 {
       font-size: 18px;
-      margin: -40px 0 32px 72px;
+      margin: -40px 0 16px 72px;
     }
   }
   @media only screen and (max-width: 1017px) {
@@ -902,27 +996,25 @@ export const TeatrColumn = styled.div`
     }
     h3 {
       font-size: 11px;
-      margin: -40px 8px 32px 64px;
+      margin: -40px 8px 16px 64px;
     }
   }
 `
 
-export const MinisterstwoColumn = styled.div`
+export const MinisterstwoColumn = styled(motion.div)`
   display: flex;
   flex-direction: column;
   flex: 3 3 35%;
-  margin-top: -16px;
-  img,
-  picture {
-    left: 50% !important;
-    transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+
+  img {
+    margin-top: -16px;
+    width: 200px;
   }
   @media only screen and (max-width: 1017px) {
     flex: 1 1 30%;
     margin-top: -22px;
-    div[aria-hidden="true"] {
-      padding-bottom: 242px !important;
-    }
   }
   @media only screen and (max-width: 768px) {
     flex: 0 0 100%;
@@ -931,7 +1023,7 @@ export const MinisterstwoColumn = styled.div`
   }
 `
 
-export const SocialColumn = styled.div`
+export const SocialColumn = styled(motion.div)`
   display: flex;
   flex-direction: column;
   flex: 3 3 20%;

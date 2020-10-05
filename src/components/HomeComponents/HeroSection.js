@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import {
   HeroSection,
   TextWrapper,
-  StyledHeader,
   ImagesWrapper,
   StyledImage,
   CircleBigger,
@@ -13,6 +12,7 @@ import {
   StyledButton,
   HiddenOverflowWrapper,
 } from "./HomeStyles"
+import { motion } from "framer-motion"
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -39,28 +39,99 @@ const Hero = () => {
     })
   }
 
+  const child1 = {
+    initial: {
+      y: 20,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        delay: 0.2,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+  }
+  const child2 = {
+    initial: {
+      y: 20,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        delay: 0.9,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+  }
+
   return (
     <HiddenOverflowWrapper>
       <HeroSection
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{
+          duration: 0.6,
+          when: "beforeChildren",
+        }}
       >
         <TextWrapper>
-          <StyledHeader
+          <motion.span
+            exit={{ opacity: 0 }}
+            variants={child1}
+            initial="initial"
+            animate="animate"
+          >
+            Skąd kamienica ma wiedzieć,
+          </motion.span>{" "}
+          <TextWithBackground
+            exit={{ opacity: 0 }}
+            variants={child2}
+            initial="initial"
+            animate="animate"
+            bg="#BEBFBB"
+          >
+            kiedy jest samotność?
+          </TextWithBackground>
+          {/* <StyledHeader
             as="h2"
             fontSize="70px"
             lineHeight="101px"
             fontWeight="400"
             color="#000"
+            variants={containerVariants}
+            initial="before"
+            animate="after"
+            transition={{
+              staggerChildren: 0.3,
+              delayChildren: 0.5,
+            }}
           >
-            Skąd kamienica ma wiedzieć,{" "}
-            <TextWithBackground bg="#BEBFBB">
+            <motion.span
+              exit={{ opacity: 0 }}
+              variants={child1}
+              initial="initial"
+              animate="animate"
+            >
+              Skąd kamienica ma wiedzieć,
+            </motion.span>{" "}
+            <TextWithBackground variants={textVariants} bg="#BEBFBB">
               kiedy jest samotność?
             </TextWithBackground>
-          </StyledHeader>
-          <StyledButton onClick={e => handleClick(e)} margin="40px 0 0">
+          </StyledHeader> */}
+          <StyledButton
+            onClick={e => handleClick(e)}
+            margin="40px 0 0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.8, duration: 1 }}
+          >
             Zobacz
           </StyledButton>
         </TextWrapper>

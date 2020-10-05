@@ -1,5 +1,6 @@
 import React from "react"
 import Seo from "../components/Seo"
+import { motion } from "framer-motion"
 
 import ContextHeroSection from "../components/contextComponents/ContextHeroSection"
 import ContextContentSection from "../components/contextComponents/ContextContentSection"

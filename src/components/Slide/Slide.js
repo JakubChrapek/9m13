@@ -2,10 +2,10 @@ import React from "react"
 import { motion } from "framer-motion"
 import Text from "../Text/Text"
 
-const Slide = ({ creator, description }) => {
+const Slide = ({ creator, description, layout }) => {
   return (
     <motion.li
-      layout
+      layout={layout}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

@@ -81,8 +81,9 @@ export const Wrapper = styled(motion.section)`
   }
 
   div:first-child {
-    flex: 1 1 40%;
+    flex: 1 1 50%;
     align-self: center;
+    padding-right: 24px;
     @media only screen and (max-width: 1007px) {
       flex: 1 1 100%;
       order: 1;
@@ -93,11 +94,37 @@ export const Wrapper = styled(motion.section)`
     @media only screen and (max-width: 500px) {
       width: unset;
     }
-    h1 {
+
+    p {
+      margin-top: 24px;
+      font-size: 30px;
+      line-height: 50px;
+      letter-spacing: 0.05em;
+      @media only screen and (max-width: 1306px) {
+        font-size: 26px;
+        line-height: 42px;
+      }
+      @media only screen and (max-width: 1153px) {
+        font-size: 22px;
+        line-height: 38px;
+      }
+      @media only screen and (max-width: 1007px) {
+        font-size: 22px;
+        line-height: 36px;
+        margin-right: 0;
+        margin-top: 18px;
+      }
+      @media only screen and (max-width: 350px) {
+        font-size: 18px;
+        line-height: 30px;
+        margin-right: 0;
+        margin-top: 12px;
+      }
+    }
+    p.title {
       font-size: 52px;
       line-height: 62px;
       font-weight: 600;
-      margin-right: -40%;
       @media only screen and (max-width: 1306px) {
         font-size: 42px;
         line-height: 50px;
@@ -105,7 +132,6 @@ export const Wrapper = styled(motion.section)`
       @media only screen and (max-width: 1153px) {
         font-size: 36px;
         line-height: 44px;
-        margin-right: -20%;
       }
       @media only screen and (max-width: 1007px) {
         font-size: 30px;
@@ -121,35 +147,7 @@ export const Wrapper = styled(motion.section)`
         margin: 0 0 0;
       }
     }
-    p {
-      margin-top: 24px;
-      font-size: 30px;
-      line-height: 50px;
-      letter-spacing: 0.05em;
-      margin-right: -35%;
-      @media only screen and (max-width: 1306px) {
-        font-size: 26px;
-        line-height: 42px;
-      }
-      @media only screen and (max-width: 1153px) {
-        font-size: 22px;
-        line-height: 38px;
-        margin-right: -25%;
-      }
-      @media only screen and (max-width: 1007px) {
-        font-size: 22px;
-        line-height: 36px;
-        margin-right: 0;
-        margin-top: 18px;
-      }
-      @media only screen and (max-width: 350px) {
-        font-size: 18px;
-        line-height: 30px;
-        margin-right: 0;
-        margin-top: 12px;
-      }
-    }
-    h1,
+
     p {
       z-index: 1;
       pointer-events: none;
@@ -157,9 +155,9 @@ export const Wrapper = styled(motion.section)`
   }
 
   div:last-child {
-    flex: 1 1 60%;
+    flex: 1 1 50%;
     @media only screen and (max-width: 1306px) {
-      flex: 1 1 70%;
+      flex: 1 1 50%;
     }
     height: 60vh;
     max-height: 450px;
@@ -562,7 +560,7 @@ export const HowToTextWrapper = styled.div`
       content: "";
       position: absolute;
       left: 0;
-      bottom: -7px;
+      bottom: -4px;
       height: 2px;
       width: 100%;
       background-color: #000;
@@ -571,7 +569,7 @@ export const HowToTextWrapper = styled.div`
         ${({ theme }) => `0.2s ${theme.transition.cubicBezier}`};
     }
     :hover:after {
-      transform: translateY(-5px);
+      transform: translateY(-2px);
     }
   }
 `

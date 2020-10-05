@@ -5,6 +5,7 @@ import Wrapper from "../components/Wrapper/Wrapper"
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop"
 import styled, { ThemeProvider } from "styled-components"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
+import { AnimatePresence } from "framer-motion"
 
 const PageWrapper = styled.div`
   padding: 0;

@@ -7,6 +7,7 @@ import {
   RightWrapper,
   CenterWrapper,
 } from "./ContextStyles"
+import { motion } from "framer-motion"
 
 const ContextHeroSection = ({ width }) => {
   const tabletBreakpoint = 910
@@ -46,7 +47,12 @@ const ContextHeroSection = ({ width }) => {
       transition={{ duration: 0.4 }}
     >
       {width >= tabletBreakpoint && (
-        <LeftWrapper>
+        <LeftWrapper
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}
+        >
           <StyledImage
             fluid={data.leftSide.childImageSharp.fluid}
             alt="Część kamienicy"
@@ -60,9 +66,18 @@ const ContextHeroSection = ({ width }) => {
           </svg>
         </LeftWrapper>
       )}
-      <CenterWrapper>
-        <ul>
-          <li>
+      <CenterWrapper
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.4 }}
+      >
+        <motion.ul>
+          <motion.li
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
             <a onClick={e => handleClick(e)} href="#opowiesci">
               Zuzanna Bojda, Opowieści kamienicy
               <svg
@@ -78,8 +93,12 @@ const ContextHeroSection = ({ width }) => {
                 />
               </svg>
             </a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+          >
             <a onClick={e => handleClick(e)} href="#dotyk">
               Jagoda Prześluga, O dotyku
               <svg
@@ -95,8 +114,12 @@ const ContextHeroSection = ({ width }) => {
                 />
               </svg>
             </a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
             <a onClick={e => handleClick(e)} href="#odczuwanie">
               Steen Eiler Rasmussen, Odczuwanie architektury
               <svg
@@ -112,11 +135,16 @@ const ContextHeroSection = ({ width }) => {
                 />
               </svg>
             </a>
-          </li>
-        </ul>
+          </motion.li>
+        </motion.ul>
       </CenterWrapper>
       {width >= tabletBreakpoint && (
-        <RightWrapper>
+        <RightWrapper
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}
+        >
           <StyledImage
             fluid={data.rightSide.childImageSharp.fluid}
             alt="Część kamienicy"

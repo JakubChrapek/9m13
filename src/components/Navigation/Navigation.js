@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 import useCurrentWidth from "../../components/hooks/useCurrentWidth"
 
-const NavigationWrapper = styled.nav`
+const NavigationWrapper = styled(motion.nav)`
   max-width: 1440px;
   margin: 0 auto;
   padding: 40px 75px;
@@ -84,16 +84,23 @@ const NavigationList = styled(motion.ul)`
     align-items: center;
     li {
       margin-right: 0;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
       &:last-child {
         margin-bottom: 0;
       }
-      font-size: 30px;
-      line-height: 44px;
+      font-size: 28px;
+      line-height: 38px;
       font-weight: 400;
       letter-spacing: 1.25px;
     }
-    /* } */
+
+    @media (max-width: 688px) {
+      li {
+        margin-bottom: 26px;
+        font-size: 24px;
+        line-height: 34px;
+      }
+    }
   }
 `
 
@@ -198,7 +205,11 @@ const Navigation = () => {
   let width = useCurrentWidth()
 
   return (
-    <NavigationWrapper>
+    <NavigationWrapper
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <SkipNavLink to="#main">Skip navigation</SkipNavLink>
       <Logo onClick={() => setOpen(false)}>
         <Link to="/">

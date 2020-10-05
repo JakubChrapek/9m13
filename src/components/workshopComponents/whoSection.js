@@ -21,7 +21,7 @@ const WhoSection = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ delay: 0.6, duration: 0.4 }}
+      transition={{ delay: 0, duration: 0.4 }}
     >
       <ImageWrapper>
         <Image
@@ -33,7 +33,7 @@ const WhoSection = () => {
         <Text as="h2">Warsztat: kto, kiedy, gdzie?</Text>
         <ul>
           <li>17 października 2020, godz. 12:00</li>
-          <li>Czas trwania: 2 godz.</li>
+          <li>Czas trwania: 3 godz.</li>
           <li>Ilość uczestników: 8-10 osób</li>
           <li>Wiek uczestników: młodzież (15+) i dorośli</li>
           <li>Prowadząca: Magdalena Parszewska</li>

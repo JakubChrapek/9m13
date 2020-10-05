@@ -13,8 +13,19 @@ const HeroWorkshop = () => {
       transition={{ duration: 0.4 }}
     >
       <Flex column>
-        <Text as="h1">Warsztaty z animacji poklatkowej online</Text>
-        <Text>
+        <Text
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="title"
+        >
+          Warsztaty z animacji poklatkowej online
+        </Text>
+        <Text
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        >
           Weź udział w bezpłatnych warsztatach animacji poklatkowej online!
         </Text>
       </Flex>
@@ -29,7 +40,7 @@ const HeroWorkshop = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ delay: 0.4, duration: 0.4 }}
+          transition={{ duration: 0.5, delay: 2 }}
         ></VideoIframe>
       </Flex>
     </Wrapper>

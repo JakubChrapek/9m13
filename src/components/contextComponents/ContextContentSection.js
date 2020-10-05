@@ -80,8 +80,8 @@ const ContextContentSection = ({ width }) => {
             Opowieści kamienicy
           </Text>
           <Text>
-            Słowo <span> izolacja</span> przewijało się ostatnimi czasy dosyć
-            często w rozmowach, tych zasłyszanych i tych, przeprowadzanych - w
+            Słowo izolacja przewijało się ostatnimi czasy dosyć często w
+            rozmowach, tych zasłyszanych i tych, przeprowadzanych - w
             tramwajach, w kolejkach, poczekalniach, parkach, w domach, podczas
             spotkań towarzyskich, podczas konferencji dotyczących pracy, podczas
             śniadań i kolacji.
@@ -89,9 +89,9 @@ const ContextContentSection = ({ width }) => {
 
           <Text margin="32px 0 0" mobileMargin="20px 0 0">
             Pandemia, której się nie spodziewaliśmy, sprawiła, że wiele i wielu
-            z nas zostało zmuszonych do <span> zamknięcia się</span> na pewien
-            czas w domu, czy też przynajmniej - do spędzenia w nim większej
-            ilości czasu, niż dotychczas.{" "}
+            z nas zostało zmuszonych do zamknięcia się na pewien czas w domu,
+            czy też przynajmniej - do spędzenia w nim większej ilości czasu, niż
+            dotychczas.{" "}
           </Text>
           <section id="dom">
             <Text
@@ -107,8 +107,7 @@ const ContextContentSection = ({ width }) => {
 
             <Text>
               Dom jest tym czymś, co zwykle przewija się w pierwszych rysunkach
-              dzieci. <span> W dom</span> jest jedną z pierwszych wspólnych
-              zabaw. <span> Domem </span>
+              dzieci. W dom jest jedną z pierwszych wspólnych zabaw. Domem
               nazywamy konkretną przestrzeń, budynek, instytucję społeczną. Ale
               dom to też miejsce, z którego się pochodzi, do którego się wraca,
               za którym się tęskni, albo którego się nienawidzi, który można
@@ -116,12 +115,11 @@ const ContextContentSection = ({ width }) => {
             </Text>
 
             <Text margin="32px 0 0" mobileMargin="20px 0 0">
-              Niektórzy bardzo chcą mieć <span> swój dom</span> . Inni ciągle
-              zmieniają miejsca zamieszkania. Dla niektórych dom to pierwsze
-              miejsce, w jakim się żyło, dla innych - plecak z
-              najpotrzebniejszymi rzeczami. Dom to też przestrzeń metaforyczna,
-              zbiór pragnień, uczuć, możliwości. Dom równa się często:
-              melancholia.
+              Niektórzy bardzo chcą mieć swój dom. Inni ciągle zmieniają miejsca
+              zamieszkania. Dla niektórych dom to pierwsze miejsce, w jakim się
+              żyło, dla innych - plecak z najpotrzebniejszymi rzeczami. Dom to
+              też przestrzeń metaforyczna, zbiór pragnień, uczuć, możliwości.
+              Dom równa się często: melancholia.
             </Text>
           </section>
           <section id="przestrzeń">

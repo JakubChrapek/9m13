@@ -46,22 +46,22 @@ const HowToAttend = () => {
               którym będziesz wykonywać zdjęcia
             </li>
             <li>
-              darmowa aplikacja Stop Motion Studio, do pobrania{" "}
+              darmowa aplikacja{" "}
               <a
                 target="_blank"
                 rel="noreferrer"
                 href="https://play.google.com/store/apps/details?id=com.cateater.stopmotionstudio&hl=pl"
               >
-                stąd
+                Stop Motion Studio
               </a>
+              ,
             </li>
             <li>
-              wydrukowane materiały (
               <a
                 download="9m13 warsztaty"
                 href="https://www.datocms-assets.com/34173/1601655469-numer9-mieszkania-13materialy-warsztaty.rar"
               >
-                pobierz
+                wydrukowane materiały ( pobierz
               </a>
               ) lub jeśli nie masz możliwości wydruku, przygotuj kilka małych
               przedmiotów codziennego użytku, które chcesz ożywić - kolorowe i
