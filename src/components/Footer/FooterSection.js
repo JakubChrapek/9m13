@@ -55,7 +55,11 @@ const Footer = () => {
   return (
     <FooterSection>
       <TeatrColumn>
-        <a target="_blank" href="https://wspolczesny.szczecin.pl/">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://wspolczesny.szczecin.pl/"
+        >
           <LogoImage fluid={data.teatr.childImageSharp.fluid} />
 
           <Text
@@ -106,12 +110,18 @@ const Footer = () => {
           <a
             className="link"
             target="_blank"
+            rel="noreferrer"
             href="https://kryptonumstudio.com"
           >
             Kryptonum Studio
           </a>{" "}
           &{" "}
-          <a className="link" target="_blank" href="https://dobratresc.com">
+          <a
+            className="link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://dobratresc.com"
+          >
             Dobra Treść
           </a>
         </Text>

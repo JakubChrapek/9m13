@@ -1,7 +1,6 @@
 import React from "react"
 import Seo from "../components/Seo"
 import useCurrentWidth from "../components/hooks/useCurrentWidth"
-import { motion } from "framer-motion"
 // Components
 import Hero from "../components/HomeComponents/HeroSection"
 import Video from "../components/HomeComponents/VideoSection"

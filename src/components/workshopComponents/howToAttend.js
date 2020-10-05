@@ -59,11 +59,11 @@ const HowToAttend = () => {
             <li>
               <a
                 download="9m13 warsztaty"
-                href="https://www.datocms-assets.com/34173/1601655469-numer9-mieszkania-13materialy-warsztaty.rar"
+                href="https://www.datocms-assets.com/34173/1601910528-numer9-mieszkania-13materialy-warsztaty.zip"
               >
-                wydrukowane materiały ( pobierz
+                wydrukowane materiały ( pobierz )
               </a>
-              ) lub jeśli nie masz możliwości wydruku, przygotuj kilka małych
+              lub jeśli nie masz możliwości wydruku, przygotuj kilka małych
               przedmiotów codziennego użytku, które chcesz ożywić - kolorowe i
               białe kartki, nożyczki, klej, mazaki lub kredki, taśma klejąca,
               gumki do przyklejania zdjęć na ścianę

@@ -130,6 +130,25 @@ const NavigationListItem = styled(motion.li)`
 const StyledNavLink = styled(Link)`
   display: flex;
   align-items: center;
+  position: relative;
+
+  :after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #000;
+    transform: scaleY(0);
+    transform-origin: center center;
+    transition: transform
+      ${({ theme }) => `0.2s ${theme.transition.cubicBezier}`};
+  }
+  :hover:after,
+  &.active {
+    transform: scaleY(1);
+  }
 `
 
 const SkipNavLink = styled(Link)`
@@ -225,19 +244,29 @@ const Navigation = () => {
             className={open ? "open" : ""}
           >
             <NavigationListItem onClick={() => setOpen(false)}>
-              <StyledNavLink to="/#spektakl">Spektakl</StyledNavLink>
+              <StyledNavLink to="/#spektakl" activeClassName="active">
+                Spektakl
+              </StyledNavLink>
             </NavigationListItem>
             <NavigationListItem onClick={() => setOpen(false)}>
-              <StyledNavLink to="/#tworcy">Twórcy</StyledNavLink>
+              <StyledNavLink to="/#tworcy" activeClassName="active">
+                Twórcy
+              </StyledNavLink>
             </NavigationListItem>
             <NavigationListItem onClick={() => setOpen(false)}>
-              <StyledNavLink to="/#postaci">Postaci</StyledNavLink>
+              <StyledNavLink to="/#postaci" activeClassName="active">
+                Postaci
+              </StyledNavLink>
             </NavigationListItem>
             <NavigationListItem onClick={() => setOpen(false)}>
-              <StyledNavLink to="/konteksty">Konteksty</StyledNavLink>
+              <StyledNavLink to="/konteksty" activeClassName="active">
+                Konteksty
+              </StyledNavLink>
             </NavigationListItem>
             <NavigationListItem onClick={() => setOpen(false)}>
-              <StyledNavLink to="/warsztat">Warsztat</StyledNavLink>
+              <StyledNavLink to="/warsztat" activeClassName="active">
+                Warsztat
+              </StyledNavLink>
             </NavigationListItem>
           </NavigationList>
         )}

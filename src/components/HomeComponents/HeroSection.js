@@ -88,43 +88,17 @@ const Hero = () => {
             initial="initial"
             animate="animate"
           >
-            Skąd kamienica ma wiedzieć,
+            Skąd kamienica ma wiedzieć,{" "}
           </motion.span>{" "}
           <TextWithBackground
             exit={{ opacity: 0 }}
             variants={child2}
             initial="initial"
             animate="animate"
-            bg="#BEBFBB"
+            // bg="#BEBFBB"
           >
             kiedy jest samotność?
           </TextWithBackground>
-          {/* <StyledHeader
-            as="h2"
-            fontSize="70px"
-            lineHeight="101px"
-            fontWeight="400"
-            color="#000"
-            variants={containerVariants}
-            initial="before"
-            animate="after"
-            transition={{
-              staggerChildren: 0.3,
-              delayChildren: 0.5,
-            }}
-          >
-            <motion.span
-              exit={{ opacity: 0 }}
-              variants={child1}
-              initial="initial"
-              animate="animate"
-            >
-              Skąd kamienica ma wiedzieć,
-            </motion.span>{" "}
-            <TextWithBackground variants={textVariants} bg="#BEBFBB">
-              kiedy jest samotność?
-            </TextWithBackground>
-          </StyledHeader> */}
           <StyledButton
             onClick={e => handleClick(e)}
             margin="40px 0 0"

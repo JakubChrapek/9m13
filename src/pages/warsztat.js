@@ -7,7 +7,6 @@ import Teacher from "../components/workshopComponents/teacherWorkshop"
 import VideoSection from "../components/workshopComponents/videoSection"
 import WhoSection from "../components/workshopComponents/whoSection"
 import useCurrentWidth from "../components/hooks/useCurrentWidth"
-import { motion } from "framer-motion"
 
 import {} from "../components/workshopComponents/workshopStyles"
 import Footer from "../components/Footer/FooterSection"

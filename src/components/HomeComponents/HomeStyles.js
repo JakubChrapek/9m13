@@ -265,22 +265,47 @@ export const StyledButton = styled(motion.button)`
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 0.1em;
+  border: none;
   text-transform: uppercase;
   width: 50%;
   max-width: 305px;
   min-width: 200px;
   padding: 20px 0px;
   z-index: 8;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: color ${({ theme }) => `0.2s ${theme.transition.cubicBezier}`};
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: transform
+        ${({ theme }) => `0.2s ${theme.transition.cubicBezier}`},
+      background-color ${({ theme }) => `0.2s ${theme.transition.cubicBezier}`};
+    width: 90%;
+    height: 100%;
+    left: 5%;
+    top: 0;
+    background: #fff;
+    transform-origin: 50% 50%;
+    transform: scaleX(0);
+  }
   &:focus {
     outline: 2px solid ${({ theme }) => theme.colors.black};
     outline-offset: 5px;
+  }
+  &:hover {
+    color: #1b1d1f;
+    :after {
+      transform: scaleX(1);
+    }
   }
   @media only screen and (max-width: 908px) {
     padding: 16px 0px;
     min-width: 160px;
     max-width: 185px;
   }
-  border: 1px solid ${({ theme }) => theme.colors.black};
+  border: 2px solid ${({ theme }) => theme.colors.black};
   margin: ${({ margin }) => margin};
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.grayDarkest};

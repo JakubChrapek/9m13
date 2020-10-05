@@ -553,7 +553,7 @@ export const HowToTextWrapper = styled.div`
     color: #000;
     &:focus {
       outline: 2px solid ${({ theme }) => theme.colors.black};
-      outline-offset: 5px;
+      outline-offset: 2px;
     }
 
     :after {
