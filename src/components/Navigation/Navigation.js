@@ -101,6 +101,14 @@ const NavigationList = styled(motion.ul)`
         line-height: 34px;
       }
     }
+    @media (max-height: 415px) {
+      li {
+        margin-bottom: 0;
+        padding: 10px;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
   }
 `
 
@@ -249,13 +257,13 @@ const Navigation = () => {
               </StyledNavLink>
             </NavigationListItem>
             <NavigationListItem onClick={() => setOpen(false)}>
-              <StyledNavLink to="/#tworcy" activeClassName="active">
-                Twórcy
+              <StyledNavLink to="/#postaci" activeClassName="active">
+                Postaci
               </StyledNavLink>
             </NavigationListItem>
             <NavigationListItem onClick={() => setOpen(false)}>
-              <StyledNavLink to="/#postaci" activeClassName="active">
-                Postaci
+              <StyledNavLink to="/#tworcy" activeClassName="active">
+                Twórcy
               </StyledNavLink>
             </NavigationListItem>
             <NavigationListItem onClick={() => setOpen(false)}>
@@ -265,7 +273,7 @@ const Navigation = () => {
             </NavigationListItem>
             <NavigationListItem onClick={() => setOpen(false)}>
               <StyledNavLink to="/warsztat" activeClassName="active">
-                Warsztat
+                Warsztaty
               </StyledNavLink>
             </NavigationListItem>
           </NavigationList>

@@ -95,51 +95,43 @@ const Video = () => {
           exit={{ opacity: 0 }}
           variants={parent}
           initial="initial"
-          animate="animate"
+          animate={parentInView ? "animate" : {}}
         >
-          {parentInView && (
-            <motion.span
-              exit={{ opacity: 0 }}
-              variants={child1}
-              initial="initial"
-              animate="animate"
-              className="first"
-            >
-              numer 9
-            </motion.span>
-          )}
-          {parentInView && (
-            <motion.span
-              exit={{ opacity: 0 }}
-              variants={child2}
-              initial="initial"
-              animate="animate"
-              className="second"
-            >
-              mieszkania 13
-            </motion.span>
-          )}
-          {parentInView && (
-            <motion.span
-              exit={{ opacity: 0 }}
-              variants={child3}
-              initial="initial"
-              animate="animate"
-              className="third"
-            >
-              premiera: 24.10.2020
-            </motion.span>
-          )}
-          {parentInView && (
-            <motion.div
-              exit={{ opacity: 0 }}
-              variants={line}
-              initial="initial"
-              animate="animate"
-              className="fourth"
-              style={{ originX: 0, originY: 0.5 }}
-            ></motion.div>
-          )}
+          <motion.span
+            exit={{ opacity: 0 }}
+            variants={child1}
+            initial="initial"
+            animate={parentInView ? "animate" : {}}
+            className="first"
+          >
+            numer 9
+          </motion.span>
+          <motion.span
+            exit={{ opacity: 0 }}
+            variants={child2}
+            initial="initial"
+            animate={parentInView ? "animate" : {}}
+            className="second"
+          >
+            mieszkania 13
+          </motion.span>
+          <motion.span
+            exit={{ opacity: 0 }}
+            variants={child3}
+            initial="initial"
+            animate={parentInView ? "animate" : {}}
+            className="third"
+          >
+            premiera: 24.10.2020
+          </motion.span>
+          <motion.div
+            exit={{ opacity: 0 }}
+            variants={line}
+            initial="initial"
+            animate={parentInView ? "animate" : {}}
+            className="fourth"
+            style={{ originX: 0, originY: 0.5 }}
+          ></motion.div>
         </motion.div>
       </AnimatePresence>
     </PremieraSection>

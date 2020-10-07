@@ -10,6 +10,7 @@ export const HiddenOverflowWrapper = styled(motion.div)`
 export const HeroSection = styled(motion.div)`
   background-color: #fff;
   height: calc(100vh - 180px);
+  min-height: 420px;
   @media only screen and (max-width: 960px) {
     height: calc(100vh - 120px);
   }
@@ -52,7 +53,7 @@ export const TextWrapper = styled(motion.div)`
   width: 55%;
   display: block;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   @media only screen and (max-width: 1032px) {
     width: 65%;
   }
@@ -61,7 +62,7 @@ export const TextWrapper = styled(motion.div)`
     justify-content: flex-start;
   }
   @media only screen and (max-width: 750px) {
-    padding-top: 60px;
+    padding-top: 40px;
     width: 75%;
   }
   @media only screen and (max-width: 608px) {
@@ -271,6 +272,7 @@ export const StyledButton = styled(motion.button)`
   max-width: 305px;
   min-width: 200px;
   padding: 20px 0px;
+  display: block;
   z-index: 8;
   position: relative;
   transform-style: preserve-3d;
@@ -326,12 +328,17 @@ export const PremieraSection = styled(motion.section)`
   justify-content: center;
   align-items: center;
   height: 560px;
+  @media only screen and (max-width: 768px) {
+    height: 460px;
+    margin-top: 20px;
+  }
   > div {
     max-width: 1440px;
     padding: 100px 185px 80px 100px;
     @media only screen and (max-width: 1200px) {
       padding: 100px 115px 80px 70px;
     }
+
     @media only screen and (max-width: 586px) {
       padding: 48px 28px;
     }

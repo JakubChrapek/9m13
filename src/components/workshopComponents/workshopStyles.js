@@ -585,6 +585,7 @@ export const VideoWrapper = styled.div`
   max-width: 1440px;
   height: calc(100vh + 235px);
   max-height: 1020px;
+  min-height: 490px;
   @media only screen and (max-width: 1320px) {
     padding: 60px 50px 40px;
   }
