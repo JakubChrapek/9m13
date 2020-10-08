@@ -24,6 +24,11 @@ const Hero = () => {
           }
         }
       }
+      datoCmsStronaGlowna {
+        tytulCzesc1
+        tytulCzesc2
+        tekstPrzycisk
+      }
     }
   `)
 
@@ -88,7 +93,7 @@ const Hero = () => {
             initial="initial"
             animate="animate"
           >
-            Skąd kamienica ma wiedzieć,{" "}
+            {data.datoCmsStronaGlowna.tytulCzesc1}{" "}
           </motion.span>{" "}
           <TextWithBackground
             exit={{ opacity: 0 }}
@@ -97,7 +102,7 @@ const Hero = () => {
             animate="animate"
             // bg="#BEBFBB"
           >
-            kiedy jest samotność?
+            {data.datoCmsStronaGlowna.tytulCzesc2}
           </TextWithBackground>
           <StyledButton
             onClick={e => handleClick(e)}
@@ -106,7 +111,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.8, duration: 1 }}
           >
-            Zobacz
+            {data.datoCmsStronaGlowna.tekstPrzycisk}
           </StyledButton>
         </TextWrapper>
         <ImagesWrapper>
