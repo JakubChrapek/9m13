@@ -118,6 +118,7 @@ const NavigationListItem = styled(motion.li)`
   font-weight: 600;
   font-size: 18px;
   line-height: 18px;
+  z-index: 7;
   @media (max-width: 1190px) {
     font-size: 17px;
     line-height: 17px;

@@ -602,10 +602,20 @@ export const VideoWrapper = styled.div`
     width: 565px;
     max-width: 100%;
     text-align: center;
+    @media only screen and (max-width: 768px) {
+      margin-top: 36px;
+      font-size: 14px;
+    }
   }
 `
 export const VideoIframe = styled(motion.iframe)`
   border: 0;
+  width: 100%;
+  min-height: 300px;
+
+  @media only screen and (max-width: 482px) {
+    min-height: 220px;
+  }
 `
 
 export const TeacherWrapper = styled.section`
