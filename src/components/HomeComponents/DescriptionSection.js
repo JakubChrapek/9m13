@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import Text from "../Text/Text"
 import { ThemeContext } from "styled-components"
 import { ArtBriefSection } from "./HomeStyles"
@@ -6,6 +7,14 @@ import { useInView } from "react-intersection-observer"
 import { AnimatePresence, motion } from "framer-motion"
 
 const Description = () => {
+  const data = useStaticQuery(graphql`
+    query descriptionQuery {
+      datoCmsStronaGlowna {
+        akapit1
+        akapit2
+      }
+    }
+  `)
   const themeContext = useContext(ThemeContext)
   const [parentRef, parentInView] = useInView({
     threshold: 1,
@@ -74,14 +83,7 @@ const Description = () => {
             animate={parentInView ? "animate" : {}}
             color={themeContext.colors.grayDarkest}
           >
-            Spektakl online „numer 9 mieszkania 13” to nowatorskie połączenie
-            formy teatralnej z animacją filmową. Potrzeby i pragnienia
-            mieszkańców jednej kamienicy „stłoczą się” w jednym miejscu.
-            Inspiracja surrealizmem, absurdem i groteską pozwoli na
-            humorystyczne spojrzenie na tę sytuację. Małżeństwo z wieloletnim
-            stażem, fana gier komputerowych czy też obsesyjnie zmieniającą
-            wycieraczki kobietę spod siódemki czeka jednak pewna nieoczekiwana
-            zmiana…
+            {data.datoCmsStronaGlowna.akapit1}
           </Text>
           <Text
             exit={{ opacity: 0 }}
@@ -91,10 +93,7 @@ const Description = () => {
             margin="32px 0 0"
             color={themeContext.colors.grayDarkest}
           >
-            Jak poradzić sobie z tęsknotą za bliskością, dotykiem, bezpośrednią
-            rozmową? Czy blok wytrzyma izolację? Czy ściany nie pękną pod
-            naporem rozpychających się w jednym miejscu emocji…? I wreszcie –
-            czy kamienica, architektoniczna bryła, może mieć uczucia…?
+            {data.datoCmsStronaGlowna.akapit2}
           </Text>
         </motion.div>
       </AnimatePresence>

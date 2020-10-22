@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import {
   DetailsSection,
   PeopleDetailsWrapper,
@@ -9,6 +10,21 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
 const Details = () => {
+  const data = useStaticQuery(graphql`
+    query detailsQuery {
+      datoCmsStronaGlowna {
+        listaRealizatorow {
+          realizator
+        }
+        listaObsadaCzesc1 {
+          realizator
+        }
+        listaObsadaCzesc2 {
+          realizator
+        }
+      }
+    }
+  `)
   const [parentRef] = useInView()
 
   const [realisatorsRef, realisatorsInView] = useInView({
@@ -50,17 +66,11 @@ const Details = () => {
                 exit={{ opacity: 0 }}
                 key="realisatorsList"
               >
-                <motion.li>reżyseria i montaż: Daria Kopiec</motion.li>
-                <motion.li>scenariusz: Zuzanna Bojda</motion.li>
-                <motion.li>muzyka: Natalia Czekała</motion.li>
-                <motion.li>scenografia: Aleksandra Starzyńska</motion.li>
-                <motion.li>animacja filmowa: Magdalena Parszewska</motion.li>
-                <motion.li>
-                  postprodukcja filmowa, efekty specjalne: Jacek Mazur
-                </motion.li>
-                <motion.li>reżyseria dźwięku: Agata Chodyra</motion.li>
-                <motion.li>współpraca operatorska: Piotr Chodura</motion.li>
-                <motion.li>korekcja barwna: Jarosław Sterczewski</motion.li>
+                {data.datoCmsStronaGlowna.listaRealizatorow.map(realizator => (
+                  <motion.li key={realizator.realizator}>
+                    {realizator.realizator}
+                  </motion.li>
+                ))}
               </motion.ul>
             </motion.div>
             {/* )} */}
@@ -86,18 +96,16 @@ const Details = () => {
                 exit={{ opacity: 0 }}
                 key="crewList"
               >
-                <motion.li>Kamienica: Beata Zygarlicka</motion.li>
-                <motion.li>
-                  Chór:
-                  <br />
-                  Umarły żeglarz: Konrad Pawicki
-                </motion.li>
-                <motion.li>Samobójczyni: Joanna Matuszak</motion.li>
-                <motion.li>Zamordowany cinkciarz: Arkadiusz Buszko</motion.li>
-                <motion.li>
-                  Kochanka na fotelu rozwalonego samochodu: Adrianna
-                  Janowska-Moniuszko
-                </motion.li>
+                {data.datoCmsStronaGlowna.listaObsadaCzesc1.map(
+                  (realizator, iterator) => (
+                    <>
+                    {iterator === 1 && (<motion.li>Chór:</motion.li>)}
+                    <motion.li key={realizator.realizator}>
+                        {realizator.realizator}
+                    </motion.li>
+                    </>
+                  )
+                )}
               </motion.ul>
               <motion.ul
                 initial={{ opacity: 0 }}
@@ -106,15 +114,11 @@ const Details = () => {
                 exit={{ opacity: 0 }}
                 key="charactersList"
               >
-                <motion.li>Drzewo: Maciej Litkowski</motion.li>
-                <motion.li>Pan spod piątki: Grzegorz Młudzik</motion.li>
-                <motion.li>Pani spod piątki: Anna Januszewska</motion.li>
-                <motion.li>Kobieta spod siódemki: Maria Dąbrowska</motion.li>
-                <motion.li>Chłopak spod szóstki: Konrad Beta</motion.li>
-                <motion.li>
-                  Dziewczyna spod dwunastki: Magdalena Wrani-Stachowska
-                </motion.li>
-                <motion.li>Mężczyzna spod trójki: Wojciech Sandach</motion.li>
+                {data.datoCmsStronaGlowna.listaObsadaCzesc2.map(realizator => (
+                  <motion.li key={realizator.realizator}>
+                    {realizator.realizator}
+                  </motion.li>
+                ))}
               </motion.ul>
             </motion.div>
           </CrewWrapper>

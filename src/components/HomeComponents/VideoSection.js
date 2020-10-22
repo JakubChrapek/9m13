@@ -1,12 +1,30 @@
 import React from "react"
-import { PremieraSection } from "./HomeStyles"
+import { graphql, useStaticQuery } from "gatsby"
+import {
+  PremieraSection,
+  VideoSection,
+  VideoContainer,
+  VideoIframe,
+} from "./HomeStyles"
+
+import Text from "../Text/Text"
 
 import { AnimatePresence, motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
 const Video = () => {
+  const data = useStaticQuery(graphql`
+    query videoQuery {
+      datoCmsStronaGlowna {
+        tytulWiersz1
+        tytulWiersz2
+        wiersz3
+      }
+    }
+  `)
+
   const [parentRef, parentInView] = useInView({
-    threshold: 0.2,
+    threshold: 0.6,
     triggerOnce: true,
   })
 
@@ -51,7 +69,7 @@ const Video = () => {
       opacity: 1,
       transition: {
         duration: 1.6,
-        delay: 1.2,
+        delay: 2,
         ease: [0.76, 0, 0.24, 1],
       },
     },
@@ -88,75 +106,91 @@ const Video = () => {
   }
 
   return (
-    <PremieraSection id="spektakl">
+    // <PremieraSection id="spektakl">
+    //   <AnimatePresence>
+    //     {/* <motion.div
+    //       ref={parentRef}
+    //       exit={{ opacity: 0 }}
+    //       variants={parent}
+    //       initial="initial"
+    //       animate={parentInView ? "animate" : {}}
+    //     >
+    //       <motion.span
+    //         exit={{ opacity: 0 }}
+    //         variants={child1}
+    //         initial="initial"
+    //         animate={parentInView ? "animate" : {}}
+    //         className="first"
+    //       >
+    //         {data.datoCmsStronaGlowna.tytulWiersz1}
+    //       </motion.span>
+    //       <motion.span
+    //         exit={{ opacity: 0 }}
+    //         variants={child2}
+    //         initial="initial"
+    //         animate={parentInView ? "animate" : {}}
+    //         className="second"
+    //       >
+    //         {data.datoCmsStronaGlowna.tytulWiersz2}
+    //       </motion.span>
+    //       <motion.span
+    //         exit={{ opacity: 0 }}
+    //         variants={child3}
+    //         initial="initial"
+    //         animate={parentInView ? "animate" : {}}
+    //         className="third"
+    //       >
+    //         {data.datoCmsStronaGlowna.wiersz3}
+    //       </motion.span>
+    //       <motion.div
+    //         exit={{ opacity: 0 }}
+    //         variants={line}
+    //         initial="initial"
+    //         animate={parentInView ? "animate" : {}}
+    //         className="fourth"
+    //         style={{ originX: 0, originY: 0.5 }}
+    //       ></motion.div>
+    //     </motion.div> */}
+    //   </AnimatePresence>
+    // </PremieraSection>
+    <VideoSection id="spektakl">
       <AnimatePresence>
-        <motion.div
+        <VideoContainer
           ref={parentRef}
           exit={{ opacity: 0 }}
           variants={parent}
           initial="initial"
           animate={parentInView ? "animate" : {}}
         >
-          <motion.span
+          <Text
+            color="#fff"
+            fontSize="24px"
+            fontWeight="600"
+            letterSpacing="0.02em"
+            lineHeight="28px"
             exit={{ opacity: 0 }}
             variants={child1}
             initial="initial"
             animate={parentInView ? "animate" : {}}
-            className="first"
           >
-            numer 9
-          </motion.span>
-          <motion.span
+            numer 9 <br />
+            mieszkania 13
+          </Text>
+          <VideoIframe
+            src="https://player.vimeo.com/video/470975633"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
             exit={{ opacity: 0 }}
             variants={child2}
             initial="initial"
             animate={parentInView ? "animate" : {}}
-            className="second"
-          >
-            mieszkania 13
-          </motion.span>
-          <motion.span
-            exit={{ opacity: 0 }}
-            variants={child3}
-            initial="initial"
-            animate={parentInView ? "animate" : {}}
-            className="third"
-          >
-            premiera: 24.10.2020
-          </motion.span>
-          <motion.div
-            exit={{ opacity: 0 }}
-            variants={line}
-            initial="initial"
-            animate={parentInView ? "animate" : {}}
-            className="fourth"
-            style={{ originX: 0, originY: 0.5 }}
-          ></motion.div>
-        </motion.div>
+          />
+        </VideoContainer>
       </AnimatePresence>
-    </PremieraSection>
-    // <VideoSection id="spektakl">
-    //   <VideoContainer>
-    //     <Text
-    //       color="#fff"
-    //       fontSize="24px"
-    //       fontWeight="600"
-    //       letterSpacing="0.02em"
-    //       lineHeight="28px"
-    //     >
-    //       numer 9 <br />
-    //       mieszkania 13
-    //     </Text>
-    //     <VideoIframe
-    //       src="https://player.vimeo.com/video/458423947"
-    //       width="100%"
-    //       height="100%"
-    //       frameborder="0"
-    //       allow="autoplay; fullscreen"
-    //       allowfullscreen
-    //     ></VideoIframe>
-    //   </VideoContainer>
-    // </VideoSection>
+    </VideoSection>
   )
 }
 
