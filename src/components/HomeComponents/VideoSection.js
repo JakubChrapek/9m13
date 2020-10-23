@@ -95,7 +95,7 @@ const Video = () => {
             mieszkania 13
           </Text>
           <VideoIframe
-            src="https://player.vimeo.com/video/470975633"
+            src="https://player.vimeo.com/video/471351047"
             width="100%"
             height="100%"
             frameborder="0"
