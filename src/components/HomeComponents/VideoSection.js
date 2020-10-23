@@ -1,15 +1,10 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import {
-  PremieraSection,
-  VideoSection,
-  VideoContainer,
-  VideoIframe,
-} from "./HomeStyles"
+import { VideoSection, VideoContainer, VideoIframe } from "./HomeStyles"
 
 import Text from "../Text/Text"
 
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
 const Video = () => {
@@ -74,85 +69,8 @@ const Video = () => {
       },
     },
   }
-  const child3 = {
-    initial: {
-      y: 40,
-      opacity: 0,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 1.6,
-        delay: 2,
-        ease: [0.76, 0, 0.24, 1],
-      },
-    },
-  }
-  const line = {
-    initial: {
-      opacity: 0,
-      scaleX: 0,
-    },
-    animate: {
-      opacity: 1,
-      scaleX: 1,
-      transition: {
-        duration: 0.6,
-        delay: 3.1,
-        ease: [0.76, 0, 0.24, 1],
-      },
-    },
-  }
 
   return (
-    // <PremieraSection id="spektakl">
-    //   <AnimatePresence>
-    //     {/* <motion.div
-    //       ref={parentRef}
-    //       exit={{ opacity: 0 }}
-    //       variants={parent}
-    //       initial="initial"
-    //       animate={parentInView ? "animate" : {}}
-    //     >
-    //       <motion.span
-    //         exit={{ opacity: 0 }}
-    //         variants={child1}
-    //         initial="initial"
-    //         animate={parentInView ? "animate" : {}}
-    //         className="first"
-    //       >
-    //         {data.datoCmsStronaGlowna.tytulWiersz1}
-    //       </motion.span>
-    //       <motion.span
-    //         exit={{ opacity: 0 }}
-    //         variants={child2}
-    //         initial="initial"
-    //         animate={parentInView ? "animate" : {}}
-    //         className="second"
-    //       >
-    //         {data.datoCmsStronaGlowna.tytulWiersz2}
-    //       </motion.span>
-    //       <motion.span
-    //         exit={{ opacity: 0 }}
-    //         variants={child3}
-    //         initial="initial"
-    //         animate={parentInView ? "animate" : {}}
-    //         className="third"
-    //       >
-    //         {data.datoCmsStronaGlowna.wiersz3}
-    //       </motion.span>
-    //       <motion.div
-    //         exit={{ opacity: 0 }}
-    //         variants={line}
-    //         initial="initial"
-    //         animate={parentInView ? "animate" : {}}
-    //         className="fourth"
-    //         style={{ originX: 0, originY: 0.5 }}
-    //       ></motion.div>
-    //     </motion.div> */}
-    //   </AnimatePresence>
-    // </PremieraSection>
     <VideoSection id="spektakl">
       <AnimatePresence>
         <VideoContainer
