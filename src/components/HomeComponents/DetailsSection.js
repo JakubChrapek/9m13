@@ -73,7 +73,6 @@ const Details = () => {
                 ))}
               </motion.ul>
             </motion.div>
-            {/* )} */}
           </RealisatorsWrapper>
         </AnimatePresence>
         <AnimatePresence>
@@ -99,10 +98,10 @@ const Details = () => {
                 {data.datoCmsStronaGlowna.listaObsadaCzesc1.map(
                   (realizator, iterator) => (
                     <>
-                    {iterator === 1 && (<motion.li>Chór:</motion.li>)}
-                    <motion.li key={realizator.realizator}>
+                      {iterator === 1 && <motion.li>Chór:</motion.li>}
+                      <motion.li key={realizator.realizator}>
                         {realizator.realizator}
-                    </motion.li>
+                      </motion.li>
                     </>
                   )
                 )}

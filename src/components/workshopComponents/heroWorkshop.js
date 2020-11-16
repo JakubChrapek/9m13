@@ -1,10 +1,19 @@
 import React from "react"
-
+import { graphql, useStaticQuery } from "gatsby"
 import { Flex } from "../Flex/Flex"
 import { Wrapper, VideoIframe } from "./workshopStyles"
 import Text from "../Text/Text"
 
 const HeroWorkshop = () => {
+  const data = useStaticQuery(graphql`
+    query WorkshopHeroQuery {
+      datoCmsWarsztaty {
+        tytul
+        podtytul
+        videoLink
+      }
+    }
+  `)
   return (
     <Wrapper
       initial={{ opacity: 0 }}
@@ -19,19 +28,19 @@ const HeroWorkshop = () => {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="title"
         >
-          Warsztaty z animacji poklatkowej online
+          {data.datoCmsWarsztaty.tytul}
         </Text>
         <Text
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          Weź udział w bezpłatnych warsztatach animacji poklatkowej online!
+          {data.datoCmsWarsztaty.podtytul}
         </Text>
       </Flex>
       <Flex justifyContent="center" alignItems="center" relative column>
         <VideoIframe
-          src="https://player.vimeo.com/video/462550261"
+          src={data.datoCmsWarsztaty.videoLink}
           width="100%"
           height="100%"
           frameborder="0"

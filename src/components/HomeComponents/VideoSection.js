@@ -91,8 +91,9 @@ const Video = () => {
             initial="initial"
             animate={parentInView ? "animate" : {}}
           >
-            numer 9 <br />
-            mieszkania 13
+            {data.datoCmsStronaGlowna.tytulWiersz1}
+            <br />
+            {data.datoCmsStronaGlowna.tytulWiersz2}
           </Text>
           <VideoIframe
             src="https://player.vimeo.com/video/471351047"

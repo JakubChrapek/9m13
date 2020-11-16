@@ -41,7 +41,6 @@ const Creators = ({ width, mobileBreakpoint }) => {
   }
 
   const handleKeyPress = (e, iterator) => {
-    console.log(e.keyCode, e.which)
     if (e.keyCode === 32 || e.key === " " || e.which === 32) {
       changeSlide(iterator)
     }
