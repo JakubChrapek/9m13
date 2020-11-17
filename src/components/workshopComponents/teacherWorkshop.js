@@ -18,6 +18,10 @@ const TeacherWorkshop = () => {
           }
         }
       }
+      datoCmsWarsztaty {
+        tytulProwadzaca
+        blokTekstu
+      }
     }
   `)
   return (
@@ -38,13 +42,8 @@ const TeacherWorkshop = () => {
         alignSelf="flex-end"
         margin="0 0 80px"
       >
-        <Text as="h3">Prowadząca</Text>
-        <Text margin="24px 0 0">
-          Magdalena Parszewska - animatorka filmowa, absolwentka Państwowej
-          Wyższej Szkoły Filmowej, Telewizyjnej i Teatralnej im. Leona Schillera
-          w Łodzi (specjalizacja Animacja i Efekty Specjalne), twórczyni studia
-          animacji filmowej Animusz Studio. 
-        </Text>
+        <Text as="h3">{data.datoCmsWarsztaty.tytulProwadzaca}</Text>
+        <Text margin="24px 0 0">{data.datoCmsWarsztaty.blokTekstu} </Text>
       </TeacherBox>
     </TeacherWrapper>
   )
