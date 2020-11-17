@@ -1,13 +1,22 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import Text from "../Text/Text"
 import { WorkshopSection, VideoWrapper, VideoIframe } from "./workshopStyles"
 
 const VideoSection = () => {
+  const data = useStaticQuery(graphql`
+    query VideoQuery {
+      datoCmsWarsztaty {
+        youtubeLink
+        opisWideo
+      }
+    }
+  `)
   return (
     <WorkshopSection>
       <VideoWrapper>
         <VideoIframe
-          src="https://www.youtube.com/embed/T_1i6S2lBdY"
+          src={data.datoCmsWarsztaty.youtubeLink}
           width="100%"
           height="100%"
           frameborder="0"
@@ -22,10 +31,7 @@ const VideoSection = () => {
           textTransform="uppercase"
           margin="58px 0 0"
         >
-          Teledysk dla brytyjskiego zespołu Sunship Balloon, zrealizowany w
-          tradycyjnej technice animacji wycinankowej przez Animusz Studio
-          Magdaleny Parszewskiej, pod kamerą na zlecenie reżyserki Marty
-          Brodackiej
+          {data.datoCmsWarsztaty.opisWideo}
         </Text>
       </VideoWrapper>
     </WorkshopSection>
