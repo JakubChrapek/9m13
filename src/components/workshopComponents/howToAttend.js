@@ -1,13 +1,26 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import { HowToWrapper, HowToTextWrapper } from "./workshopStyles"
 import Text from "../Text/Text"
 
 const HowToAttend = () => {
+  const data = useStaticQuery(graphql`
+    query HowToQuery {
+      datoCmsWarsztaty {
+        tytulCo
+        tytulJak
+        zachetaDoUdzialu
+        listaPotrzebnych {
+          tekst
+        }
+      }
+    }
+  `)
   return (
     <HowToWrapper>
       <HowToTextWrapper margin="0 0 107px" alignItems="flex-end">
         <Text fontSize="52px" lineHeight="60px">
-          Jak wziąć udział w warsztatach?
+          {data.datoCmsWarsztaty.tytulJak}
         </Text>
         <Text
           margin="40px 0 0"
@@ -16,19 +29,19 @@ const HowToAttend = () => {
           lineHeight="33px"
           letterSpacing="0.05em"
         >
-          Napisz maila na adres:{" "}
-          <a href="mailto:promocja@wspolczesny.szczecin.pl">
-            promocja@wspolczesny.szczecin.pl
-          </a>
-          <br />
-          Decyduje kolejność zgłoszeń.
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.datoCmsWarsztaty.zachetaDoUdzialu
+                .replace("<p>", "")
+                .replace("</p>", ""),
+            }}
+          />
         </Text>
       </HowToTextWrapper>
       <HowToTextWrapper margin="0 20% 0 0">
         <Text fontSize="52px" lineHeight="60px">
-          Co będzie potrzebne do udziału w warsztatach?
+          {data.datoCmsWarsztaty.tytulCo}
         </Text>
-
         <Text
           margin="40px 0 0"
           mobileMargin="24px 0 0"
@@ -37,43 +50,13 @@ const HowToAttend = () => {
           letterSpacing="0.05em"
         >
           <ul>
-            <li>
-              dostęp do Internetu, laptop/tablet lub komputer stacjonarny, za
-              pomocą którego połączysz się z prowadzącą
-            </li>
-            <li>
-              smartfon lub tablet, na który pobierzesz bezpłatną aplikację i
-              którym będziesz wykonywać zdjęcia
-            </li>
-            <li>
-              darmowa aplikacja{" "}
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://play.google.com/store/apps/details?id=com.cateater.stopmotionstudio&hl=pl"
-              >
-                Stop Motion Studio
-              </a>
-              ,
-            </li>
-            <li>
-              <a
-                download="9m13 warsztaty"
-                href="https://www.datocms-assets.com/34173/1601910528-numer9-mieszkania-13materialy-warsztaty.zip"
-              >
-                wydrukowane materiały ( pobierz )
-              </a>
-              lub jeśli nie masz możliwości wydruku, przygotuj kilka małych
-              przedmiotów codziennego użytku, które chcesz ożywić - kolorowe i
-              białe kartki, nożyczki, klej, mazaki lub kredki, taśma klejąca,
-              gumki do przyklejania zdjęć na ścianę
-            </li>
-            <li>
-              stanowisko pracy: pudło kartonowe lub niski stolik/ krzesło, do
-              którego przytwierdzisz telefon komórkowy, tak by się nie poruszał
-              podczas robienia zdjęć
-            </li>
-            <li>wyobraźnia i dobry humor!</li>
+            {data.datoCmsWarsztaty.listaPotrzebnych.map(item => (
+              <li
+                dangerouslySetInnerHTML={{
+                  __html: item.tekst,
+                }}
+              ></li>
+            ))}
           </ul>
         </Text>
       </HowToTextWrapper>

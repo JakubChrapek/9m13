@@ -6,12 +6,19 @@ import Image from "gatsby-image"
 
 const WhoSection = () => {
   const data = useStaticQuery(graphql`
-    query WorkshopQuery {
+    query WorkshopWhoQuery {
       warsztat: file(name: { eq: "warsztat" }) {
         childImageSharp {
           fluid(quality: 90) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
+        }
+      }
+      datoCmsWarsztaty {
+        tytulSekcji1
+        akapit
+        listaInformacji {
+          tekst
         }
       }
     }
@@ -30,18 +37,11 @@ const WhoSection = () => {
         />
       </ImageWrapper>
       <TextWrapper column>
-        <Text as="h2">Warsztat: kto, kiedy, gdzie?</Text>
+        <Text as="h2">{data.datoCmsWarsztaty.tytulSekcji1}</Text>
         <ul>
-          <li>17 października 2020, godz. 12:00</li>
-          <li>Czas trwania: 3 godz.</li>
-          <li>Ilość uczestników: 8-10 osób</li>
-          <li>Wiek uczestników: młodzież (15+) i dorośli</li>
-          <li>Prowadząca: Magdalena Parszewska</li>
-          <li>
-            Warsztaty za pośrednictwem
-            <br />
-            platformy internetowej.
-          </li>
+          {data.datoCmsWarsztaty.listaInformacji.map(item => (
+            <li>{item.tekst}</li>
+          ))}
         </ul>
         <Text
           fontWeight="600"
@@ -50,12 +50,7 @@ const WhoSection = () => {
           lineHeight="27px"
           margin="130px 0 0"
         >
-          Stwórz własną produkcję krótkometrażową w warunkach domowych przy
-          użyciu darmowych aplikacji do animacji poklatkowej i ogólnodostępnych
-          materiałów plastycznych. Przekonaj się, że można zrobić własną
-          animację, bez użycia profesjonalnego sprzętu, używając do tego
-          przedmiotów codziennego użytku, które znajdziesz w domu. Można ożywić
-          i wprawić w ruch wszystko, ogranicza nas tylko nasza wyobraźnia!
+          {data.datoCmsWarsztaty.akapit}
         </Text>
       </TextWrapper>
     </WhoWrapper>

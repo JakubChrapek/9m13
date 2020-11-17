@@ -28,27 +28,27 @@ const AboutWorkshop = ({ currentWidth }) => {
           }
         }
       }
+      datoCmsWarsztaty {
+        pierwszyTytul
+        listaPierwsza {
+          tekst
+        }
+        drugiTytul
+        listaDruga {
+          tekst
+        }
+      }
     }
   `)
   return (
     <WorkshopSection>
       <WorkshopWrapper>
         <Flex column>
-          <Text as="h2">W trakcie warsztatów:</Text>
+          <Text as="h2">{data.datoCmsWarsztaty.pierwszyTytul}</Text>
           <ul>
-            <li>Zapoznasz się z tajnikami sztuki filmowej;</li>
-            <li>
-              Zdobędziesz wiedzę i nowe umiejętności z zakresu animacji
-              poklatkowej;
-            </li>
-            <li>
-              Przejdziesz (w ekspresowym tempie) przez wszystkie etapy
-              realizacji filmowej;
-            </li>
-            <li>
-              Rozwiniesz wyobraźnię i przekonasz się, że można ożywić i wprawić
-              w ruch przedmioty, które otaczają nas na co dzień.
-            </li>
+            {data.datoCmsWarsztaty.listaPierwsza.map(item => (
+              <li>{item.tekst}</li>
+            ))}
           </ul>
         </Flex>
         <Flex>
@@ -78,16 +78,11 @@ const AboutWorkshop = ({ currentWidth }) => {
           <GifToggleButton className={!playing && "show"} playing={playing} />
         </WorkshopDiv>
         <WorkshopDiv column>
-          <Text as="h2">Przebieg warsztatu:</Text>
+          <Text as="h2">{data.datoCmsWarsztaty.drugiTytul}</Text>
           <ul>
-            <li>
-              Przygotowanie stanowiska pracy i zapoznanie się z aplikacją Stop
-              motion studio
-            </li>
-            <li>
-              Przygotowanie elementów do animacji, pierwsze próby animacji.
-            </li>
-            <li>Animacja poklatkowa oraz postprodukcja materiału</li>
+            {data.datoCmsWarsztaty.listaDruga.map(item => (
+              <li>{item.tekst}</li>
+            ))}
           </ul>
         </WorkshopDiv>
       </WorkshopWrapper>
