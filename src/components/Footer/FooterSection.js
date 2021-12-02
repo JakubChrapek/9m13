@@ -111,9 +111,9 @@ const Footer = () => {
             className="link"
             target="_blank"
             rel="noreferrer"
-            href="https://kryptonumstudio.com"
+            href="https://www.kryptonum.eu"
           >
-            Kryptonum Studio
+            Kryptonum
           </a>{" "}
           &{" "}
           <a
@@ -145,13 +145,25 @@ const Footer = () => {
           Nasze social media
         </Text>
         <Flex width="184px" justifyContent="space-between">
-          <StyledLink href="https://www.facebook.com/teatrwspolczesnywszczecinie/">
+          <StyledLink
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.facebook.com/teatrwspolczesnywszczecinie/"
+          >
             <img src={fb} alt="Facebook icon" />
           </StyledLink>
-          <StyledLink href="https://www.instagram.com/wspolczesny_szczecin/">
+          <StyledLink
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.instagram.com/wspolczesny_szczecin/"
+          >
             <img src={ig} alt="Instagram icon" />
           </StyledLink>
-          <StyledLink href="https://www.youtube.com/channel/UCS6NK77RoyqxMUx7np0M6Gg">
+          <StyledLink
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.youtube.com/channel/UCS6NK77RoyqxMUx7np0M6Gg"
+          >
             <img src={yt} alt="Youtube icon" />
           </StyledLink>
         </Flex>
